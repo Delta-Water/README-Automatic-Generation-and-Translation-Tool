@@ -3,5 +3,5 @@
     "owner": "your-github-username",
     "base_url": "https://api.openai.com/v1",
     "main_language_index": 0,
-    "ignore_patterns": ["test/", "docs/", ".env"]
+    "ignore_patterns": ["README/"]
 }
