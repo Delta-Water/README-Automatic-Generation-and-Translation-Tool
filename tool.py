@@ -108,7 +108,6 @@ def create_translations(client, readme_content, main_language):
 def update_readme_with_links(readme_content, translations, main_language):
     readme_with_links = f"## README\n\n"
     readme_with_links += f"### {LANGUAGE_SWITCH_HEADER[main_language]}\n"
-    readme_with_links += f"- [{main_language}](README.md)\n"
     
     for lang in translations.keys():
         readme_with_links += f"- [{lang}](README/README_{lang}.md)\n"
