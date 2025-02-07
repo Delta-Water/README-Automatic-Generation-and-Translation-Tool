@@ -1,8 +1,8 @@
 {
-    "repo_name": "README-Automatic-Generation-and-Translation-Tool",
+    "repo_name": "Habitica-Party",
     "owner": "Delta-Water",
     "base_url": "https://api.chatanywhere.tech",
     "branch": "main",
     "main_language_index": 0,
-    "ignore_patterns": ["README/"]
+    "ignore_patterns": ["README/", "logs/", "documents/"]
 }
