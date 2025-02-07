@@ -1,11 +1,11 @@
 import os
 import json
 import requests
-import openai
+from openai import OpenAI
 from git import Repo
 
 # 设置密钥
-openai.api_key = os.getenv('OPENAI_API_KEY')
+api_key = os.getenv('OPENAI_API_KEY')
 github_token = os.getenv('GITHUB_TOKEN')
 
 # 配置翻译语言
@@ -46,11 +46,15 @@ def get_file_content(file_url, github_token):
 
 def call_openai_api(prompt):
     try:
-        response = openai.ChatCompletion.create(
+        client = OpenAI(
+            api_key=api_key,
+            base_url=base_url
+        )
+        completion = client.chat.completion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
-        return response['choices'][0]['message']['content']
+        return completion['choices'][0]['message']['content']
     except Exception as e:
         print(f"API调用失败: {e}")
         return None
@@ -152,6 +156,7 @@ def main():
     config = load_config()
     
     repo_url = config['repo_url']
+    base_url = config['base_url']
     branch = config.get('branch', 'main')
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
