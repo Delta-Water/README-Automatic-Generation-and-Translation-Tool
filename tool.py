@@ -4,8 +4,9 @@ import requests
 import openai
 from git import Repo
 
-# 设置OpenAI API密钥
+# 设置密钥
 openai.api_key = os.getenv('OPENAI_API_KEY')
+github_token = os.getenv('GITHUB_TOKEN')
 
 # 配置翻译语言
 TRANSLATION_LANGUAGES = ['简中', '繁中', 'Español', 'Français', 'Deutsch', '日本語']
@@ -16,7 +17,7 @@ def load_config(config_file='config.json'):
 
 def validate_input(repo_url, github_token):
     if not repo_url.startswith("https://github.com/") or not github_token:
-        print("无效的输入，请确保仓库地址格式正确并提供有效的Token。")
+        print("请确保仓库地址格式正确并提供有效的Token。")
         return False
     return True
 
@@ -151,7 +152,6 @@ def main():
     config = load_config()
     
     repo_url = config['repo_url']
-    github_token = config['github_token']
     branch = config.get('branch', 'main')
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
