@@ -1,7 +1,8 @@
 {
-    "repo_name": "your-repo-name",
-    "owner": "your-github-username",
-    "base_url": "https://api.openai.com/v1",
+    "repo_name": "README-Automatic-Generation-and-Translation-Tool",
+    "owner": "Delta-Water",
+    "base_url": "https://api.chatanywhere.tech",
+    "branch": "main",
     "main_language_index": 0,
     "ignore_patterns": ["README.md", "README/"]
 }
