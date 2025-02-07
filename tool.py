@@ -4,33 +4,14 @@ import requests
 from openai import OpenAI
 from git import Repo
 
-# 设置密钥
-api_key = os.getenv('OPENAI_API_KEY')
-github_token = os.getenv('GITHUB_TOKEN')
-
 # 配置翻译语言
 TRANSLATION_LANGUAGES = ['简中', '繁中', 'Español', 'Français', 'Deutsch', '日本語']
-
-# 配置源
-config = load_config()
-    
-repo_url = config['repo_url']
-base_url = config['base_url']
-branch = config.get('branch', 'main')
-main_language_index = config['main_language_index']
-main_language = TRANSLATION_LANGUAGES[main_language_index]
-
-# 配置OpenAI服务器
-client = OpenAI(
-    api_key=api_key,
-    base_url=base_url
-)
 
 def load_config(config_file='config.json'):
     with open(config_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def validate_input(repo_url):
+def validate_input(repo_url, github_token):
     if not repo_url.startswith("https://github.com/") or not github_token:
         print("请确保仓库地址格式正确并提供有效的Token。")
         return False
@@ -59,7 +40,7 @@ def get_file_content(file_url, github_token):
         print("无法获取文件内容:", response.json())
         return None
 
-def call_openai_api(prompt):
+def call_openai_api(client, prompt):
     try:
         completion = client.chat.completion.create(
             model="gpt-3.5-turbo",
@@ -70,22 +51,22 @@ def call_openai_api(prompt):
         print(f"API调用失败: {e}")
         return None
 
-def summarize_file_content(file_name, file_content):
+def summarize_file_content(client, file_name, file_content):
     prompt = (
         f"请为以下文件生成一个简要的总结：\n"
         f"文件名：{file_name}\n"
         f"文件内容：\n{file_content}\n\n"
         f"请提供文件的主要功能和用途的简要描述。"
     )
-    return call_openai_api(prompt)
+    return call_openai_api(client, prompt)
 
-def generate_readme_content(files, github_token):
+def generate_readme_content(client, files, github_token):
     file_summaries = []
     for file in files:
         if file['type'] == 'file':
             content = get_file_content(file['download_url'], github_token)
             if content:
-                summary = summarize_file_content(file['name'], content)
+                summary = summarize_file_content(client, file['name'], content)
                 if summary:
                     file_summaries.append(summary)
 
@@ -100,20 +81,20 @@ def generate_readme_content(files, github_token):
         f"请确保README包含项目简介、安装步骤、使用说明和贡献指南等部分，并使用Markdown格式。"
     )
     
-    return call_openai_api(prompt)
+    return call_openai_api(client, prompt)
 
-def translate_text(text, target_language):
+def translate_text(client, text, target_language):
     prompt = f"请将以下文本翻译成{target_language}，并适当添加emoji，使其更具吸引力：\n{text}"
-    return call_openai_api(prompt)
+    return call_openai_api(client, prompt)
 
-def create_translations(readme_content, main_language):
+def create_translations(client, readme_content, main_language):
     translations = {}
     
     for lang in TRANSLATION_LANGUAGES:
         if lang == main_language:
             continue
         print(f"正在翻译为 {lang}...")
-        translation = translate_text(readme_content, lang)
+        translation = translate_text(client, readme_content, lang)
         if translation:
             translations[lang] = translation
         else:
@@ -164,17 +145,27 @@ def commit_changes(repo_url, github_token, updated_readme, translations, branch)
         print(f"推送更改失败: {e}")
 
 def main():
+    config = load_config()
+    
+    repo_url = config['repo_url']
+    github_token = os.getenv('GITHUB_TOKEN')
+    base_url = config['base_url']
+    branch = config.get('branch', 'main')
+    main_language_index = config['main_language_index']
+    main_language = TRANSLATION_LANGUAGES[main_language_index]
+
     if not validate_input(repo_url, github_token):
         return
 
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     files = get_repo_files(repo_url, github_token)
 
     if files:
         print("正在生成README内容...")
-        readme_content = generate_readme_content(files)
+        readme_content = generate_readme_content(client, files, github_token)
         if readme_content:
             print("正在生成翻译...")
-            translations = create_translations(readme_content, main_language)
+            translations = create_translations(client, readme_content, main_language)
             updated_readme = update_readme_with_links(readme_content, translations, main_language)
             commit_changes(repo_url, github_token, updated_readme, translations, branch)
             print("README文件及翻译文件已更新并提交到仓库。")
