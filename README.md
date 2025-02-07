@@ -6,4 +6,8 @@ fork本工具
 
 在secrets中配置你自己的key和token
 
+配置config.json
+
+可以先行写一个简单的readme
+
 手动运行GitHub Actions（当然你也可以将其设置为在你做出新的提交之后自动运行）
