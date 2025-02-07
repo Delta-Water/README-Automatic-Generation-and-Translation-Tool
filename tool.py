@@ -139,7 +139,7 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
         with open(translation_path, 'w', encoding='utf-8') as f:
             # Add link to the main README
             f.write("[Back to main language README](README.md)")
-            f.write(f"\n\ntranslation")
+            f.write(f"\n\n{translation}")
 
     repo.git.add('README.md')
     for lang in translations.keys():
