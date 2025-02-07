@@ -11,15 +11,7 @@ def load_config(config_file='config.json'):
     with open(config_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def validate_input(repo_url, github_token):
-    if not repo_url.startswith("https://github.com/") or not github_token:
-        print("请确保仓库地址格式正确并提供有效的Token。")
-        return False
-    return True
-
-def get_repo_files(repo_url, github_token):
-    repo_name = repo_url.split('/')[-1]
-    owner = repo_url.split('/')[-2]
+def get_repo_files(repo_name, owner, github_token):
     api_url = f'https://api.github.com/repos/{owner}/{repo_name}/contents'
     headers = {'Authorization': f'token {github_token}'}
     
@@ -112,12 +104,10 @@ def update_readme_with_links(readme_content, translations, main_language):
     readme_with_links += "\n" + readme_content  # 添加主语言的内容
     return readme_with_links
 
-def commit_changes(repo_url, github_token, updated_readme, translations, branch):
-    repo_name = repo_url.split('/')[-1]
-    owner = repo_url.split('/')[-2]
-
+def commit_changes(repo_name, owner, github_token, updated_readme, translations, branch):
     try:
-        repo = Repo.clone_from(repo_url, f'./{repo_name}', branch=branch)
+        # 使用 GitHub Token 进行克隆
+        repo = Repo.clone_from(f'https://{github_token}@github.com/{owner}/{repo_name}.git', f'./{repo_name}', branch=branch)
     except Exception as e:
         print(f"克隆仓库失败: {e}")
         return
@@ -140,25 +130,24 @@ def commit_changes(repo_url, github_token, updated_readme, translations, branch)
     repo.index.commit('自动生成README文件，添加翻译文件')
     
     try:
-        repo.git.push('origin', branch)
+        # 使用 GitHub Token 进行推送
+        repo.git.push(f'https://{github_token}@github.com/{owner}/{repo_name}.git', branch)
     except Exception as e:
         print(f"推送更改失败: {e}")
 
 def main():
     config = load_config()
     
-    repo_url = config['repo_url']
+    repo_name = config['repo_name']
+    owner = config["owner"]
     github_token = os.getenv('GITHUB_TOKEN')
     base_url = config['base_url']
     branch = config.get('branch', 'main')
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
 
-    if not validate_input(repo_url, github_token):
-        return
-
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
-    files = get_repo_files(repo_url, github_token)
+    files = get_repo_files(repo_name, owner, github_token)
 
     if files:
         print("正在生成README内容...")
@@ -167,7 +156,7 @@ def main():
             print("正在生成翻译...")
             translations = create_translations(client, readme_content, main_language)
             updated_readme = update_readme_with_links(readme_content, translations, main_language)
-            commit_changes(repo_url, github_token, updated_readme, translations, branch)
+            commit_changes(repo_name, owner, github_token, updated_readme, translations, branch)
             print("README文件及翻译文件已更新并提交到仓库。")
         else:
             print("未能生成README内容，操作终止。")
