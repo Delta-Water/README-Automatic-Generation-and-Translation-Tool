@@ -1,5 +1,7 @@
 {
-    "repo_url": "https://github.com/username/repo",
+    "repo_name": "README-Automatic-Generation-and-Translation-Tool",
+    "owner": "Delta-Water",
+    "base_url": "https://api.chatanywhere.tech",
     "branch": "main",
     "main_language_index": 0
 }
