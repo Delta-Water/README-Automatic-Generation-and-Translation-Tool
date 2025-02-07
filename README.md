@@ -1,77 +1,100 @@
 ## README
 
-### 语言切换:
-- [主语言: 简中](README.md)
-- [繁中](README_繁中.md)
+### 语言切换
+- [简体中文](README.md)
+- [繁体中文](README_繁体中文.md)
+- [English](README_English.md)
 - [Español](README_Español.md)
 - [Français](README_Français.md)
 - [Deutsch](README_Deutsch.md)
 - [日本語](README_日本語.md)
 
-# 自动生成与翻译工具
+# Automatic Generation and Translation Tool
 
-## 项目简介
+Welcome to the **Automatic Generation and Translation Tool**! This innovative tool is designed to facilitate the automatic creation and translation of text for software projects hosted on GitHub. By leveraging advanced APIs and a user-friendly configuration, you can effortlessly generate professional README files and translate them into various languages. 
 
-自动生成与翻译工具是一个基于 Python 的开源项目，旨在简化 README 文件的创建和多语言翻译过程。该工具集成了 GitHub API 和 OpenAI 的语言模型，通过自动化方式生成高质量的 README 文件，并支持将其翻译成多种语言，帮助项目维护者提高文档可访问性与用户体验。
+## Table of Contents
+- [Project Introduction](#project-introduction)
+- [Features](#features)
+- [Installation Steps](#installation-steps)
+- [Usage Instructions](#usage-instructions)
+- [Configuration](#configuration)
+- [Contribution Guidelines](#contribution-guidelines)
+- [License](#license)
 
-## 功能特点
+## Project Introduction
 
-- **自动生成上述内容**: 从指定的 GitHub 仓库获取文件并生成项目的 README 文档。
-- **多语言翻译**: 使用先进的翻译技术将 README 文档转换为多种语言。
-- **易于配置**: 通过简单的 JSON 配置文件管理与 GitHub 仓库的交互。
-- **高效的文档管理**: 自动更新和提交生成的 README 文件及其翻译到 GitHub。
+The Automatic Generation and Translation Tool streamlines the process of creating polished and multilingual README files for software repositories. By understanding and summarizing the content of your project files, it not only generates an engaging README but also translates it into multiple languages, making your project more accessible to a global audience.
 
-## 安装步骤
+## Features
 
-1. **克隆仓库**:
+- **Configuration Management**: Simplify your setup with a JSON configuration file that defines essential repository parameters.
+- **File Retrieval**: Automatically fetch files from your GitHub repository using the GitHub API.
+- **Content Generation**: Generate a professional README with clear project details, installation steps, usage instructions, and more, utilizing OpenAI's API.
+- **Translation Support**: Translate the README content into multiple languages to cater to a diverse audience.
+- **User-Friendly Updates**: Easily commit changes to the main README and create separate translated README files.
+
+## Installation Steps
+
+To get started with the Automatic Generation and Translation Tool, follow these steps:
+
+1. **Clone the Repository:**
    ```bash
-   git clone <仓库URL>
-   cd <仓库目录>
+   git clone https://github.com/username/repo.git
    ```
 
-2. **安装依赖**:
-   在项目根目录下，使用以下命令安装所需的Python库：
+2. **Navigate to the Project Directory:**
+   ```bash
+   cd repo
+   ```
+
+3. **Install Dependencies:**
+   Make sure you have Python installed. Then install the required packages using pip:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **配置文件**:
-   编辑 `config.json` 文件，设置 `repo_url` 为所需的 GitHub 仓库地址，保持其他设置如 `branch` 和 `main_language_index` 的默认值。
+4. **Configure the Tool:**
+   Edit the `config.json` file to include your GitHub repository URL, branch information, and preferred translation languages.
 
-## 使用说明
+## Usage Instructions
 
-1. **运行工具**:
-   使用以下命令启动工具，开始生成和翻译 README 文档：
-   ```bash
-   python tool.py
-   ```
+To utilize the Automatic Generation and Translation Tool, execute the Python script as follows:
 
-2. **存储访问令牌**:
-   确保已在环境中设置 GitHub 访问令牌，以便工具能成功访问仓库内容。
+```bash
+python tool.py
+```
 
-## 贡献指南
+This command will read the configuration file, retrieve the necessary files from the specified GitHub repository, generate the README content, translate it, and commit the changes back to the repository.
 
-我们欢迎任何形式的贡献！您可以通过以下步骤参与到项目中：
+### Example of Configuration
 
-1. **Fork 本仓库**。
-2. **创建特性分支**:
-   ```bash
-   git checkout -b feature/新特性
-   ```
-3. **提交更改**:
-   ```bash
-   git commit -m "添加新特性"
-   ```
-4. **推送到远程**:
-   ```bash
-   git push origin feature/新特性
-   ```
-5. **提交拉取请求**。
+Here is a sample of what your `config.json` should look like:
 
-## 许可证
+```json
+{
+    "repo_url": "https://github.com/username/repo",
+    "branch": "main",
+    "main_language_index": 0,
+    "api_token": "YOUR_GITHUB_API_TOKEN",
+    "target_languages": ["es", "fr", "de"]
+}
+```
 
-本项目遵循 [Apache 许可证 2.0](http://www.apache.org/licenses/LICENSE-2.0)。您可以自由使用和分发该软件，但请遵循许可证中的条款。
+Make sure to replace `"YOUR_GITHUB_API_TOKEN"` with your actual GitHub API token.
+
+## Contribution Guidelines
+
+We welcome contributions to enhance the functionality of the Automatic Generation and Translation Tool! Here are some ways you can contribute:
+
+1. **Fork the Repository**: Create your own fork to work on your changes.
+2. **Submit a Pull Request**: Once you have made your changes and tested them, please submit a pull request for review.
+3. **Report Issues**: If you encounter any bugs or have suggestions, feel free to open an issue in the repository.
+
+## License
+
+This project is licensed under the terms of the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0). This permissive license allows you to use, reproduce, and distribute the software while protecting the rights of contributors.
 
 ---
 
-感谢您对自动生成与翻译工具的关注与支持！如有任何问题或建议，欢迎在项目问题追踪器提交反馈。
+Thank you for using the Automatic Generation and Translation Tool! We hope it enhances your project’s accessibility and engagement. Happy coding!
