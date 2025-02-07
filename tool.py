@@ -111,7 +111,7 @@ def update_readme_with_links(readme_content, translations, main_language):
     readme_with_links += f"- [{main_language}](README.md)\n"
     
     for lang in translations.keys():
-        readme_with_links += f"- [{lang}](README_{lang}.md)\n"
+        readme_with_links += f"- [{lang}](README/README_{lang}.md)\n"
 
     readme_with_links += "\n" + readme_content  # 添加主语言内容
     return readme_with_links
@@ -131,7 +131,7 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
 
     # Update translation files
     for lang, translation in translations.items():
-        translation_path = f'./{repo_name}/README_{lang}.md'
+        translation_path = f'./{repo_name}/README/README_{lang}.md'
         with open(translation_path, 'w', encoding='utf-8') as f:
             # Add link to the main README
             f.write("[Back to main language README](README.md)")
