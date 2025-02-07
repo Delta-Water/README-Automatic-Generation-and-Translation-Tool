@@ -22,5 +22,8 @@ jobs:
         pip install requests openai GitPython
 
     - name: Run script
+      env:
+        GITHUB_TOKEN: ${{ PAT }}
+        OPENAI_API_KEY: ${{ OPENAI_API_KEY }}
       run: |
         python tool.py
