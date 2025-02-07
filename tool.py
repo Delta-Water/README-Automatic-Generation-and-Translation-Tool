@@ -128,10 +128,14 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
     readme_path = f'./{repo_name}/README.md'
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(updated_readme)
-
+  
+    readme_path = f'./{repo_name}/README'
+    if not os.path.exists(readme_path):
+      os.makedirs(readme_path)
+  
     # Update translation files
     for lang, translation in translations.items():
-        translation_path = f'./{repo_name}/README/README_{lang}.md'
+        translation_path = f'{readme_path}/README_{lang}.md'
         with open(translation_path, 'w', encoding='utf-8') as f:
             # Add link to the main README
             f.write("[Back to main language README](README.md)")
