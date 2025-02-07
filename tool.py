@@ -62,7 +62,7 @@ def summarize_file_content(client, file_name, file_content):
     )
     return call_openai_api(client, prompt)
 
-def generate_readme_content(client, files, github_token):
+def generate_readme_content(client, files, github_token, main_language):
     file_summaries = []
     for file in files:
         if file['type'] == 'file':
@@ -78,15 +78,16 @@ def generate_readme_content(client, files, github_token):
     all_file_summaries = "\n".join(file_summaries)
     
     prompt = (
-        f"Please generate a professional and engaging README file based on the following file summaries:\n"
+        f"Please use {main_language} to generate a professional and engaging README file based on the following file summaries:\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
         f"Please ensure the README includes sections such as project introduction, installation steps, usage instructions, and contribution guidelines, and use Markdown format."
+        f"Please add emojis appropriately to make it more engaging."
     )
     
     return call_openai_api(client, prompt)
 
 def translate_text(client, text, target_language):
-    prompt = f"Please translate the following text into {target_language}, and add emojis appropriately to make it more engaging:\n{text}"
+    prompt = f"Please translate the following text into {target_language}, and reserve emojis to make it more engaging:\n{text}"
     return call_openai_api(client, prompt)
 
 def create_translations(client, readme_content, main_language):
@@ -132,9 +133,9 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
     for lang, translation in translations.items():
         translation_path = f'./{repo_name}/README_{lang}.md'
         with open(translation_path, 'w', encoding='utf-8') as f:
-            f.write(translation)
             # Add link to the main README
-            f.write(f"\n\n[Back to main language README](README.md)")
+            f.write("[Back to main language README](README.md)")
+            f.write(f"\n\ntranslation")
 
     repo.git.add('README.md')
     for lang in translations.keys():
@@ -164,7 +165,7 @@ def main():
 
     if files:
         print("Generating README content...")  # 正在生成 README 内容
-        readme_content = generate_readme_content(client, files, github_token)
+        readme_content = generate_readme_content(client, files, github_token, main_language)
         if readme_content:
             print("Generating translations...")  # 正在生成翻译
             translations = create_translations(client, readme_content, main_language)
