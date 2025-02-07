@@ -139,7 +139,7 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
 
     repo.git.add('README.md')
     for lang in translations.keys():
-        repo.git.add(f'README_{lang}.md')
+        repo.git.add(f'README/README_{lang}.md')
     
     repo.index.commit('Automatically generated README file, added translation files')  # 自动生成的 README 文件，添加翻译文件
     
