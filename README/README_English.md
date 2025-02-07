@@ -1,61 +1,75 @@
 [Back to main language README](README.md)
 
-# 📄 README Auto-Generation and Translation Tool
+# README: README-Automatic-Generation-and-Translation-Tool 📄🌍
 
-## Project Introduction
+## Project Introduction ✨
 
-Welcome to the **README Auto-Generation and Translation Tool**! This tool, developed by **Delta-Water**, aims to simplify the creation and management of README files and their translations for GitHub repositories. With this tool, you can easily generate high-quality README documents and translate them into multiple languages, enhancing your project's accessibility and user engagement. 🚀
+Welcome to the **README-Automatic-Generation-and-Translation-Tool** project! This tool aims to simplify the process of generating and translating README files for GitHub repositories. By combining the GitHub API and OpenAI API, our tool can automatically generate comprehensive README documents and support translations in multiple languages, making your project more accessible and understandable to users around the world.
 
-## License
+## Features 🚀
 
-This project follows the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). This license outlines the terms and conditions for the use, reproduction, and distribution of the software and other works. Users can enjoy a worldwide, non-exclusive, royalty-free copyright and patent license to use and distribute the work and its derivatives, provided they comply with the relevant terms. 📜
+- **Automated Configuration Management**: Load settings from a configuration file.
+- **GitHub API Interaction**: Fetch file contents from specified GitHub repositories.
+- **OpenAI API Integration**: Use OpenAI API to extract file content and generate engaging README text and translations.
+- **Multi-language Support**: Generate translated versions based on predefined language configurations.
+- **README Management**: Build README files that include project overview, installation steps, and link translated versions.
+- **Version Control**: Automatically commit changes to GitHub repository after generating the README and its translations, maintaining version control.
 
-## Installation Steps
+## Installation Steps ⚙️
 
-Please ensure you have Python 3.x and pip installed. You can follow these steps to install the required dependencies:
+Before using this tool, please ensure you have the following dependencies installed:
 
-1. Clone the project repository:
+1. **Clone this repository**:
    ```bash
-   git clone <your project repository URL>
-   cd <your project directory>
+   git clone https://github.com/Delta-Water/README-Automatic-Generation-and-Translation-Tool.git
+   cd README-Automatic-Generation-and-Translation-Tool
    ```
 
-2. Install dependencies:
+2. **Install Dependencies**:
+   Use `pip` to install the required libraries for the project:
    ```bash
    pip install -r requirements.txt
    ```
 
-The dependencies include:
-- `requests`: Simplifies HTTP requests for interacting with web services and APIs.
-- `openai`: Provides access to the OpenAI API, supporting the integration of language models and AI functionalities.
-- `GitPython`: Seamlessly interacts with Git repositories to support version management, commits, branches, and more.
+3. **Configuration File**: Create or edit the `config.json` file in the project root directory to set the API URL and other configuration options.
 
-## Usage Instructions
+4. **Set Up GitHub Key**: Configure your personal access token in the "Secrets" section of GitHub, allowing the tool to access your GitHub repository.
 
-Use the `tool.py` script to automatically generate and manage README files and their translations:
+## Usage Instructions 📋
 
-1. Configure the `config.json` file to set the repository name, owner identity, and primary language.
-2. Run the following command to generate the README file:
+1. **Configuration**: Ensure the `config.json` file is correctly configured with the Base API URL, main branch, and primary programming language index.
+
+2. **Run the Tool**: Execute the following command to start the tool:
    ```bash
    python tool.py
    ```
-3. If translation is needed, the script will automatically translate the generated README document into the specified multiple languages.
 
-## Contribution Guidelines
+3. **Manually Trigger GitHub Actions**: You can also manually run GitHub Actions or configure it to run automatically upon new commits.
 
-We welcome contributions from the community! You can participate in the following ways:
-1. Fork this project.
-2. Submit your modifications and create a Pull Request.
-3. Provide suggestions or feedback regarding the project's documentation, code, or other aspects.
+## Contribution Guidelines 🤝
 
-Please ensure you follow our [Contribution Agreement](./CONTRIBUTING.md). 🤝
+We welcome contributions in any form! Please follow these steps:
+1. **Fork this repository**.
+2. **Create your feature branch**:
+   ```bash
+   git checkout -b feature/MyFeature
+   ```
+3. **Commit your changes**:
+   ```bash
+   git commit -m "Add some feature"
+   ```
+4. **Push to the branch**:
+   ```bash
+   git push origin feature/MyFeature
+   ```
+5. **Submit a pull request**.
 
-## Support
+Thank you for supporting this project! If you have any questions or suggestions, please create an issue or contact the project maintainers. 🙏
 
-If you encounter any issues during use, feel free to raise them in the Issues section. We will respond and assist you as soon as possible! 😊
+## License 📜
 
-Thank you for your support, and we hope you enjoy using this tool! 🎉
+This project follows the **Apache License, Version 2.0**. Please refer to the relevant documents for detailed terms and conditions to ensure legality and fairness in collaboration and use.
 
 ---
 
-If you have any other questions or suggestions, please feel free to contact us. We look forward to improving and refining this project together with you! 🌟
+Thank you for using the **README-Automatic-Generation-and-Translation-Tool**! Let's make open source more open and collaborative together! 💪

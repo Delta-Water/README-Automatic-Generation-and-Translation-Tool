@@ -1,61 +1,75 @@
 [Back to main language README](README.md)
 
-# 📄 README Generador Automático y Herramienta de Traducción
+# README: Herramienta de Generación y Traducción Automática de README 📄🌍
 
-## Introducción al Proyecto
+## Introducción al Proyecto ✨
 
-¡Bienvenido a la **Herramienta de Generación Automática y Traducción de README**! Este herramienta fue desarrollada por **Delta-Water** y tiene como objetivo simplificar la creación y gestión de archivos README para repositorios de GitHub, así como sus traducciones. Con esta herramienta, puedes generar fácilmente documentos README de alta calidad y traducirlos a múltiples idiomas, mejorando la accesibilidad y el compromiso de los usuarios con tu proyecto. 🚀
+¡Bienvenido al proyecto **README-Automatic-Generation-and-Translation-Tool**! Esta herramienta está diseñada para simplificar el proceso de generación y traducción de archivos README en repositorios de GitHub. Al combinar la API de GitHub y la API de OpenAI, nuestra herramienta puede generar automáticamente documentación README completa y soportar traducciones en varios idiomas, haciendo que su proyecto sea más accesible y comprensible para usuarios de todo el mundo.
 
-## Licencia
+## Características 🚀
 
-Este proyecto sigue la [Licencia Apache, Versión 2.0](http://www.apache.org/licenses/LICENSE-2.0). Esta licencia describe los términos y condiciones para el uso, copia y distribución de software y otros trabajos. Los usuarios pueden disfrutar de una licencia de derechos de autor y patente global, no exclusiva y libre de regalías para usar y distribuir el trabajo y sus obras derivadas, siempre que cumplan con las condiciones correspondientes. 📜
+- **Gestión de configuración automatizada**: Carga de configuraciones desde un archivo de configuración.
+- **Interacción con la API de GitHub**: Obtiene el contenido de archivos de repositorios de GitHub específicos.
+- **Integración de la API de OpenAI**: Utiliza la API de OpenAI para resumir el contenido del archivo y generar texto README atractivo y traducciones.
+- **Soporte multilenguaje**: Genera versiones traducidas según configuraciones de idiomas predefinidas.
+- **Gestión de README**: Construye un archivo README que incluye una descripción del proyecto, pasos de instalación y más, enlazando las versiones traducidas.
+- **Control de versiones**: Después de generar el README y su traducción, envía automáticamente los cambios al repositorio de GitHub, manteniendo el control de versiones.
 
-## Pasos de Instalación
+## Pasos de Instalación ⚙️
 
-Asegúrate de tener instalado Python 3.x y pip. Luego, puedes instalar las dependencias necesarias siguiendo estos pasos:
+Antes de comenzar a usar esta herramienta, asegúrese de tener instaladas las siguientes dependencias:
 
-1. Clona el repositorio del proyecto:
+1. **Clonar este repositorio**:
    ```bash
-   git clone <tu_dirección_de_repositorio>
-   cd <tu_directorio_de_proyecto>
+   git clone https://github.com/Delta-Water/README-Automatic-Generation-and-Translation-Tool.git
+   cd README-Automatic-Generation-and-Translation-Tool
    ```
 
-2. Instala las dependencias:
+2. **Instalar dependencias**:
+   Use `pip` para instalar las bibliotecas necesarias para el proyecto:
    ```bash
    pip install -r requirements.txt
    ```
 
-Las bibliotecas de dependencia incluyen:
-- `requests`: para simplificar las solicitudes HTTP al interactuar con servicios web y API.
-- `openai`: proporciona acceso a la API de OpenAI, soportando la integración de modelos de lenguaje y funciones de IA.
-- `GitPython`: permite interactuar sin problemas con repositorios Git, soportando gestión de versiones, commits y ramas, entre otras operaciones.
+3. **Archivo de configuración**: Cree o edite el archivo `config.json` en el directorio raíz del proyecto, configurando la URL de la API y otros elementos de configuración.
 
-## Instrucciones de Uso
+4. **Configurar la clave de GitHub**: En la sección de "Secrets" de GitHub, configure su token de acceso personal para que la herramienta pueda acceder a su repositorio de GitHub.
 
-Usa el script `tool.py` para generar y gestionar automáticamente archivos README y sus traducciones:
+## Instrucciones de Uso 📋
 
-1. Configura el archivo `config.json` estableciendo el nombre del repositorio, la identidad del propietario y el idioma principal.
-2. Ejecuta el siguiente comando para generar el archivo README:
+1. **Configuración**: Asegúrese de que el archivo `config.json` esté correctamente configurado con la URL base de la API, la rama principal y el índice del lenguaje de programación principal.
+
+2. **Ejecutar la herramienta**: Ejecute el siguiente comando para iniciar la herramienta:
    ```bash
    python tool.py
    ```
-3. Si necesitas traducciones, el script traducirá automáticamente el documento README generado a los idiomas especificados.
 
-## Guía de Contribución
+3. **Activar manualmente GitHub Actions**: También puede ejecutar manualmente GitHub Actions o configurarlo para que se ejecute automáticamente con nuevos envíos.
 
-¡Damos la bienvenida a las contribuciones de la comunidad! Puedes participar de las siguientes maneras:
-1. Haz un fork de este proyecto.
-2. Envía tus modificaciones y crea un Pull Request.
-3. Ofrece sugerencias o comentarios sobre la documentación, el código o cualquier otro aspecto del proyecto.
+## Guía de Contribución 🤝
 
-Asegúrate de seguir nuestro [acuerdo de contribución](./CONTRIBUTING.md).
+¡Agradecemos cualquier forma de contribución! Siga estos pasos:
+1. **Haga un fork de este repositorio**.
+2. **Cree su rama de función**:
+   ```bash
+   git checkout -b feature/MyFeature
+   ```
+3. **Realice su cambio**:
+   ```bash
+   git commit -m "Add some feature"
+   ```
+4. **Empuje a la rama**:
+   ```bash
+   git push origin feature/MyFeature
+   ```
+5. **Envíe una solicitud de extracción**.
 
-## Soporte
+¡Gracias por su apoyo a este proyecto! Si tiene alguna pregunta o sugerencia, por favor cree un problema o contacte a los mantenedores del proyecto. 🙏
 
-Si encuentras algún problema durante el uso, no dudes en plantearlo en Issues. ¡Te responderemos lo antes posible y te ayudaremos! 😊
+## Licencia 📜
 
-¡Gracias por tu apoyo y esperamos que disfrutes usando esta herramienta! 🎉
+Este proyecto sigue la **Licencia Apache, Versión 2.0**. Consulte los documentos relevantes para obtener los términos y condiciones detallados, asegurando la legalidad y la equidad en la colaboración y uso.
 
 ---
 
-Si tienes otras preguntas o sugerencias, ¡siéntete libre de contactarnos en cualquier momento! Esperamos mejorar y perfeccionar este proyecto contigo. 🤝
+¡Gracias por usar **README-Automatic-Generation-and-Translation-Tool**! ¡Juntos hacemos el código abierto más accesible y colaborativo! 💪

@@ -1,61 +1,75 @@
 [Back to main language README](README.md)
 
-# 📄 README 自動生成與翻譯工具
+# README: README-Automatic-Generation-and-Translation-Tool 📄🌍
 
-## 專案介紹
+## 專案介紹 ✨
 
-歡迎使用 **README 自動生成與翻譯工具**！該工具由 **Delta-Water** 開發，旨在簡化 GitHub 倉庫的 README 檔案及其翻譯的創建與管理。通過這一工具，您可以輕鬆生成高品質的 README 文檔，並將其翻譯成多種語言，提升您的專案可訪問性和用戶參與度。
+歡迎來到 **README-Automatic-Generation-and-Translation-Tool** 專案！本工具旨在簡化GitHub倉庫的README文件生成與翻譯流程。通過結合GitHub API和OpenAI API，我們的工具能夠自動生成全面的README文件，並支持多種語言翻譯，讓您的專案更加易於被全球用戶訪問和理解。
 
-## 授權
+## 功能特點 🚀
 
-本專案遵循 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)。該授權概述了軟體及其他作品的使用、複製和分發的條款與條件。用戶在遵循相應條件的前提下，可以享有全球範圍內、非獨佔性、免版稅的版權和專利授權，使用和分發該作品及其衍生作品。
+- **自動化配置管理**：從配置文件中加載設置。
+- **GitHub API互動**：獲取指定GitHub倉庫的文件內容。
+- **OpenAI API集成**：使用OpenAI API提煉文件內容，生成引人入勝的README文本和翻譯。
+- **多語言支持**：根據預定義的語言配置生成翻譯版本。
+- **README管理**：構建包括專案簡介、安裝步驟等多個部分的README文件，並鏈接翻譯版本。
+- **版本控制**：生成README及其翻譯後，自動提交更改到GitHub倉庫，維護版本控制。
 
-## 安裝步驟
+## 安裝步驟 ⚙️
 
-請確保您已安裝了 Python 3.x 及 pip，接下來可以通過以下步驟安裝所需依賴：
+在開始使用本工具之前，請確保已安裝以下依賴項：
 
-1. 克隆專案倉庫：
+1. **克隆本倉庫**：
    ```bash
-   git clone <您的專案倉庫地址>
-   cd <您的專案目錄>
+   git clone https://github.com/Delta-Water/README-Automatic-Generation-and-Translation-Tool.git
+   cd README-Automatic-Generation-and-Translation-Tool
    ```
 
-2. 安裝依賴：
+2. **安裝依賴**：
+   使用`pip`安裝項目所需的依賴庫：
    ```bash
    pip install -r requirements.txt
    ```
 
-依賴庫包括：
-- `requests`：用於簡化與 web 服務和 API 互動的 HTTP 請求。
-- `openai`：提供對 OpenAI API 的訪問，支持語言模型和 AI 功能的集成。
-- `GitPython`：無縫與 Git 倉庫互動，支持版本管理、提交和分支等操作。
+3. **配置文件**：在專案根目錄下創建或編輯`config.json`文件，設置API URL和其他配置項。
 
-## 使用說明
+4. **設置GitHub密鑰**：在GitHub的“Secrets”部分配置您的個人訪問令牌，使工具可以訪問您的GitHub倉庫。
 
-使用 `tool.py` 腳本來自動生成和管理 README 檔案及其翻譯：
+## 使用說明 📋
 
-1. 配置 `config.json` 檔案，設置倉庫名稱、擁有者身份和主要語言。
-2. 執行以下命令以生成 README 檔案：
+1. **配置**：確保`config.json`文件正確配置了Base API URL、主分支及主要編程語言索引。
+
+2. **運行工具**：執行以下命令啟動工具：
    ```bash
    python tool.py
    ```
-3. 如果需要進行翻譯，腳本會自動將生成的 README 文檔翻譯成指定的多種語言。
 
-## 貢獻指引
+3. **手動觸發GitHub Actions**：您還可以手動運行GitHub Actions，或配置為在新提交時自動運行。
 
-我們歡迎社區的貢獻！您可以通過以下方式參與：
-1. Fork 本專案。
-2. 提交您的修改並發起 Pull Request。
-3. 對專案的文檔、程式碼或其他方面提出建議或反饋。
+## 貢獻指南 🤝
 
-請確保遵循本專案的 [貢獻協議](./CONTRIBUTING.md)。
+我們歡迎任何形式的貢獻！請遵循以下步驟：
+1. **Fork本倉庫**。
+2. **創建您的功能分支**：
+   ```bash
+   git checkout -b feature/MyFeature
+   ```
+3. **提交您的更改**：
+   ```bash
+   git commit -m "Add some feature"
+   ```
+4. **推送到分支**：
+   ```bash
+   git push origin feature/MyFeature
+   ```
+5. **提交拉取請求**。
 
-## 支援
+感謝您對本專案的支持！如果您有任何問題或建議，請創建一個問題或聯繫專案維護者。🙏
 
-如您在使用過程中遇到任何問題，歡迎您在 Issues 中提出。我們會盡快給予響應和幫助！😊
+## 授權 📜
 
-感謝您的支持，希望您能享受使用本工具的過程！🎉
+本專案遵循 **Apache License, Version 2.0**。請查閱相關文件以獲取詳細的條款和條件，確保合作與使用的合法性和公正性。
 
 ---
 
-如果您有其他問題或建議，歡迎隨時與我們聯繫。我們期待與您一起改進和完善這個專案！
+感謝您使用 **README-Automatic-Generation-and-Translation-Tool**！讓我們一起使開源更加開放與協作！💪
