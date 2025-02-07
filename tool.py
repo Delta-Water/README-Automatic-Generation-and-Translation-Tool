@@ -46,7 +46,7 @@ def call_openai_api(client, prompt):
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
-        return completion['choices'][0]['message']['content']
+        return completio.choices[0].message.content
     except Exception as e:
         print(f"API调用失败: {e}")
         return None
