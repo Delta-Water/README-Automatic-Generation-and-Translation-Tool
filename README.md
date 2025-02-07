@@ -1,7 +1,6 @@
 ## README
 
 ### 语言切换
-- [简体中文](README.md)
 - [繁体中文](README/README_繁体中文.md)
 - [English](README/README_English.md)
 - [Español](README/README_Español.md)
@@ -9,54 +8,62 @@
 - [Deutsch](README/README_Deutsch.md)
 - [日本語](README/README_日本語.md)
 
-# README - README-Automatic-Generation-and-Translation-Tool 🚀
+# 📄 README 自动生成与翻译工具
 
-## 项目介绍 📜
-这个项目名为 **README-Automatic-Generation-and-Translation-Tool**，由 **Delta-Water** 开发。它旨在自动化生成和翻译指定 GitHub 仓库中的 README 文件。通过使用 GitHub API 和 OpenAI 的服务，本工具可以高效地提取文件内容、生成 README 文本，并将其翻译成多种语言，以便全球用户能够轻松理解和使用。
+## 项目介绍
 
-## 许可证 📄
-本项目遵循 Apache 许可证，版本 2.0。该许可证描述了使用、复制和分发软件及其他作品的条款和条件，并定义了多个关键术语，如“许可方”、“您”、“作品”、“衍生作品”和“贡献”。您将获得一个永久性、全球范围内的、非独占性和免版税的权利来使用本项目及其衍生作品。了解更多关于许可证的信息，请参见 `LICENSE` 文件。
+欢迎使用 **README 自动生成与翻译工具**！该工具由 **Delta-Water** 开发，旨在简化 GitHub 仓库的 README 文件及其翻译的创建与管理。通过这一工具，您可以轻松生成高质量的 README 文档，并将其翻译成多种语言，提升您的项目可访问性和用户参与度。
 
-## 准备环境 ⚙️
+## 许可证
 
-在开始使用本工具之前，您需要确保安装必要的依赖项。本项目依赖以下库：
+本项目遵循 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)。该许可证概述了软件及其他作品的使用、复制和分发的条款与条件。用户在遵守相应条件的前提下，可以享有全球范围内、非独占性、免版税的版权和专利许可证，使用和分发该作品及其衍生作品。
 
-1. **requests** - 用于轻松进行 HTTP 请求的流行库。
-2. **openai** - 用于访问 OpenAI 服务和模型的库，助力集成先进的人工智能能力。
-3. **GitPython** - 用于以编程方式与 Git 仓库交互的库，便利版本控制操作。
+## 安装步骤
 
-您可以通过运行以下命令来安装这些依赖：
+请确保您已安装了 Python 3.x 及 pip，接下来可以通过以下步骤安装所需依赖：
 
-```bash
-pip install -r requirements.txt
-```
+1. 克隆项目仓库：
+   ```bash
+   git clone <您的项目仓库地址>
+   cd <您的项目目录>
+   ```
 
-## 使用说明 📚
+2. 安装依赖：
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-1. **配置加载**：该工具会从 `config.json` 文件中加载配置设置，您需要根据实际情况修改此文件。基本信息包括 API 的基础 URL 及主要语言索引等。
+依赖库包括：
+- `requests`：用于简化与 web 服务和 API 交互的 HTTP 请求。
+- `openai`：提供对 OpenAI API 的访问，支持语言模型和 AI 功能的集成。
+- `GitPython`：无缝与 Git 仓库交互，支持版本管理、提交和分支等操作。
 
-2. **与 GitHub 交互**：工具会使用 GitHub API 从指定的仓库中检索文件内容。
+## 使用说明
 
-3. **与 OpenAI 集成**：利用 OpenAI API 总结文件内容、生成 README 文本，同时进行翻译处理。
+使用 `tool.py` 脚本来自动生成和管理 README 文件及其翻译：
 
-4. **翻译管理**：该工具支持将生成的 README 文档翻译成多种语言，并将翻译结果格式化。
+1. 配置 `config.json` 文件，设置仓库名称、拥有者身份和主要语言。
+2. 运行以下命令以生成 README 文件：
+   ```bash
+   python tool.py
+   ```
+3. 如果需要进行翻译，脚本会自动将生成的 README 文档翻译成指定的多种语言。
 
-5. **README 更新**：工具会构建主要 README，并在其中添加翻译版本的链接，最后将更改提交到原仓库。
+## 贡献指南
 
-6. **错误处理**：包含出错处理，能够在各种操作阶段打印消息，以便及早发现问题。
+我们欢迎社区的贡献！您可以通过以下方式参与：
+1. Fork 本项目。
+2. 提交您的修改并发起 Pull Request。
+3. 对项目的文档、代码或其他方面提出建议或反馈。
 
-## 贡献指导 💡
+请确保遵循本项目的 [贡献协议](./CONTRIBUTING.md)。
 
-欢迎对本项目贡献您的力量！如果您有想法或建议，请按照以下步骤参与贡献：
+## 支持
 
-1. Fork 本仓库
-2. 在您的分支上进行修改
-3. 提交 Pull Request
+如您在使用过程中遇到任何问题，欢迎您在 Issues 中提出。我们会尽快给予响应和帮助！😊
 
-请确保遵守项目的代码规范和贡献流程。您的贡献将会被认真审阅，并帮助我们提升该工具的功能和可用性。
+感谢您的支持，希望您能享受使用本工具的过程！🎉
 
-## 联系我们 📫
+--- 
 
-如有疑问或意见，欢迎通过 GitHub Issues 或直接联系作者 **Delta-Water**。
-
-感谢您选择 **README-Automatic-Generation-and-Translation-Tool**，期待您的反馈与贡献！🌟
+如果您有其他问题或建议，欢迎随时与我们联系。我们期待与您一起改进和完善这个项目！

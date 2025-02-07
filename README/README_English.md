@@ -1,53 +1,61 @@
 [Back to main language README](README.md)
 
-# README - README-Automatic-Generation-and-Translation-Tool 🚀
+# 📄 README Auto-Generation and Translation Tool
 
-## Project Introduction 📜
-This project is called **README-Automatic-Generation-and-Translation-Tool**, developed by **Delta-Water**. It aims to automate the generation and translation of README files in specified GitHub repositories. By utilizing the GitHub API and OpenAI's services, this tool efficiently extracts file content, generates README text, and translates it into multiple languages, making it easier for users worldwide to understand and use.
+## Project Introduction
 
-## License 📄
-This project is licensed under the Apache License, Version 2.0. This license outlines the terms and conditions for using, copying, and distributing the software and other works, as well as defining several key terms, such as "licensor," "you," "work," "derivative works," and "contribution." You will receive a perpetual, worldwide, non-exclusive, and royalty-free right to use this project and its derivative works. For more information about the license, please refer to the `LICENSE` file.
+Welcome to the **README Auto-Generation and Translation Tool**! This tool, developed by **Delta-Water**, aims to simplify the creation and management of README files and their translations for GitHub repositories. With this tool, you can easily generate high-quality README documents and translate them into multiple languages, enhancing your project's accessibility and user engagement. 🚀
 
-## Environment Setup ⚙️
+## License
 
-Before you start using this tool, make sure to install the necessary dependencies. This project relies on the following libraries:
+This project follows the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). This license outlines the terms and conditions for the use, reproduction, and distribution of the software and other works. Users can enjoy a worldwide, non-exclusive, royalty-free copyright and patent license to use and distribute the work and its derivatives, provided they comply with the relevant terms. 📜
 
-1. **requests** - A popular library for making HTTP requests easily.
-2. **openai** - A library for accessing OpenAI services and models, enabling the integration of advanced AI capabilities.
-3. **GitPython** - A library for programmatically interacting with Git repositories, facilitating version control operations.
+## Installation Steps
 
-You can install these dependencies by running the following command:
+Please ensure you have Python 3.x and pip installed. You can follow these steps to install the required dependencies:
 
-```bash
-pip install -r requirements.txt
-```
+1. Clone the project repository:
+   ```bash
+   git clone <your project repository URL>
+   cd <your project directory>
+   ```
 
-## Usage Instructions 📚
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-1. **Configuration Loading**: The tool will load configuration settings from the `config.json` file, which you need to modify according to your needs. Basic information includes the API base URL and main language index.
+The dependencies include:
+- `requests`: Simplifies HTTP requests for interacting with web services and APIs.
+- `openai`: Provides access to the OpenAI API, supporting the integration of language models and AI functionalities.
+- `GitPython`: Seamlessly interacts with Git repositories to support version management, commits, branches, and more.
 
-2. **Interacting with GitHub**: The tool will use the GitHub API to retrieve file content from the specified repository.
+## Usage Instructions
 
-3. **Integrating with OpenAI**: Utilize the OpenAI API to summarize file content, generate README text, and handle translations.
+Use the `tool.py` script to automatically generate and manage README files and their translations:
 
-4. **Translation Management**: This tool supports translating the generated README documents into multiple languages and formatting the translation results.
+1. Configure the `config.json` file to set the repository name, owner identity, and primary language.
+2. Run the following command to generate the README file:
+   ```bash
+   python tool.py
+   ```
+3. If translation is needed, the script will automatically translate the generated README document into the specified multiple languages.
 
-5. **Updating README**: The tool will construct the main README and add links to the translated versions, then commit the changes to the original repository.
+## Contribution Guidelines
 
-6. **Error Handling**: It includes error handling that prints messages during various operation stages to help identify issues promptly.
+We welcome contributions from the community! You can participate in the following ways:
+1. Fork this project.
+2. Submit your modifications and create a Pull Request.
+3. Provide suggestions or feedback regarding the project's documentation, code, or other aspects.
 
-## Contribution Guidelines 💡
+Please ensure you follow our [Contribution Agreement](./CONTRIBUTING.md). 🤝
 
-We welcome your contributions to this project! If you have ideas or suggestions, please follow these steps to contribute:
+## Support
 
-1. Fork this repository
-2. Make modifications in your branch
-3. Submit a Pull Request
+If you encounter any issues during use, feel free to raise them in the Issues section. We will respond and assist you as soon as possible! 😊
 
-Please ensure you adhere to the project's coding standards and contribution process. Your contributions will be reviewed carefully and will help us enhance the functionality and usability of this tool.
+Thank you for your support, and we hope you enjoy using this tool! 🎉
 
-## Contact Us 📫
+---
 
-If you have any questions or feedback, feel free to reach out through GitHub Issues or directly contact the author **Delta-Water**.
-
-Thank you for choosing **README-Automatic-Generation-and-Translation-Tool**! We look forward to your feedback and contributions! 🌟
+If you have any other questions or suggestions, please feel free to contact us. We look forward to improving and refining this project together with you! 🌟
