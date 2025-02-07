@@ -42,7 +42,7 @@ def get_file_content(file_url, github_token):
 
 def call_openai_api(client, prompt):
     try:
-        completion = client.chat.completion.create(
+        completion = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
