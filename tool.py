@@ -168,8 +168,10 @@ def main():
     github_token = os.getenv('GITHUB_TOKEN')
     base_url = config['base_url']
     branch = config.get('branch', 'main')
-    global TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
-    global LANGUAGE_SWITCH_HEADER = config.get('LANGUAGE_SWITCH_HEADER')
+    global TRANSLATION_LANGUAGES
+    TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
+    global LANGUAGE_SWITCH_HEADER
+    LANGUAGE_SWITCH_HEADER = config.get('LANGUAGE_SWITCH_HEADER')
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     ignore_patterns = config.get('ignore_patterns', [])
