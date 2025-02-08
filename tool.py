@@ -131,7 +131,6 @@ def create_links(language, path, main_language=False):
     if main_language:
         head = "- [{main_language}](README.md)
     return head + "\n".join(f"- [{value}]({"{readme_path}/README_{lang}.md".format(readme_path=path, lang=key)})" for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language and key != main_language)
-        
 
 def update_readme_with_links(readme_content, translations, main_language, path):
     readme_with_links = f"{create_links(main_language, path)}\n\n{readme_content}"
