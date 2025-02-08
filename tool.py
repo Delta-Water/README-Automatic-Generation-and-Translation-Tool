@@ -4,19 +4,6 @@ import requests
 from openai import OpenAI
 from git import Repo
 
-# Configure translation languages
-TRANSLATION_LANGUAGES = ['简体中文', '繁体中文', 'English', 'Español', 'Français', 'Deutsch', '日本語']
-
-LANGUAGE_SWITCH_HEADER = {
-    '简体中文': '切换语言: 简体中文',
-    '繁体中文': '切換語言: 繁體中文',
-    'English': 'Switch Language: English',
-    'Español': 'Cambiar idioma: Español',
-    'Français': 'Changer de langue: Français',
-    'Deutsch': 'Sprache wechseln: Deutsch',
-    '日本語': '言語を切り替える: 日本語'
-}
-
 def load_config(config_file='config.json'):
     with open(config_file, 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -181,6 +168,8 @@ def main():
     github_token = os.getenv('GITHUB_TOKEN')
     base_url = config['base_url']
     branch = config.get('branch', 'main')
+    global TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
+    global LANGUAGE_SWITCH_HEADER = config.get('LANGUAGE_SWITCH_HEADER')
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     ignore_patterns = config.get('ignore_patterns', [])
