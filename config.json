@@ -15,6 +15,6 @@
     },
     "_comment_0": "You can also add other languages to your descriptive document.",
     "main_language_index": 0,
-    "ignore_patterns": ["README"],
+    "ignore_patterns": ["README", "."],
     "_comment_1": "In addition to the above(ignore_patterns; Marks the names of files that do not need to be read as patterns), there are two optional keywords, which are used to mark folders that are not to be read(ignore_folder; list), and the path to the translation readme file(readme_path; string)."
 }
