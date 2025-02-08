@@ -3,18 +3,18 @@
     "owner": "Delta-Water",
     "base_url": "https://api.chatanywhere.tech",
     "branch": "main",
-    "TRANSLATION_LANGUAGES": ["简体中文", '繁体中文', 'English', 'Español', 'Français', 'Deutsch', '日本語'],
-"LANGUAGE_SWITCH_HEADER": {
-    '简体中文': '切换语言: 简体中文',
-    '繁体中文': '切換語言: 繁體中文',
-    'English': 'Switch Language: English',
-    'Español': 'Cambiar idioma: Español',
-    'Français': 'Changer de langue: Français',
-    'Deutsch': 'Sprache wechseln: Deutsch',
-    '日本語': '言語を切り替える: 日本語'
-},
+    "TRANSLATION_LANGUAGES": ["简体中文", "繁体中文", "English", "Español", "Français", "Deutsch", "日本語"],
+    "LANGUAGE_SWITCH_HEADER": {
+        "简体中文": "切换语言: 简体中文",
+        "繁体中文": "切換語言: 繁體中文",
+        "English": "Switch Language: English",
+        "Español": "Cambiar idioma: Español",
+        "Français": "Changer de langue: Français",
+        "Deutsch": "Sprache wechseln: Deutsch",
+        "日本語": "言語を切り替える: 日本語"
+    },
     "_comment_0": "You can also add other languages to your descriptive document.",
     "main_language_index": 0,
-    "ignore_patterns": ["README"]
+    "ignore_patterns": ["README"],
     "_comment_1": "In addition to the above(ignore_patterns; Marks the names of files that do not need to be read as patterns), there are two optional keywords, which are used to mark folders that are not to be read(ignore_folder; list), and the path to the translation readme file(readme_path; string)."
 }
