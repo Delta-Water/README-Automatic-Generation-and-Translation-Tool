@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import requests
 from openai import OpenAI
@@ -135,34 +136,37 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
         print(f"Failed to clone the repository: {e}")  # 克隆仓库失败
         return
 
-    # Update the main README file
-    raw_readme_path = f'./{repo_name}/README.md'
-    with open(raw_readme_path, 'w', encoding='utf-8') as f:
-        f.write(updated_readme)
+    if not translations:
+        # Update the main README file
+        raw_readme_path = f'./{repo_name}/README.md'
+        with open(raw_readme_path, 'w', encoding='utf-8') as f:
+            f.write(updated_readme)
 
-    os.makedirs(f"./{repo_name}/{readme_path}", exist_ok=True)
+        repo.git.add('README.md')
+        repo.index.commit('Automatically generated README file.')
+    else:
+        os.makedirs(f"./{repo_name}/{readme_path}", exist_ok=True)
 
-    # Update translation files
-    for lang, translation in translations.items():
-        translation_path = f'./{repo_name}/{readme_path}/README_{lang}.md'
-        with open(translation_path, 'w', encoding='utf-8') as f:
-            f.write(translation)
+        # Update translation files
+        for lang, translation in translations.items():
+            translation_path = f'./{repo_name}/{readme_path}/README_{lang}.md'
+            with open(translation_path, 'w', encoding='utf-8') as f:
+                f.write(translation)
 
-    repo.git.add('README.md')
-    for lang in translations.keys():
-        repo.git.add(f'{readme_path}/README_{lang}.md')
-    
-    repo.index.commit('Automatically generated README file, added translation files')  # 自动生成的 README 文件，添加翻译文件
-    
+        for lang in translations.keys():
+            repo.git.add(f'{readme_path}/README_{lang}.md')
+
+        repo.index.commit('Automatically translation README files.')
+
     try:
         # Push changes using GitHub Token
         repo.git.push(f'https://{github_token}@github.com/{owner}/{repo_name}.git', branch)
     except Exception as e:
         print(f"Failed to push changes: {e}")  # 推送更改失败
 
-def main():
+def generate_and_commit_readme():
     config = load_config()
-    
+
     repo_name = config['repo_name']
     owner = config["owner"]
     github_token = os.getenv('GITHUB_TOKEN')
@@ -176,7 +180,6 @@ def main():
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     ignore_patterns = config.get('ignore_patterns', [])
     ignore_paths = config.get('ignore_paths', [])
-    readme_path = config.get('readme_path', "README")
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     files, file_structure = get_repo_files(repo_name, owner, github_token)
@@ -185,15 +188,47 @@ def main():
         print("Generating README content...")  # 正在生成 README 内容
         readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths, file_structure)
         if readme_content:
-            print("Generating translations...")  # 正在生成翻译
-            translations = create_translations(client, readme_content, main_language)
-            updated_readme, updated_translations = update_readme_with_links(readme_content, translations, main_language, readme_path)
-            commit_changes(repo_name, owner, github_token, updated_readme, updated_translations, branch, readme_path)
-            print("README file and translation files have been updated and committed to the repository.")  # README 文件和翻译文件已更新并提交到仓库
+            # 直接提交生成的README，不包含翻译
+            commit_changes(repo_name, owner, github_token, readme_content, {}, branch, "")
+            print("README file has been generated and committed to the repository.")  # README 文件已生成并提交到仓库
         else:
             print("Failed to generate README content, operation terminated.")  # 生成 README 内容失败，操作终止
     else:
         print("Failed to retrieve repository files, operation terminated.")  # 无法检索仓库文件，操作终止
 
+def translate_and_commit_translations():
+    config = load_config()
+
+    repo_name = config['repo_name']
+    owner = config["owner"]
+    github_token = os.getenv('GITHUB_TOKEN')
+    base_url = config['base_url']
+    branch = config.get('branch', 'main')
+    global TRANSLATION_LANGUAGES
+    TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
+    global LANGUAGE_SWITCH_HEADER
+    LANGUAGE_SWITCH_HEADER = config.get('LANGUAGE_SWITCH_HEADER')
+    main_language_index = config['main_language_index']
+    main_language = TRANSLATION_LANGUAGES[main_language_index]
+    readme_path = config.get('readme_path', "README")
+
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
+    readme_content = get_file_content(f'https://raw.githubusercontent.com/{owner}/{repo_name}/{branch}/README.md', github_token)
+
+    if readme_content:
+        print("Generating translations...")  # 正在生成翻译
+        translations = create_translations(client, readme_content, main_language)
+        updated_readme, updated_translations = update_readme_with_links(readme_content, translations, main_language, readme_path)
+        commit_changes(repo_name, owner, github_token, updated_readme, updated_translations, branch, readme_path)
+        print("Translation files have been generated and committed to the repository.")  # 翻译文件已生成并提交到仓库
+    else:
+        print("Failed to retrieve README content, operation terminated.")  # 无法检索 README 内容，操作终止
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "generate":
+            generate_and_commit_readme()
+        elif sys.argv[1] == "translate":
+            translate_and_commit_translations()
+    else:
+        print("Please run the code by passing parameters.")
