@@ -1,75 +1,75 @@
-[Back to main language README](README.md)
+- [切换语言: 简体中文](/README.md)
+- [切換語言: 繁體中文](/README/README_繁体中文.md)
+- [Cambiar idioma: Español](/README/README_Español.md)
+- [Changer de langue: Français](/README/README_Français.md)
+- [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
+- [言語を切り替える: 日本語](/README/README_日本語.md)
 
-# README: README-Automatic-Generation-and-Translation-Tool 📄🌍
+# README - Automatic Generation and Translation Tool 🌟
 
-## Project Introduction ✨
+Welcome to the **README-Automatic-Generation-and-Translation-Tool** project! 🚀
 
-Welcome to the **README-Automatic-Generation-and-Translation-Tool** project! This tool aims to simplify the process of generating and translating README files for GitHub repositories. By combining the GitHub API and OpenAI API, our tool can automatically generate comprehensive README documents and support translations in multiple languages, making your project more accessible and understandable to users around the world.
+We are dedicated to providing developers with an automated tool to easily generate and translate README files for GitHub projects, making your project documentation more attractive and professional! 💕
 
-## Features 🚀
+## Project Structure 📂
 
-- **Automated Configuration Management**: Load settings from a configuration file.
-- **GitHub API Interaction**: Fetch file contents from specified GitHub repositories.
-- **OpenAI API Integration**: Use OpenAI API to extract file content and generate engaging README text and translations.
-- **Multi-language Support**: Generate translated versions based on predefined language configurations.
-- **README Management**: Build README files that include project overview, installation steps, and link translated versions.
-- **Version Control**: Automatically commit changes to GitHub repository after generating the README and its translations, maintaining version control.
+Here is the current structure of the project, with descriptions of the different files as follows:
 
-## Installation Steps ⚙️
+```
+├── .github
+│   └── workflows
+│       └── main.yml     # GitHub Actions workflow configuration file
+├── LICENSE                # Project license file
+├── README.md              # Main documentation of the project
+├── README
+│   ├── README_Deutsch.md  # German README file
+│   ├── README_English.md  # English README file
+│   ├── README_Español.md  # Spanish README file
+│   ├── README_Français.md # French README file
+│   ├── README_日本語.md    # Japanese README file
+│   └── README_繁体中文.md   # Traditional Chinese README file
+├── config.json            # Project configuration file
+├── requirements.txt       # List of Python dependencies
+└── tool.py                # Script for auto-generating and updating README files
+```
 
-Before using this tool, please ensure you have the following dependencies installed:
+## File Summary 📄
 
-1. **Clone this repository**:
-   ```bash
-   git clone https://github.com/Delta-Water/README-Automatic-Generation-and-Translation-Tool.git
-   cd README-Automatic-Generation-and-Translation-Tool
-   ```
+### 1. `.github/workflows/main.yml`
+This GitHub Actions workflow configuration file helps us automate the generating and translating of README files. It runs in the latest version of the Ubuntu environment and performs the following steps:
 
-2. **Install Dependencies**:
-   Use `pip` to install the required libraries for the project:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- **Code Checkout**: Fetch the latest code.
+- **Set Up Python**: Configure Python 3.8 as the environment.
+- **Install Dependencies**: Upgrade pip and install necessary Python packages (requests, openai, GitPython).
+- **Run Script**: Execute the Python script (tool.py) using GitHub and OpenAI API credentials to generate the README.
 
-3. **Configuration File**: Create or edit the `config.json` file in the project root directory to set the API URL and other configuration options.
+### 2. `LICENSE`
+This file contains the Apache License Version 2.0, outlining the terms and conditions for using, copying, and distributing the software and other works. The license provides a legal framework to facilitate open source software development, protecting the rights of contributors and users.
 
-4. **Set Up GitHub Key**: Configure your personal access token in the "Secrets" section of GitHub, allowing the tool to access your GitHub repository.
+### 3. `config.json`
+This configuration file defines important parameters for the project, such as: repository name, owner, base API URL, and default branch (main). It supports the automated generation and translation of README files.
 
-## Usage Instructions 📋
+### 4. `requirements.txt`
+This lists the dependencies required for the Python project, including:
 
-1. **Configuration**: Ensure the `config.json` file is correctly configured with the Base API URL, main branch, and primary programming language index.
+- **requests**: A popular library that simplifies HTTP requests.
+- **openai**: A library for interacting with the OpenAI API.
+- **GitPython**: A library for working with and interacting with Git repositories directly from Python.
 
-2. **Run the Tool**: Execute the following command to start the tool:
-   ```bash
-   python tool.py
-   ```
+### 5. `tool.py`
+This script automates the generation and updating of README files and their translations in the GitHub repository. Its key functionalities include:
 
-3. **Manually Trigger GitHub Actions**: You can also manually run GitHub Actions or configure it to run automatically upon new commits.
+1. **Configuration and Setup**: Loads configuration and retrieves necessary environment variables.
+2. **File Management**: Accesses the GitHub repository to get file structure and content.
+3. **README Generation**: Utilizes the OpenAI API to generate detailed README files.
+4. **Translation Creation**: Translates the generated README into multiple languages.
+5. **Link and Structure Integration**: Enhances navigability.
+6. **Commit and Push**: Submits the updated files to the GitHub repository.
 
-## Contribution Guidelines 🤝
+## Quick Start 🚀
 
-We welcome contributions in any form! Please follow these steps:
-1. **Fork this repository**.
-2. **Create your feature branch**:
-   ```bash
-   git checkout -b feature/MyFeature
-   ```
-3. **Commit your changes**:
-   ```bash
-   git commit -m "Add some feature"
-   ```
-4. **Push to the branch**:
-   ```bash
-   git push origin feature/MyFeature
-   ```
-5. **Submit a pull request**.
+Want to get involved? Click ⭐ in the top right corner to give our project a thumbs up! 💖
 
-Thank you for supporting this project! If you have any questions or suggestions, please create an issue or contact the project maintainers. 🙏
+With this tool, we help every developer easily maintain project documentation, enhancing the internationalization level of projects! Whether your project is big or small, we can save you the hassle when it comes to documentation, working together to build a better open source ecosystem! 🌍👩‍💻👨‍💻
 
-## License 📜
-
-This project follows the **Apache License, Version 2.0**. Please refer to the relevant documents for detailed terms and conditions to ensure legality and fairness in collaboration and use.
-
----
-
-Thank you for using the **README-Automatic-Generation-and-Translation-Tool**! Let's make open source more open and collaborative together! 💪
+If you have any questions or suggestions, please feel free to reach out! Happy coding! 🎉

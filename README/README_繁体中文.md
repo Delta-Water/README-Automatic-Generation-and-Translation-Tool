@@ -1,75 +1,75 @@
-[Back to main language README](README.md)
+- [切换语言: 简体中文](/README.md)
+- [Switch Language: English](/README/README_English.md)
+- [Cambiar idioma: Español](/README/README_Español.md)
+- [Changer de langue: Français](/README/README_Français.md)
+- [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
+- [言語を切り替える: 日本語](/README/README_日本語.md)
 
-# README: README-Automatic-Generation-and-Translation-Tool 📄🌍
+# README - 自動化生成與翻譯工具 🌟
 
-## 專案介紹 ✨
+歡迎來到 **README-Automatic-Generation-and-Translation-Tool** 專案！🚀
 
-歡迎來到 **README-Automatic-Generation-and-Translation-Tool** 專案！本工具旨在簡化GitHub倉庫的README文件生成與翻譯流程。通過結合GitHub API和OpenAI API，我們的工具能夠自動生成全面的README文件，並支持多種語言翻譯，讓您的專案更加易於被全球用戶訪問和理解。
+我們致力於為開發者提供一個自動化工具，以輕鬆生成和翻譯GitHub專案的README文件，讓你的專案文檔更具吸引力和專業感！💕 
 
-## 功能特點 🚀
+## 專案結構 📂
 
-- **自動化配置管理**：從配置文件中加載設置。
-- **GitHub API互動**：獲取指定GitHub倉庫的文件內容。
-- **OpenAI API集成**：使用OpenAI API提煉文件內容，生成引人入勝的README文本和翻譯。
-- **多語言支持**：根據預定義的語言配置生成翻譯版本。
-- **README管理**：構建包括專案簡介、安裝步驟等多個部分的README文件，並鏈接翻譯版本。
-- **版本控制**：生成README及其翻譯後，自動提交更改到GitHub倉庫，維護版本控制。
+以下是當前專案的結構，對於不同文件的說明如下：
 
-## 安裝步驟 ⚙️
+```
+├── .github
+│   └── workflows
+│       └── main.yml     # GitHub Actions工作流配置文件
+├── LICENSE                # 專案許可證文件
+├── README.md              # 專案的主要文檔
+├── README
+│   ├── README_Deutsch.md  # 德語README文件
+│   ├── README_English.md  # 英語README文件
+│   ├── README_Español.md  # 西班牙語README文件
+│   ├── README_Français.md # 法語README文件
+│   ├── README_日本語.md    # 日語README文件
+│   └── README_繁體中文.md   # 繁體中文README文件
+├── config.json            # 專案配置文件
+├── requirements.txt       # Python依賴庫列表
+└── tool.py                # 自動生成和更新README文件的腳本
+```
 
-在開始使用本工具之前，請確保已安裝以下依賴項：
+## 文件摘要 📄
 
-1. **克隆本倉庫**：
-   ```bash
-   git clone https://github.com/Delta-Water/README-Automatic-Generation-and-Translation-Tool.git
-   cd README-Automatic-Generation-and-Translation-Tool
-   ```
+### 1. `.github/workflows/main.yml`
+這個GitHub Actions工作流配置文件幫助我們實現了README文件的生成和翻譯自動化。它在最新版本的Ubuntu環境中運行，執行以下步驟：
 
-2. **安裝依賴**：
-   使用`pip`安裝項目所需的依賴庫：
-   ```bash
-   pip install -r requirements.txt
-   ```
+- **代碼檢出**：獲取最新的代碼。
+- **設置Python**：配置Python 3.8作為環境。
+- **安裝依賴**：升級pip並安裝所需的Python包（requests、openai、GitPython）。
+- **運行腳本**：執行Python腳本（tool.py），使用GitHub和OpenAI API憑據生成README。
 
-3. **配置文件**：在專案根目錄下創建或編輯`config.json`文件，設置API URL和其他配置項。
+### 2. `LICENSE`
+該文件包含Apache許可證版本2.0，概述了使用、複製和分發軟體和其他作品的條款與條件。許可證提供了法律框架，促進開源軟體開發，保護貢獻者和用戶的權益。
 
-4. **設置GitHub密鑰**：在GitHub的“Secrets”部分配置您的個人訪問令牌，使工具可以訪問您的GitHub倉庫。
+### 3. `config.json`
+這個配置文件定義了專案的重要參數，如：倉庫名稱、擁有者、基本API URL和默認分支（main）。它支持自動生成和翻譯README文件。
 
-## 使用說明 📋
+### 4. `requirements.txt`
+列出了Python專案所需的依賴庫，包括：
 
-1. **配置**：確保`config.json`文件正確配置了Base API URL、主分支及主要編程語言索引。
+- **requests**：簡化HTTP請求的流行庫。
+- **openai**：與OpenAI API互動的庫。
+- **GitPython**：直接從Python操作和互動Git倉庫的庫。
 
-2. **運行工具**：執行以下命令啟動工具：
-   ```bash
-   python tool.py
-   ```
+### 5. `tool.py`
+這個腳本自動化生成和更新GitHub倉庫中的README文件及其翻譯。其關鍵功能包括：
 
-3. **手動觸發GitHub Actions**：您還可以手動運行GitHub Actions，或配置為在新提交時自動運行。
+1. **配置與設置**：加載配置，獲取必要的環境變量。
+2. **文件管理**：訪問GitHub倉庫，獲取文件結構和內容。
+3. **README生成**：利用OpenAI的API生成詳細的README文件。
+4. **翻譯創建**：將生成的README翻譯成多種語言。
+5. **鏈接與結構集成**：增強可導航性。
+6. **提交與推送**：將更新後的文件提交到GitHub倉庫。
 
-## 貢獻指南 🤝
+## 快速開始 🚀
 
-我們歡迎任何形式的貢獻！請遵循以下步驟：
-1. **Fork本倉庫**。
-2. **創建您的功能分支**：
-   ```bash
-   git checkout -b feature/MyFeature
-   ```
-3. **提交您的更改**：
-   ```bash
-   git commit -m "Add some feature"
-   ```
-4. **推送到分支**：
-   ```bash
-   git push origin feature/MyFeature
-   ```
-5. **提交拉取請求**。
+想要參與嗎？點擊右上角的⭐贊一下我們的專案吧！ 💖 
 
-感謝您對本專案的支持！如果您有任何問題或建議，請創建一個問題或聯繫專案維護者。🙏
+透過這個工具，我們幫助每個開發者都能輕鬆維護專案文檔，提升專案的國際化水平！無論你的專案是大還是小，我們都能讓你在文檔方面省去煩惱，共同打造一個更好的開源生態！🌍👩‍💻👨‍💻
 
-## 授權 📜
-
-本專案遵循 **Apache License, Version 2.0**。請查閱相關文件以獲取詳細的條款和條件，確保合作與使用的合法性和公正性。
-
----
-
-感謝您使用 **README-Automatic-Generation-and-Translation-Tool**！讓我們一起使開源更加開放與協作！💪
+如果你有任何問題或建議，請隨時與我們聯繫！happy coding！🎉
