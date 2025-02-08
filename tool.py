@@ -29,15 +29,22 @@ def get_repo_files(repo_name, owner, github_token, path=''):
     if response.status_code == 200:
         items = response.json()
         all_files = []
+        file_structure = {}
+        
         for item in items:
             if item['type'] == 'dir':
-              all_files.extend(get_repo_files(repo_name, owner, github_token, item['path']))
+                # 递归获取目录内容
+                sub_files, sub_structure = get_repo_files(repo_name, owner, github_token, item['path'])
+                all_files.extend(sub_files)
+                file_structure[item['path']] = sub_structure  # 将子目录结构添加到文件结构中
             else:
                 all_files.append(item)
-        return all_files
+                file_structure[item['path']] = item['name']  # 将文件添加到文件结构中
+        
+        return all_files, file_structure  # 返回文件列表和文件结构
     else:
         print("Unable to retrieve repository files:", response.json())  # 无法检索仓库文件
-        return None
+        return None, None  # 返回 None
 
 def get_file_content(file_url, github_token):
     headers = {'Authorization': f'token {github_token}'}
@@ -70,7 +77,7 @@ def summarize_file_content(client, file_path, file_content):
     print(f"Summing up: {file_path}")
     return call_openai_api(client, prompt)
 
-def generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths):
+def generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths, file_structure):
     file_summaries = []
     for file in files:
         if any(path in file['path'] for path in ignore_paths):
@@ -88,8 +95,11 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
 
     all_file_summaries = "\n".join(file_summaries)
 
+    # 将文件结构信息添加到 README 内容生成的提示中
+    structure_info = json.dumps(file_structure, ensure_ascii=False, indent=2)  # 格式化文件结构为 JSON 字符串
     prompt = (
-        f"Please use {main_language} to generate a professional and engaging README file based on the following file summaries:\n"
+        f"Please use {main_language} to generate a professional and engaging README file based on the following project structure and file summaries:\n"
+        f"Project Structure:\n{structure_info}\n\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
         f"Please add emojis appropriately to make it more engaging."
         f"This is a direct output to the production environment, so please do not provide anything to be modified"
@@ -177,11 +187,11 @@ def main():
     ignore_paths = config.get('ignore_paths', [])
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
-    files = get_repo_files(repo_name, owner, github_token)
+    files, file_structure = get_repo_files(repo_name, owner, github_token)
 
     if files:
         print("Generating README content...")  # 正在生成 README 内容
-        readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths)
+        readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths, file_structure)
         if readme_content:
             print("Generating translations...")  # 正在生成翻译
             translations = create_translations(client, readme_content, main_language)
