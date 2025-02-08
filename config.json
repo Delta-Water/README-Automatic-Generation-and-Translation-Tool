@@ -4,7 +4,7 @@
     "base_url": "https://api.chatanywhere.tech",
     "branch": "main",
     "main_language_index": 0,
-    "_comment_0": "To understand the direction of main language index, please check the code."
+    "_comment_0": "To understand the meaning of main language index, please check the code. You can also add other languages to your descriptive document."
     "ignore_patterns": ["README"]
     "_comment_1": "In addition to the above(ignore_patterns; Marks the names of files that do not need to be read as patterns), there are two optional keywords, which are used to mark folders that are not to be read(ignore_folder; list), and the path to the translation readme file(readme_path; string)."
 }
