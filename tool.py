@@ -62,15 +62,33 @@ def summarize_file_content(client, file_name, file_content):
     )
     return call_openai_api(client, prompt)
 
-def generate_readme_content(client, files, github_token, main_language, ignore_patterns):
+ 
+def generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_folders):
     file_summaries = []
     for file in files:
+        if any(folder in file['path'] for folder in ignore_folders):
+            continue
+
         if file['type'] == 'file' and not any(file['name'].startswith(pattern) for pattern in ignore_patterns):
             content = get_file_content(file['download_url'], github_token)
             if content:
                 summary = summarize_file_content(client, file['name'], content)
                 if summary:
                     file_summaries.append(summary)
+
+    if not file_summaries:
+        return None
+
+    all_file_summaries = "\n".join(file_summaries)
+
+    prompt = (
+        f"Please use {main_language} to generate a professional and engaging README file based on the following file summaries:\n"
+        f"File Summaries:\n{all_file_summaries}\n\n"
+        f"Please add emojis appropriately to make it more engaging."
+    )
+
+    return call_openai_api(client, prompt)
+ 
 
     if not file_summaries:
         return None
@@ -163,13 +181,14 @@ def main():
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     ignore_patterns = config.get('ignore_patterns', [])
+    ignore_folders = config.get('ignore_folders', [])
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     files = get_repo_files(repo_name, owner, github_token)
 
     if files:
         print("Generating README content...")  # 正在生成 README 内容
-        readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns)
+        readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_folders)
         if readme_content:
             print("Generating translations...")  # 正在生成翻译
             translations = create_translations(client, readme_content, main_language)
