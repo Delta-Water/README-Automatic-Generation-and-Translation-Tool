@@ -130,7 +130,7 @@ def create_links(language):
     return "\n".join(LANGUAGE_SWITCH_LIST.pop(language).values())
 
 def update_readme_with_links(readme_content, translations, main_language):
-    readme_with_links = f"{create_links(TRANSLATION_LANGUAGES[main_language])}\n\n{readme_content}"
+    readme_with_links = f"{create_links(main_language)}\n\n{readme_content}"
     translations_with_links = {}
     for (language, translation) in translations:
         translations_with_links[language] = f"{create_links(language)}\n\n{translation}"
