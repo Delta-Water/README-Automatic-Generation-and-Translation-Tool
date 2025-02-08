@@ -99,10 +99,10 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
     structure_info = json.dumps(file_structure, ensure_ascii=False, indent=2)  # 格式化文件结构为 JSON 字符串
     prompt = (
         f"Please use {main_language} to generate a professional and engaging README file based on the following project structure and file summaries:\n"
-        f"Project Structure:\n{structure_info}\n\n"
+        f"Project Structure:(You need to make it more readable)\n{structure_info}\n\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
-        f"Use emoticons and witty language to make this descriptive document more interesting."
-        f"This is a direct output to the production environment, so please do not provide anything to be modified"
+        f"Use witty language and appropriate emoticons to make people want to fork the project and make the descriptive file more appealing."
+        f"This is a direct output to the production environment, so please do not provide anything to be modified."
     )
     print(f"Generating README file.")
     return call_openai_api(client, prompt)
@@ -129,7 +129,7 @@ def create_translations(client, readme_content, main_language):
 def create_links(language, path, main_language=False):
     head = ""
     if main_language:
-        head = "- [{main_language}](README.md)"
+        head = f"- [{main_language}](README.md)\n"
     return head + "\n".join(f"- [{value}]({'{readme_path}/README_{lang}.md'.format(readme_path=path, lang=key)})" for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language and key != main_language)
 
 def update_readme_with_links(readme_content, translations, main_language, path):
