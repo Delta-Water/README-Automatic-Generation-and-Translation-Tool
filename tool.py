@@ -151,9 +151,8 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
         f.write(updated_readme)
   
     readme_path = f'./{repo_name}/README'
-    if not os.path.exists(readme_path):
-      os.makedirs(readme_path)
-  
+    os.makedirs(readme_path, exist_ok=True)
+
     # Update translation files
     for lang, translation in translations.items():
         translation_path = f'{readme_path}/README_{lang}.md'
