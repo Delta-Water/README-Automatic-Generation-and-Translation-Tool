@@ -59,6 +59,7 @@ def summarize_file_content(client, file_path, file_content):
         f"File path: {file_path}\n"
         f"File Content:\n{file_content}\n\n"
         f"Please provide a brief description of the main functionality and purpose of the file."
+        f"If this is just a license file, just tell me its name."
     )
     return call_openai_api(client, prompt)
 
