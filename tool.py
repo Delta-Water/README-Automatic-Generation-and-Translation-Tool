@@ -126,18 +126,23 @@ def create_translations(client, readme_content, main_language):
 
     return translations
 
-def create_links(language):
-    return "\n".join(value for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language)
+def create_links(language, path, main_language=False):
+    if main_language:
+        head = "- [{main_language}](README.md)
+    else:
+        head = ""
+    return head + "\n".join(f"- [{value}]({"{readme_path}/README_{lang}.md".fomat(readme_path=path, lang=key)})" for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language and key != main_language)
+        
 
-def update_readme_with_links(readme_content, translations, main_language):
-    readme_with_links = f"{create_links(main_language)}\n\n{readme_content}"
+def update_readme_with_links(readme_content, translations, main_language, path):
+    readme_with_links = f"{create_links(main_language, path)}\n\n{readme_content}"
     translations_with_links = {}
     for (language, translation) in translations.items():
-        translations_with_links[language] = f"{create_links(language)}\n\n{translation}"
+        translations_with_links[language] = f"{create_links(language, path, main_language)}\n\n{translation}"
 
     return readme_with_links, translations_with_links
 
-def commit_changes(repo_name, owner, github_token, updated_readme, translations, branch):
+def commit_changes(repo_name, owner, github_token, updated_readme, translations, branch, readme_path):
     try:
         # Clone the repository using GitHub Token
         repo = Repo.clone_from(f'https://{github_token}@github.com/{owner}/{repo_name}.git', f'./{repo_name}', branch=branch)
@@ -150,20 +155,17 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(updated_readme)
   
-    readme_path = f'./{repo_name}/README'
     os.makedirs(readme_path, exist_ok=True)
 
     # Update translation files
     for lang, translation in translations.items():
-        translation_path = f'{readme_path}/README_{lang}.md'
+        translation_path = f'./{repo_name}/{readme_path}/README_{lang}.md'
         with open(translation_path, 'w', encoding='utf-8') as f:
-            # Add link to the main README
-            f.write("[Back to main language README](README.md)")
-            f.write(f"\n\n{translation}")
+            f.write(translation)
 
     repo.git.add('README.md')
     for lang in translations.keys():
-        repo.git.add(f'README/README_{lang}.md')
+        repo.git.add(f'{readme_path}/README_{lang}.md')
     
     repo.index.commit('Automatically generated README file, added translation files')  # 自动生成的 README 文件，添加翻译文件
     
@@ -185,6 +187,7 @@ def main():
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     ignore_patterns = config.get('ignore_patterns', [])
     ignore_paths = config.get('ignore_paths', [])
+    readme_path = config.get('readme_path', "README")
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     files, file_structure = get_repo_files(repo_name, owner, github_token)
@@ -195,8 +198,8 @@ def main():
         if readme_content:
             print("Generating translations...")  # 正在生成翻译
             translations = create_translations(client, readme_content, main_language)
-            updated_readme, updated_translations = update_readme_with_links(readme_content, translations, main_language)
-            commit_changes(repo_name, owner, github_token, updated_readme, updated_translations, branch)
+            updated_readme, updated_translations = update_readme_with_links(readme_content, translations, main_language, readme_path)
+            commit_changes(repo_name, owner, github_token, updated_readme, updated_translations, branch, readme_path)
             print("README file and translation files have been updated and committed to the repository.")  # README 文件和翻译文件已更新并提交到仓库
         else:
             print("Failed to generate README content, operation terminated.")  # 生成 README 内容失败，操作终止
