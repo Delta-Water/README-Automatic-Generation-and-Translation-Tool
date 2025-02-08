@@ -8,13 +8,13 @@ from git import Repo
 TRANSLATION_LANGUAGES = ['简体中文', '繁体中文', 'English', 'Español', 'Français', 'Deutsch', '日本語']
 
 LANGUAGE_SWITCH_HEADER = {
-    '简体中文': '语言切换',
-    '繁体中文': '语言切换',
-    'English': 'Language Switch',
-    'Español': 'Cambio de idioma',
-    'Français': 'Changement de langue',
-    'Deutsch': 'Sprachwechsel',
-    '日本語': '言語切替'
+    '简体中文': ['切换语言: 简体中文', 0],
+    '繁体中文': '切換語言: 繁體中文',
+    'English': 'Switch Language: English',
+    'Español': 'Cambiar idioma: Español',
+    'Français': 'Changer de langue: Français',
+    'Deutsch': 'Sprache wechseln: Deutsch',
+    '日本語': '言語を切り替える: 日本語'
 }
 
 def load_config(config_file='config.json'):
@@ -126,15 +126,16 @@ def create_translations(client, readme_content, main_language):
 
     return translations
 
-def update_readme_with_links(readme_content, translations, main_language):
-    readme_with_links = f"## README\n\n"
-    readme_with_links += f"### {LANGUAGE_SWITCH_HEADER[main_language]}\n"
-    
-    for lang in translations.keys():
-        readme_with_links += f"- [{lang}](README/README_{lang}.md)\n"
+def create_links(language):
+    return "\n".join(LANGUAGE_SWITCH_LIST.pop(language).values())
 
-    readme_with_links += "\n" + readme_content  # 添加主语言内容
-    return readme_with_links
+def update_readme_with_links(readme_content, translations, main_language):
+    readme_with_links = f"{create_links(TRANSLATION_LANGUAGES[main_language])}\n\n{readme_content}"
+    translations_with_links = {}
+    for (language, translation) in translations:
+        translations_with_links[language] = f"{create_links(language)}\n\n{translation}"
+
+    return readme_with_links, translations_with_links
 
 def commit_changes(repo_name, owner, github_token, updated_readme, translations, branch):
     try:
@@ -195,8 +196,8 @@ def main():
         if readme_content:
             print("Generating translations...")  # 正在生成翻译
             translations = create_translations(client, readme_content, main_language)
-            updated_readme = update_readme_with_links(readme_content, translations, main_language)
-            commit_changes(repo_name, owner, github_token, updated_readme, translations, branch)
+            updated_readme, updated_translations = update_readme_with_links(readme_content, translations, main_language)
+            commit_changes(repo_name, owner, github_token, updated_readme, updated_translations, branch)
             print("README file and translation files have been updated and committed to the repository.")  # README 文件和翻译文件已更新并提交到仓库
         else:
             print("Failed to generate README content, operation terminated.")  # 生成 README 内容失败，操作终止
