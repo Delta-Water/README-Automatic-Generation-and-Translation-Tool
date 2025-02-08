@@ -179,8 +179,8 @@ def generate_and_commit_readme():
         print("Generating README content...")  # 正在生成 README 内容
         readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths, file_structure)
         if readme_content:
-            # 直接提交生成的README，不包含翻译
-            commit_changes(repo_name, owner, github_token, readme_content, {}, branch, "")
+            with open("./.README.md", 'w', encoding='utf-8') as f:
+                f.write(readme_content)
             print("README file has been generated and committed to the repository.")  # README 文件已生成并提交到仓库
         else:
             print("Failed to generate README content, operation terminated.")  # 生成 README 内容失败，操作终止
