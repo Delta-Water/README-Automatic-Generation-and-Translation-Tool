@@ -53,10 +53,10 @@ def call_openai_api(client, prompt):
         print(f"API call failed: {e}")  # API 调用失败
         return None
 
-def summarize_file_content(client, file_name, file_content):
+def summarize_file_content(client, file_path, file_content):
     prompt = (
         f"Please generate a brief summary for the following file:\n"
-        f"File Name: {file_name}\n"
+        f"File path: {file_path}\n"
         f"File Content:\n{file_content}\n\n"
         f"Please provide a brief description of the main functionality and purpose of the file."
     )
@@ -71,7 +71,7 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
         if file['type'] == 'file' and not any(file['name'].startswith(pattern) for pattern in ignore_patterns):
             content = get_file_content(file['download_url'], github_token)
             if content:
-                summary = summarize_file_content(client, file['name'], content)
+                summary = summarize_file_content(client, file['path'], content)
                 if summary:
                     file_summaries.append(summary)
 
