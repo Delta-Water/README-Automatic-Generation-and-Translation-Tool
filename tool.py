@@ -61,6 +61,7 @@ def summarize_file_content(client, file_path, file_content):
         f"Please provide a brief description of the main functionality and purpose of the file."
         f"If this is just a license file, just tell me its name."
     )
+    print(f"Summing up: {file_path}")
     return call_openai_api(client, prompt)
 
 def generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_folders):
@@ -86,7 +87,7 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
         f"File Summaries:\n{all_file_summaries}\n\n"
         f"Please add emojis appropriately to make it more engaging."
     )
-
+    print(f"Generating README file.")
     return call_openai_api(client, prompt)
 
 def translate_text(client, text, target_language):
