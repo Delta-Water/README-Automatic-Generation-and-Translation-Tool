@@ -101,7 +101,7 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
         f"Please use {main_language} to generate a professional and engaging README file based on the following project structure and file summaries:\n"
         f"Project Structure:\n{structure_info}\n\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
-        f"Please add emojis appropriately to make it more engaging."
+        f"Use emoticons and witty language to make this descriptive document more interesting."
         f"This is a direct output to the production environment, so please do not provide anything to be modified"
     )
     print(f"Generating README file.")
