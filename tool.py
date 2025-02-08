@@ -131,7 +131,7 @@ def create_links(language, path, main_language=False):
         head = "- [{main_language}](README.md)
     else:
         head = ""
-    return head + "\n".join(f"- [{value}]({"{readme_path}/README_{lang}.md".fomat(readme_path=path, lang=key)})" for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language and key != main_language)
+    return head + "\n".join(f"- [{value}]({"{readme_path}/README_{lang}.md".format(readme_path=path, lang=key)})" for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language and key != main_language)
         
 
 def update_readme_with_links(readme_content, translations, main_language, path):
@@ -151,8 +151,8 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
         return
 
     # Update the main README file
-    readme_path = f'./{repo_name}/README.md'
-    with open(readme_path, 'w', encoding='utf-8') as f:
+    raw_readme_path = f'./{repo_name}/README.md'
+    with open(raw_readme_path, 'w', encoding='utf-8') as f:
         f.write(updated_readme)
   
     os.makedirs(readme_path, exist_ok=True)
