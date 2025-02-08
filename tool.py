@@ -70,10 +70,10 @@ def summarize_file_content(client, file_path, file_content):
     print(f"Summing up: {file_path}")
     return call_openai_api(client, prompt)
 
-def generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_folders):
+def generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths):
     file_summaries = []
     for file in files:
-        if any(folder in file['path'] for folder in ignore_folders):
+        if any(path in file['path'] for path in ignore_paths):
             continue
 
         if file['type'] == 'file' and not any(file['name'].startswith(pattern) for pattern in ignore_patterns):
@@ -174,14 +174,14 @@ def main():
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     ignore_patterns = config.get('ignore_patterns', [])
-    ignore_folders = config.get('ignore_folders', [])
+    ignore_paths = config.get('ignore_paths', [])
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     files = get_repo_files(repo_name, owner, github_token)
 
     if files:
         print("Generating README content...")  # 正在生成 README 内容
-        readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_folders)
+        readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths)
         if readme_content:
             print("Generating translations...")  # 正在生成翻译
             translations = create_translations(client, readme_content, main_language)
