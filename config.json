@@ -4,6 +4,6 @@
     "base_url": "https://api.chatanywhere.tech",
     "branch": "main",
     "main_language_index": 0,
-    "ignore_patterns": ["README.md"],
+    "ignore_patterns": ["README"],
     "ignore_paths": ["README/", "logs/", "documents/"]
 }
