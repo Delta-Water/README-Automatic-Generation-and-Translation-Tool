@@ -8,7 +8,7 @@ from git import Repo
 TRANSLATION_LANGUAGES = ['简体中文', '繁体中文', 'English', 'Español', 'Français', 'Deutsch', '日本語']
 
 LANGUAGE_SWITCH_HEADER = {
-    '简体中文': ['切换语言: 简体中文', 0],
+    '简体中文': '切换语言: 简体中文',
     '繁体中文': '切換語言: 繁體中文',
     'English': 'Switch Language: English',
     'Español': 'Cambiar idioma: Español',
