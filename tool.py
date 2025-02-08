@@ -66,7 +66,6 @@ def summarize_file_content(client, file_path, file_content):
         f"File path: {file_path}\n"
         f"File Content:\n{file_content}\n\n"
         f"Please provide a brief description of the main functionality and purpose of the file."
-        f"If this is just a license file, just tell me its name."
     )
     print(f"Summing up: {file_path}")
     return call_openai_api(client, prompt)
@@ -93,6 +92,7 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
         f"Please use {main_language} to generate a professional and engaging README file based on the following file summaries:\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
         f"Please add emojis appropriately to make it more engaging."
+        f"This is a direct output to the production environment, so please do not provide anything to be modified"
     )
     print(f"Generating README file.")
     return call_openai_api(client, prompt)
