@@ -127,8 +127,7 @@ def create_translations(client, readme_content, main_language):
     return translations
 
 def create_links(language):
-    language_switch_list = LANGUAGE_SWITCH_HEADER.pop(language)
-    return "\n".join(language_switch_list.values())
+    re/turn "\n".join(value for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language)
 
 def update_readme_with_links(readme_content, translations, main_language):
     readme_with_links = f"{create_links(main_language)}\n\n{readme_content}"
