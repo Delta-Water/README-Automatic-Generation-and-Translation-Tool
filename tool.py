@@ -204,7 +204,8 @@ def translate_and_commit_translations():
     readme_path = config.get('readme_path', "README")
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
-    readme_content = get_file_content(f'https://raw.githubusercontent.com/{owner}/{repo_name}/{branch}/README.md', github_token)
+    with open("./.README.md", 'r', encoding='utf-8') as f:
+        readme_content = f
 
     if readme_content:
         print("Generating translations...")  # 正在生成翻译
