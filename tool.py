@@ -62,7 +62,6 @@ def summarize_file_content(client, file_name, file_content):
     )
     return call_openai_api(client, prompt)
 
- 
 def generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_folders):
     file_summaries = []
     for file in files:
@@ -87,21 +86,6 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
         f"Please add emojis appropriately to make it more engaging."
     )
 
-    return call_openai_api(client, prompt)
- 
-
-    if not file_summaries:
-        return None
-
-    all_file_summaries = "\n".join(file_summaries)
-    
-    prompt = (
-        f"Please use {main_language} to generate a professional and engaging README file based on the following file summaries:\n"
-        f"File Summaries:\n{all_file_summaries}\n\n"
-        # f"Please ensure the README includes sections such as project introduction, installation steps, usage instructions, and contribution guidelines, and use Markdown format."
-        f"Please add emojis appropriately to make it more engaging."
-    )
-    
     return call_openai_api(client, prompt)
 
 def translate_text(client, text, target_language):
