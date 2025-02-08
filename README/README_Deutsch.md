@@ -5,83 +5,77 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-# Projektname
+# 🤖 Automatisches Generierungs- und Übersetzungstool für README
 
-Willkommen zu unserem Projekt!✨ Dieses Projekt zielt darauf ab, README-Dateien automatisch zu generieren und zu übersetzen, um umfassende Dokumentationsunterstützung für Ihr GitHub-Repository zu bieten. Lassen Sie uns als Nächstes die Struktur des Projekts und die detaillierte Beschreibung jeder Datei ansehen!
+Willkommen beim **README-Automatic-Generation-and-Translation-Tool** Projekt! 🎉 Dieses Projekt zielt darauf ab, die Dokumentationserstellung und -übersetzung Ihrer GitHub-Projekte zu vereinfachen. So wird Ihre README-Datei professioneller und mehrsprachig, und Sie können Entwickler überall auf der Welt leicht ansprechen! 🌍✨
 
-## Projektstruktur
+## 🚀 Projektstruktur
+
+Hier ist ein Überblick über die Struktur des Projekts:
 
 ```
-{
-  ".github": {
-    ".github/workflows": {
-      ".github/workflows/main.yml": "main.yml"
-    }
-  },
-  "LICENSE": "LICENSE",
-  "README.md": "README.md",
-  "README": {
-    "README/README_Deutsch.md": "README_Deutsch.md",
-    "README/README_English.md": "README_English.md",
-    "README/README_Español.md": "README_Español.md",
-    "README/README_Français.md": "README_Français.md",
-    "README/README_日本語.md": "README_日本語.md",
-    "README/README_繁体中文.md": "README_繁体中文.md"
-  },
-  "config.json": "config.json",
-  "requirements.txt": "requirements.txt",
-  "tool.py": "tool.py"
-}
+README-Automatic-Generation-and-Translation-Tool/
+│
+├── .github/
+│   └── workflows/
+│       └── main.yml  # GitHub Actions Workflow-Datei
+│
+├── LICENSE            # Apache Lizenz 2.0
+│
+├── README.md          # Haupt-README-Datei des Projekts
+│
+├── README/
+│   ├── README_Deutsch.md     # Deutsche README 
+│   ├── README_English.md      # Englische README 
+│   ├── README_Español.md      # Spanische README 
+│   ├── README_Français.md     # Französische README 
+│   ├── README_日本語.md        # Japanische README 
+│   └── README_繁体中文.md      # Traditionelle Chinesische README 
+│
+├── config.json       # Konfigurationsdatei mit Einstellungen und Übersetzungssprachen
+│
+├── requirements.txt   # Abhängigkeiten des Projekts
+│
+└── tool.py            # Hauptskript zur automatischen Generierung und Übersetzung von README
 ```
 
-### Detaillierte Dateibeschreibung
+## 📜 Lizenzübersicht
 
-#### `.github/workflows/main.yml`
-Dies ist die Schlüsseldatei zur Definition des GitHub Actions-Workflows mit dem Namen „Automatisch README generieren und übersetzen“.🔄 
-Sie wird durch manuelles Auslösen des `workflow_dispatch`-Ereignisses gestartet. Sie beinhaltet einen Task mit dem Namen „build“, der in einer Ubuntu-Umgebung läuft. Das Ziel dieses Workflows ist die Automatisierung der Erstellung und Übersetzung von README-Dateien, um das manuelle Aktualisieren zu vermeiden.
+Unser Projekt unterliegt der **Apache Lizenz 2.0**, was bedeutet, dass Sie unseren Code frei verwenden, modifizieren und verteilen können, solange Sie die ursprüngliche Lizenz und die dazugehörigen Hinweise beibehalten. 📝 Lassen Sie uns gemeinsam zur Förderung von Open-Source-Zusammenarbeit beitragen! 💪
 
-#### `LICENSE`
-Diese Datei enthält den vollständigen Text der Apache License Version 2.0 und umreißt die Bedingungen und Vorschriften für die Nutzung, Vervielfältigung und Verteilung der Software und ihrer Derivate.🛡️ 
-Sie bietet den Benutzern weitreichende Berechtigungen zur Modifikation, Nutzung und Verteilung der durch diese Lizenz geschützten Werke, legt aber auch bestimmte Verpflichtungen fest. Mit dieser Lizenz hoffen wir, offene Zusammenarbeit und den Austausch von geistigem Eigentum zu fördern.
+## ⚙️ Konfigurationsdatei
 
-#### `README.md`
-Dies ist die Haupt-README-Datei des Projekts, die den Benutzern einen Überblick über das Projekt, Nutzungshinweise und andere wichtige Informationen bietet.📊 
-Hier haben wir alle wichtigen Informationen zum Projekt zusammengefasst, um den Benutzern den schnellen Einstieg zu erleichtern!
+`config.json` ist das Konfigurationszentrum Ihres Projekts. Damit können Sie relevante Parameter wie den Repository-Namen, die Eigentümerinformationen und die unterstützten Übersetzungssprachen (vereinfacht Chinese, traditionelles Chinesisch, Englisch, Spanisch, Französisch, Deutsch, Japanisch) einstellen, sodass Sie ganz einfach zwischen verschiedenen Sprachen wechseln und Mehrsprachigkeitsinhalte verwalten können. 🌐💻
 
-#### `README`-Ordner
-- `README/README_Deutsch.md`: Deutsche Übersetzung.
-- `README/README_English.md`: Englische Übersetzung.
-- `README/README_Español.md`: Spanische Übersetzung.
-- `README/README_Français.md`: Französische Übersetzung.
-- `README/README_日本語.md`: Japanische Übersetzung.
-- `README/README_繁体中文.md`: Übersetzung in Traditionelles Chinesisch.
+## 📦 Abhängigkeiten
 
-Dieser Ordner enthält mehrsprachige Versionen der Projekt-README, damit Benutzer weltweit das Projekt einfach verstehen und verwenden können.🌍📚
+Unser Projekt benötigt folgende Bibliotheken, um sicherzustellen, dass Sie Ihre Entwicklungsumgebung problemlos einrichten können:
 
-#### `config.json`
-Diese Datei ist die Konfigurationsdatei für das Tool zur automatischen Generierung und Übersetzung von README-Dokumenten.🔧 
-Sie enthält Parameter wie den Repositories-Namen, den Eigentümer, die Basis-URL für den API-Zugriff, den verwendeten Hauptbranch und die unterstützten Übersetzungssprachen. Das Ziel der Konfiguration ist es, den Prozess der Lokalisierung und Übersetzung der Projektdokumentation zu vereinfachen.
+1. **requests** - Eine einfache HTTP-Anfragesbibliothek.
+2. **openai** - Eine Bibliothek zur Interaktion mit der OpenAI API.
+3. **GitPython** - Eine Bibliothek, um Git-Repositories mit Python zu verwalten.
 
-#### `requirements.txt`
-Dies ist eine Standard-Python-Abhängigkeitenliste, die sicherstellt, dass die Entwicklungsumgebung die erforderlichen externen Bibliotheken und Abhängigkeiten für den reibungslosen Betrieb des Projekts bereitstellt.📦 
-Dazu gehören:
-1. **requests**: Eine Bibliothek für die einfache Interaktion mit Webdiensten und REST-APIs.
-2. **openai**: Eine Bibliothek, die den Zugriff auf die OpenAI API ermöglicht und natürliche Sprachverarbeitung sowie Machine-Learning-Aufgaben unterstützt.
-3. **GitPython**: Eine Bibliothek, die es Benutzern ermöglicht, programmgesteuert mit Git-Repositories zu interagieren.
+Sie müssen nur den folgenden Befehl ausführen, um die Abhängigkeiten zu installieren:
 
-#### `tool.py`
-Dies ist ein Python-Skript zur automatischen Erstellung und Aktualisierung der README-Datei eines GitHub-Repositories.🤖 
-Die Hauptfunktionen sind:
-- Laden von Konfigurationsparametern.
-- Interaktion mit dem GitHub-Repository zur Extraktion von Dateistruktur und -inhalten.
-- Nutzung der OpenAI API zur Erstellung von Datei-Zusammenfassungen.
-- Zusammenstellung der generierten Zusammenfassungen und Struktur zur Erstellung einer professionellen README-Datei.
-- Übersetzung des README-Inhalts in mehrere Sprachen, um die Zugänglichkeit zu erhöhen.
-- Aktualisierung der README- und Übersetzungsdateien und Rückübermittlung der Änderungen an GitHub.
+```bash
+pip install -r requirements.txt
+```
 
-### 📢 Legen Sie los!
-Wenn Sie denken, dass dieses Projekt Ihnen hilfreich ist, zögern Sie nicht, uns ⭐️ zu geben! Jeder Stern ist eine Anerkennung unserer Arbeit! Vielen Dank für Ihre Unterstützung, und lassen Sie uns gemeinsam den Fortschritt von Open Source fördern!🚀
+## ⚙️ Funktionsübersicht
 
---- 
+Das Skript `tool.py` bietet leistungsstarke Funktionen, darunter:
 
-Wenn Sie Fragen oder Vorschläge haben, können Sie uns jederzeit kontaktieren! Wir freuen uns auf Ihr wertvolles Feedback!❤️
+1. **Konfigurationsladen** - Lesen von Projektparametern aus der Konfigurationsdatei.
+2. **Repository-Interaktion** - Abrufen von Repository-Dateien und deren Inhalten über die GitHub API.
+3. **Inhaltszusammenfassung** - Nutzung der OpenAI API zur Zusammenfassung von Repository-Datei-Inhalten und Erstellung knapper Beschreibungen.
+4. **README-Generierung** - Erstellen einer professionellen README-Datei basierend auf der Dateistruktur und den Zusammenfassungsinformationen.
+5. **Übersetzung** - Übersetzung des README-Inhalts in mehrere Sprachen, wobei lebendige Emojis und Stile beibehalten werden. 😄🎨
+6. **Git-Operationen** - Aktualisierte README- und Übersetzungsdateien ins Repository einpflegen.
+
+## 🚀 Starten Sie Ihre Reise
+
+Sie müssen nur den GitHub Actions Workflow manuell starten, ein paar Minuten warten, und die hervorragenden README-Dateien werden automatisch generiert und übersetzt. Genießen Sie all dies! ✨
+
+### 🌟 Geben Sie uns doch bitte einen Stern! Ihre Unterstützung ist unsere Motivation, ständig besser zu werden! 💖
+
+Vielen Dank für Ihr Interesse und Ihre Unterstützung! Bei Fragen oder Anregungen stehen wir Ihnen gerne auf GitHub zur Verfügung. Wir freuen uns darauf, gemeinsam mit Ihnen eine bessere Open-Source-Community zu schaffen! 🤝
