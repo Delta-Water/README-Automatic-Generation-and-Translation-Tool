@@ -21,13 +21,20 @@ def load_config(config_file='config.json'):
     with open(config_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def get_repo_files(repo_name, owner, github_token):
-    api_url = f'https://api.github.com/repos/{owner}/{repo_name}/contents'
+def get_repo_files(repo_name, owner, github_token, path=''):
+    api_url = f'https://api.github.com/repos/{owner}/{repo_name}/contents/{path}'
     headers = {'Authorization': f'token {github_token}'}
     
     response = requests.get(api_url, headers=headers)
     if response.status_code == 200:
-        return response.json()
+        items = response.json()
+        all_files = []
+        for item in items:
+            if item['type'] == 'dir':
+              all_files.extend(get_repo_files(repo_name, owner, github_token, item['path']))
+            else:
+                all_files.append(item)
+        return all_files
     else:
         print("Unable to retrieve repository files:", response.json())  # 无法检索仓库文件
         return None
