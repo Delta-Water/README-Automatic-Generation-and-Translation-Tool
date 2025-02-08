@@ -80,7 +80,7 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
     prompt = (
         f"Please use {main_language} to generate a professional and engaging README file based on the following file summaries:\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
-        f"Please ensure the README includes sections such as project introduction, installation steps, usage instructions, and contribution guidelines, and use Markdown format."
+        # f"Please ensure the README includes sections such as project introduction, installation steps, usage instructions, and contribution guidelines, and use Markdown format."
         f"Please add emojis appropriately to make it more engaging."
     )
     
