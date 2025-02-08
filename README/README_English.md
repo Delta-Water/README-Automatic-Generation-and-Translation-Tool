@@ -5,71 +5,83 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-# README - Automatic Generation and Translation Tool 🌟
+# Project Name
 
-Welcome to the **README-Automatic-Generation-and-Translation-Tool** project! 🚀
+Welcome to our project! ✨ This project aims to automatically generate and translate README files, providing comprehensive documentation for your GitHub repository. Now, let’s take a look at the project structure and a detailed introduction to each file!
 
-We are dedicated to providing developers with an automated tool to easily generate and translate README files for GitHub projects, making your project documentation more attractive and professional! 💕
-
-## Project Structure 📂
-
-Here is the current structure of the project, with descriptions of the different files as follows:
+## Project Structure
 
 ```
-├── .github
-│   └── workflows
-│       └── main.yml     # GitHub Actions workflow configuration file
-├── LICENSE                # Project license file
-├── README.md              # Main documentation of the project
-├── README
-│   ├── README_Deutsch.md  # German README file
-│   ├── README_English.md  # English README file
-│   ├── README_Español.md  # Spanish README file
-│   ├── README_Français.md # French README file
-│   ├── README_日本語.md    # Japanese README file
-│   └── README_繁体中文.md   # Traditional Chinese README file
-├── config.json            # Project configuration file
-├── requirements.txt       # List of Python dependencies
-└── tool.py                # Script for auto-generating and updating README files
+{
+  ".github": {
+    ".github/workflows": {
+      ".github/workflows/main.yml": "main.yml"
+    }
+  },
+  "LICENSE": "LICENSE",
+  "README.md": "README.md",
+  "README": {
+    "README/README_Deutsch.md": "README_Deutsch.md",
+    "README/README_English.md": "README_English.md",
+    "README/README_Español.md": "README_Español.md",
+    "README/README_Français.md": "README_Français.md",
+    "README/README_日本語.md": "README_日本語.md",
+    "README/README_繁体中文.md": "README_繁体中文.md"
+  },
+  "config.json": "config.json",
+  "requirements.txt": "requirements.txt",
+  "tool.py": "tool.py"
+}
 ```
 
-## File Summary 📄
+### File Descriptions
 
-### 1. `.github/workflows/main.yml`
-This GitHub Actions workflow configuration file helps us automate the generating and translating of README files. It runs in the latest version of the Ubuntu environment and performs the following steps:
+#### `.github/workflows/main.yml`
+This is the key file that defines the GitHub Actions workflow, named “Automatically Generate and Translate README”. 🔄  
+You can trigger this workflow manually using the `workflow_dispatch` event. It includes a task called “build” that runs in an Ubuntu environment. The goal of this workflow is to automate the generation and translation of README files, eliminating the hassle of manual updates.
 
-- **Code Checkout**: Fetch the latest code.
-- **Set Up Python**: Configure Python 3.8 as the environment.
-- **Install Dependencies**: Upgrade pip and install necessary Python packages (requests, openai, GitPython).
-- **Run Script**: Execute the Python script (tool.py) using GitHub and OpenAI API credentials to generate the README.
+#### `LICENSE`
+This document contains the full text of the Apache License Version 2.0, outlining the terms and conditions for using, copying, and distributing the software and its derivatives. 🛡️  
+It grants users broad permissions to modify, use, and distribute works protected by this license, while also stipulating certain obligations. Through this license, we aim to promote open collaboration and the sharing of intellectual property.
 
-### 2. `LICENSE`
-This file contains the Apache License Version 2.0, outlining the terms and conditions for using, copying, and distributing the software and other works. The license provides a legal framework to facilitate open source software development, protecting the rights of contributors and users.
+#### `README.md`
+This is the primary README file for the project, providing users with an overview, usage instructions, and other important information. 📊  
+In this document, we summarize all the key information about the project to help users get started quickly!
 
-### 3. `config.json`
-This configuration file defines important parameters for the project, such as: repository name, owner, base API URL, and default branch (main). It supports the automated generation and translation of README files.
+#### `README` Folder
+- `README/README_Deutsch.md`: German translation.
+- `README/README_English.md`: English translation.
+- `README/README_Español.md`: Spanish translation.
+- `README/README_Français.md`: French translation.
+- `README/README_日本語.md`: Japanese translation.
+- `README/README_繁体中文.md`: Traditional Chinese translation.
 
-### 4. `requirements.txt`
-This lists the dependencies required for the Python project, including:
+This folder contains multilingual versions of the project README, making it easy for global users to understand and utilize the project. 🌍📚
 
-- **requests**: A popular library that simplifies HTTP requests.
-- **openai**: A library for interacting with the OpenAI API.
-- **GitPython**: A library for working with and interacting with Git repositories directly from Python.
+#### `config.json`
+This file is the configuration file for the tool that automatically generates and translates README documents. 🔧  
+It includes parameters such as the repository name, owner, base URL for API access, the main branch used, and supported translation languages. The configuration aims to streamline the localization and translation process for project documentation.
 
-### 5. `tool.py`
-This script automates the generation and updating of README files and their translations in the GitHub repository. Its key functionalities include:
+#### `requirements.txt`
+This is a standard list of external libraries required for the Python project, ensuring that the development environment can run the needed dependencies smoothly. 📦  
+It includes:
+1. **requests**: A library for easy interaction with web services and REST APIs.
+2. **openai**: A library that provides access to the OpenAI API, supporting natural language processing and machine learning tasks.
+3. **GitPython**: A library that allows users to interact with Git repositories programmatically.
 
-1. **Configuration and Setup**: Loads configuration and retrieves necessary environment variables.
-2. **File Management**: Accesses the GitHub repository to get file structure and content.
-3. **README Generation**: Utilizes the OpenAI API to generate detailed README files.
-4. **Translation Creation**: Translates the generated README into multiple languages.
-5. **Link and Structure Integration**: Enhances navigability.
-6. **Commit and Push**: Submits the updated files to the GitHub repository.
+#### `tool.py`
+This is a Python script used to automatically generate and update the README file of a GitHub repository. 🤖  
+Its main features include:
+- Loading configuration parameters.
+- Interacting with the GitHub repository to extract file structure and content.
+- Using the OpenAI API to generate file summaries.
+- Compiling generated summaries and structures to construct a professional README file.
+- Translating README content into multiple languages to enhance accessibility.
+- Updating the README and translation files and committing changes back to GitHub.
 
-## Quick Start 🚀
+### 📢 Get Started!
+If you find this project helpful, please don’t hesitate to give us a ⭐️! Every star is a recognition of our hard work! Thank you for your support as we work together to advance open-source progress! 🚀
 
-Want to get involved? Click ⭐ in the top right corner to give our project a thumbs up! 💖
+---
 
-With this tool, we help every developer easily maintain project documentation, enhancing the internationalization level of projects! Whether your project is big or small, we can save you the hassle when it comes to documentation, working together to build a better open source ecosystem! 🌍👩‍💻👨‍💻
-
-If you have any questions or suggestions, please feel free to reach out! Happy coding! 🎉
+If you have any questions or suggestions, feel free to reach out to us! We look forward to your valuable feedback! ❤️

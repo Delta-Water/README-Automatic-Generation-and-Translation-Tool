@@ -5,71 +5,83 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-# README - 自動化生成與翻譯工具 🌟
+# 項目名稱
 
-歡迎來到 **README-Automatic-Generation-and-Translation-Tool** 專案！🚀
+歡迎來到我們的項目！✨ 這個項目旨在自動生成和翻譯 README 文件，為您的 GitHub 倉庫提供詳盡的文檔支持。接下來，讓我們看看項目的結構和每個文件的詳細介紹吧！
 
-我們致力於為開發者提供一個自動化工具，以輕鬆生成和翻譯GitHub專案的README文件，讓你的專案文檔更具吸引力和專業感！💕 
-
-## 專案結構 📂
-
-以下是當前專案的結構，對於不同文件的說明如下：
+## 項目結構
 
 ```
-├── .github
-│   └── workflows
-│       └── main.yml     # GitHub Actions工作流配置文件
-├── LICENSE                # 專案許可證文件
-├── README.md              # 專案的主要文檔
-├── README
-│   ├── README_Deutsch.md  # 德語README文件
-│   ├── README_English.md  # 英語README文件
-│   ├── README_Español.md  # 西班牙語README文件
-│   ├── README_Français.md # 法語README文件
-│   ├── README_日本語.md    # 日語README文件
-│   └── README_繁體中文.md   # 繁體中文README文件
-├── config.json            # 專案配置文件
-├── requirements.txt       # Python依賴庫列表
-└── tool.py                # 自動生成和更新README文件的腳本
+{
+  ".github": {
+    ".github/workflows": {
+      ".github/workflows/main.yml": "main.yml"
+    }
+  },
+  "LICENSE": "LICENSE",
+  "README.md": "README.md",
+  "README": {
+    "README/README_Deutsch.md": "README_Deutsch.md",
+    "README/README_English.md": "README_English.md",
+    "README/README_Español.md": "README_Español.md",
+    "README/README_Français.md": "README_Français.md",
+    "README/README_日本語.md": "README_日本語.md",
+    "README/README_繁体中文.md": "README_繁体中文.md"
+  },
+  "config.json": "config.json",
+  "requirements.txt": "requirements.txt",
+  "tool.py": "tool.py"
+}
 ```
 
-## 文件摘要 📄
+### 文件詳細介紹
 
-### 1. `.github/workflows/main.yml`
-這個GitHub Actions工作流配置文件幫助我們實現了README文件的生成和翻譯自動化。它在最新版本的Ubuntu環境中運行，執行以下步驟：
+#### `.github/workflows/main.yml`
+這是定義 GitHub Actions 工作流的關鍵文件，名為“自動生成和翻譯 README”。🔄 
+通過手動觸發 `workflow_dispatch` 事件來啟動這個工作流。它包含一個名為“build”的任務，該任務在 Ubuntu 環境中運行。此工作流的目的是自動化 README 文件的生成和翻譯，省去了手動更新的麻煩。
 
-- **代碼檢出**：獲取最新的代碼。
-- **設置Python**：配置Python 3.8作為環境。
-- **安裝依賴**：升級pip並安裝所需的Python包（requests、openai、GitPython）。
-- **運行腳本**：執行Python腳本（tool.py），使用GitHub和OpenAI API憑據生成README。
+#### `LICENSE`
+這份文件是 Apache 许可证版本 2.0 的完整文本，概述了軟件及其衍生作品使用、複製和分發的條款和條件。🛡️ 
+它為用戶提供了廣泛的權限來修改、使用和分發受該許可證保護的作品，同時也規定了一些義務。通過這份許可證，我們希望促進開放協作和知識產權的分享。
 
-### 2. `LICENSE`
-該文件包含Apache許可證版本2.0，概述了使用、複製和分發軟體和其他作品的條款與條件。許可證提供了法律框架，促進開源軟體開發，保護貢獻者和用戶的權益。
+#### `README.md`
+這是項目的主要 README 文件，向用戶提供項目的概述、使用說明和其他重要信息。📊 
+在這裡，我們彙總了項目的所有關鍵信息，幫助用戶快速入門！
 
-### 3. `config.json`
-這個配置文件定義了專案的重要參數，如：倉庫名稱、擁有者、基本API URL和默認分支（main）。它支持自動生成和翻譯README文件。
+#### `README` 文件夾
+- `README/README_Deutsch.md`: 德文翻譯。
+- `README/README_English.md`: 英文翻譯。
+- `README/README_Español.md`: 西班牙文翻譯。
+- `README/README_Français.md`: 法文翻譯。
+- `README/README_日本語.md`: 日文翻譯。
+- `README/README_繁體中文.md`: 繁體中文翻譯。
 
-### 4. `requirements.txt`
-列出了Python專案所需的依賴庫，包括：
+這個文件夾包含了項目 README 的多語言版本，讓全球用戶都能夠輕鬆了解和使用項目。🌍📚
 
-- **requests**：簡化HTTP請求的流行庫。
-- **openai**：與OpenAI API互動的庫。
-- **GitPython**：直接從Python操作和互動Git倉庫的庫。
+#### `config.json`
+該文件是自動生成和翻譯 README 文檔工具的配置文件。🔧 
+它包含了倉庫名稱、所有者、API 存取的基礎 URL、使用的主分支及支援的翻譯語言等參數。配置的目的是簡化項目文檔的本地化和翻譯過程。
 
-### 5. `tool.py`
-這個腳本自動化生成和更新GitHub倉庫中的README文件及其翻譯。其關鍵功能包括：
+#### `requirements.txt`
+這是一個標準的 Python 項目依賴庫清單，確保開發環境能夠順利運行項目所需的外部庫和依賴項。📦 
+其中包括：
+1. **requests**: 用於輕鬆與 Web 服務和 REST API 互動的庫。
+2. **openai**: 提供訪問 OpenAI API 的庫，支持自然語言處理和機器學習任務。
+3. **GitPython**: 允許用戶以編程方式與 Git 倉庫進行互動的庫。
 
-1. **配置與設置**：加載配置，獲取必要的環境變量。
-2. **文件管理**：訪問GitHub倉庫，獲取文件結構和內容。
-3. **README生成**：利用OpenAI的API生成詳細的README文件。
-4. **翻譯創建**：將生成的README翻譯成多種語言。
-5. **鏈接與結構集成**：增強可導航性。
-6. **提交與推送**：將更新後的文件提交到GitHub倉庫。
+#### `tool.py`
+這是一個用於自動生成和更新 GitHub 倉庫 README 文件的 Python 腳本。🤖 
+其主要功能包括：
+- 加載配置參數。
+- 與 GitHub 倉庫互動，提取文件結構和內容。
+- 利用 OpenAI API 生成文件摘要。
+- 編譯生成的摘要和結構，構建專業的 README 文件。
+- 將 README 內容翻譯成多種語言，提升可及性。
+- 更新 README 和翻譯文件，並將更改提交回 GitHub。
 
-## 快速開始 🚀
+### 📢 動手吧！
+如果您覺得這個項目對您有幫助，請不要猶豫，給我們 ⭐️！每一個 Star 都是對我們工作的認可！感謝您的支持，讓我們共同推動開源的進步！🚀
 
-想要參與嗎？點擊右上角的⭐贊一下我們的專案吧！ 💖 
+--- 
 
-透過這個工具，我們幫助每個開發者都能輕鬆維護專案文檔，提升專案的國際化水平！無論你的專案是大還是小，我們都能讓你在文檔方面省去煩惱，共同打造一個更好的開源生態！🌍👩‍💻👨‍💻
-
-如果你有任何問題或建議，請隨時與我們聯繫！happy coding！🎉
+如果您有任何疑問或建議，歡迎隨時聯繫我們！我們期待您的寶貴意見！❤️
