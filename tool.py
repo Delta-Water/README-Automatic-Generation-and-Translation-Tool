@@ -152,7 +152,7 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
     raw_readme_path = f'./{repo_name}/README.md'
     with open(raw_readme_path, 'w', encoding='utf-8') as f:
         f.write(updated_readme)
-  
+
     os.makedirs(f"./{repo_name}/{readme_path}", exist_ok=True)
 
     # Update translation files
