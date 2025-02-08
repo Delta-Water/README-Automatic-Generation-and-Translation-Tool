@@ -136,27 +136,18 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
         print(f"Failed to clone the repository: {e}")  # 克隆仓库失败
         return
 
-    if not translations:
-        # Update the main README file
-        raw_readme_path = f'./{repo_name}/README.md'
-        with open(raw_readme_path, 'w', encoding='utf-8') as f:
-            f.write(updated_readme)
+    os.makedirs(f"./{repo_name}/{readme_path}", exist_ok=True)
 
-        repo.git.add('README.md')
-        repo.index.commit('Automatically generated README file.')
-    else:
-        os.makedirs(f"./{repo_name}/{readme_path}", exist_ok=True)
+    # Update translation files
+    for lang, translation in translations.items():
+        translation_path = f'./{repo_name}/{readme_path}/README_{lang}.md'
+        with open(translation_path, 'w', encoding='utf-8') as f:
+            f.write(translation)
 
-        # Update translation files
-        for lang, translation in translations.items():
-            translation_path = f'./{repo_name}/{readme_path}/README_{lang}.md'
-            with open(translation_path, 'w', encoding='utf-8') as f:
-                f.write(translation)
+    for lang in translations.keys():
+        repo.git.add(f'{readme_path}/README_{lang}.md')
 
-        for lang in translations.keys():
-            repo.git.add(f'{readme_path}/README_{lang}.md')
-
-        repo.index.commit('Automatically translation README files.')
+    repo.index.commit('Automatically translation README files.')
 
     try:
         # Push changes using GitHub Token
