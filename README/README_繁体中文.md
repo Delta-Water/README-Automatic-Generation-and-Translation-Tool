@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! However, there seems to be a misunderstanding as the text you provided appears to be related to a file or programming context rather than a translatable message. If you can provide a specific text or message you'd like translated into 繁体中文 (Traditional Chinese), I'd be happy to assist you, along with adding emojis to make it more engaging! 😊
+Sure! Please provide the text you would like me to translate into 繁体中文, and I'll add some emojis to make it more engaging! 😊
