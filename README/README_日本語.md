@@ -5,10 +5,6 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-Sure! Here's the translation of your text into Japanese with some engaging emojis:
+It seems like you've included a code snippet related to reading a file, but I can’t translate that directly without more context. If you can provide the specific text or content you want to be translated into Japanese, I’d be happy to help! 
 
-```
-<_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'> 
-```
-
-However, it seems like that text is a string representation of a file object in Python, rather than actual content you'd like to translate. If you need the contents of a README file translated, please provide the text, and I would be happy to help! 😊✨
+If you're looking for a way to read a file in Japanese while using emojis, please share the content or provide some additional details. 😊📄

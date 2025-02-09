@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Please provide the text you would like to have translated into 繁體中文 (Traditional Chinese), and I will be happy to assist you! 😊
+Sure! However, it seems that you have provided a code reference instead of a specific text to translate. Please provide the content you would like to have translated into 繁體中文, and I would be happy to assist you! 🌟
