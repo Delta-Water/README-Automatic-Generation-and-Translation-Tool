@@ -246,7 +246,7 @@ def translate_and_commit_translations():
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     with open("./.README.md", 'r', encoding='utf-8') as f:
-        readme_content = f
+        readme_content = f.read()
 
     if readme_content:
         print("Generating translations...")  # 正在生成翻译
