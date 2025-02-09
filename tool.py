@@ -189,6 +189,39 @@ def generate_and_commit_readme():
     else:
         print("Failed to retrieve repository files, operation terminated.")  # 无法检索仓库文件，操作终止
 
+def optimize_readme_content():
+    config = load_config()
+
+    global model_name
+    model_name = config['model_name']
+
+    try:
+        with open("./.README.md", 'r', encoding='utf-8') as f:
+            readme_content = f.read()
+    except FileNotFoundError:
+        print(f"File {readme_path} not found. Please ensure the file exists.")  # 文件未找到
+        return
+
+    base_url = config.get('base_url', 'https://api.openai.com/v1')
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
+
+    prompt = (
+        f"Please optimize the following README content to make it more professional and engaging:\n\n"
+        f"{readme_content}\n"
+        f"Please ensure the output is clear, concise, and appealing."
+        f"Please use the language of the README itself."
+    )
+    print("Optimizing README content...")  # 正在优化 README 内容
+    optimized_content = call_openai_api(client, prompt)
+
+    if optimized_content:
+        # 将优化后的内容写入 .README.md 文件
+        with open("./.README.md", 'w', encoding='utf-8') as f:
+            f.write(optimized_content)
+        print("Optimized README content has been written to .README.md.")  # 优化后的 README 内容已写入 .README.md
+    else:
+        print("Failed to optimize README content, operation terminated.")  # 优化 README 内容失败，操作终止
+
 def translate_and_commit_translations():
     config = load_config()
 
@@ -226,5 +259,7 @@ if __name__ == "__main__":
             generate_and_commit_readme()
         elif sys.argv[1] == "translate":
             translate_and_commit_translations()
+        elif sys.argv[1] == "optimize":  # 添加新的命令行参数
+            optimize_readme_content()
     else:
         print("Please run the code by passing parameters.")
