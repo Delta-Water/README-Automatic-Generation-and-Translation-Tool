@@ -136,18 +136,24 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
         print(f"Failed to clone the repository: {e}")  # 克隆仓库失败
         return
 
-    os.makedirs(f"./{repo_name}/{readme_path}", exist_ok=True)
+    with open(f"./{repo_name}/README.md", 'w', encoding='utf-8') as f:
+        f.write(updated_readme)
+    repo.git.add(f'README.md')
+    repo.index.commit('Automatically update README files.')
 
-    # Update translation files
-    for lang, translation in translations.items():
-        translation_path = f'./{repo_name}/{readme_path}/README_{lang}.md'
-        with open(translation_path, 'w', encoding='utf-8') as f:
-            f.write(translation)
+    if translations:
+        os.makedirs(f"./{repo_name}/{readme_path}", exist_ok=True)
 
-    for lang in translations.keys():
-        repo.git.add(f'{readme_path}/README_{lang}.md')
+        # Update translation files
+        for lang, translation in translations.items():
+            translation_path = f'./{repo_name}/{readme_path}/README_{lang}.md'
+            with open(translation_path, 'w', encoding='utf-8') as f:
+                f.write(translation)
 
-    repo.index.commit('Automatically translation README files.')
+        for lang in translations.keys():
+            repo.git.add(f'{readme_path}/README_{lang}.md')
+
+        repo.index.commit('Automatically translate README files.')
 
     try:
         # Push changes using GitHub Token
@@ -181,8 +187,8 @@ def generate_and_commit_readme():
         print("Generating README content...")  # 正在生成 README 内容
         readme_content = generate_readme_content(client, files, github_token, main_language, ignore_patterns, ignore_paths, file_structure)
         if readme_content:
-            with open("./.README.md", 'w', encoding='utf-8') as f:
-                f.write(readme_content)
+            # 直接将 README 内容提交到目标仓库
+            commit_changes(repo_name, owner, github_token, readme_content, {}, branch, "")  # 传递空的 translations
             print("README file has been generated and committed to the repository.")  # README 文件已生成并提交到仓库
         else:
             print("Failed to generate README content, operation terminated.")  # 生成 README 内容失败，操作终止
@@ -199,32 +205,36 @@ def optimize_readme_content():
     global model_name
     model_name = config['model_name']
 
-    try:
-        with open("./.README.md", 'r', encoding='utf-8') as f:
-            readme_content = f.read()
-    except FileNotFoundError:
-        print(f"File {readme_path} not found. Please ensure the file exists.")  # 文件未找到
+    # 从目标仓库中读取 README 内容
+    repo_name = config['repo_name']
+    owner = config["owner"]
+    github_token = os.getenv('GITHUB_TOKEN')
+    readme_url = f'https://api.github.com/repos/{owner}/{repo_name}/contents/README.md'
+    headers = {'Authorization': f'token {github_token}'}
+    response = requests.get(readme_url, headers=headers)
+
+    if response.status_code == 200:
+        readme_content = base64.b64decode(response.json()['content']).decode('utf-8')
+    else:
+        print("Failed to retrieve README content from the repository.")  # 无法从仓库检索 README 内容
         return
 
-    base_url = config.get('base_url', 'https://api.openai.com/v1')
-    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
+    if readme_content:
+        print("Optimizing README content...")  # 正在优化 README 内容
+        prompt = (
+            f"Please optimize the following README content to make it more professional and engaging:\n\n"
+            f"{readme_content}\n"
+            f"Please ensure the output is clear, concise, and appealing."
+            f"Please use {main_language}."
+        )
+        optimized_content = call_openai_api(client, prompt)
 
-    prompt = (
-        f"Please optimize the following README content to make it more professional and engaging:\n\n"
-        f"{readme_content}\n"
-        f"Please ensure the output is clear, concise, and appealing."
-        f"Please use {main_language}."
-    )
-    print("Optimizing README content...")  # 正在优化 README 内容
-    optimized_content = call_openai_api(client, prompt)
-
-    if optimized_content:
-        # 将优化后的内容写入 .README.md 文件
-        with open("./.README.md", 'w', encoding='utf-8') as f:
-            f.write(optimized_content)
-        print("Optimized README content has been written to .README.md.")  # 优化后的 README 内容已写入 .README.md
-    else:
-        print("Failed to optimize README content, operation terminated.")  # 优化 README 内容失败，操作终止
+        if optimized_content:
+            # 将优化后的内容直接提交到目标仓库
+            commit_changes(repo_name, owner, github_token, optimized_content, {}, branch, "")  # 传递空的 translations
+            print("Optimized README content has been committed to the repository.")  # 优化后的 README 内容已提交到仓库
+        else:
+            print("Failed to optimize README content, operation terminated.")  # 优化 README 内容失败，操作终止
 
 def translate_and_commit_translations():
     config = load_config()
@@ -244,9 +254,16 @@ def translate_and_commit_translations():
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     readme_path = config.get('readme_path', "README")
 
-    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
-    with open("./.README.md", 'r', encoding='utf-8') as f:
-        readme_content = f.read()
+    # 从目标仓库中读取 README 内容
+    readme_url = f'https://api.github.com/repos/{owner}/{repo_name}/contents/README.md'
+    headers = {'Authorization': f'token {github_token}'}
+    response = requests.get(readme_url, headers=headers)
+
+    if response.status_code == 200:
+        readme_content = base64.b64decode(response.json()['content']).decode('utf-8')
+    else:
+        print("Failed to retrieve README content from the repository.")  # 无法从仓库检索 README 内容
+        return
 
     if readme_content:
         print("Generating translations...")  # 正在生成翻译
@@ -266,4 +283,4 @@ if __name__ == "__main__":
         elif sys.argv[1] == "translate":
             translate_and_commit_translations()
     else:
-        print("Please run the code by passing parameters.")
+        print("Please run the code by passing argument.")
