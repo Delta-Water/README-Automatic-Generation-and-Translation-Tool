@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Il semble que le texte que vous avez fourni n'est pas un texte lisible, mais plutôt une représentation d'un objet de fichier en Python. Si vous avez un texte spécifique que vous souhaitez traduire en français, veuillez le partager, et je me ferai un plaisir de vous aider ! 😊
+It seems that you've provided a code snippet or a reference to a file rather than actual text to be translated. Could you please provide the specific text you would like me to translate into French? Once you do, I'd be happy to help, and I can add emojis to make it more engaging! 😊
