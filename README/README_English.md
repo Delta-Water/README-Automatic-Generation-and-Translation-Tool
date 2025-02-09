@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems you've provided a file descriptor rather than text to translate. If you can share the actual content from the README.md file that you'd like translated into English, I’d be happy to help! Please paste the text here, and let me know if you want any specific emojis added. 😊
+It seems like you've provided a file path rather than a text to translate. If you can share the specific text you want translated into English, I'd be happy to help! Additionally, let me know if there are any particular emojis you would like included for engagement! 😊

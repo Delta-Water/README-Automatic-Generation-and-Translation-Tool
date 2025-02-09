@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Lo siento, pero no tengo acceso a archivos. Sin embargo, si puedes proporcionar el texto que deseas traducir, estaré encantado de ayudarte. ¡Por favor, compártelo! 😊
+Sure, I can help with that! However, it looks like the text you've provided is a code snippet rather than actual content that needs translating. If you have specific text or content from the README.md file that you want translated into Spanish, please share that, and I'd be happy to assist you! 😊
