@@ -5,12 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Here's the translation of your text into French with some added emojis for engagement:
-
----
-
-<_io.TextIOWrapper nom='./.README.md' mode='r' encoding='utf-8'> 📄✨
-
---- 
-
-If you need further translation or additional context, feel free to ask!
+I'm sorry, but it seems you've provided a file reference rather than the text itself that you'd like to have translated into French. Please provide the text you want translated, and I'll be happy to help! 😊
