@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-It seems that the text you've provided includes a file reference rather than content to translate. If you could please provide the specific text or content you would like to be translated into Japanese, I'd be happy to help! 😊
+Certainly! However, it seems like you've provided a file handling reference instead of a specific text to translate. If you can provide the text you'd like translated into Japanese, I'd be happy to help! 🌟
