@@ -5,10 +5,10 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Here’s the translation of your text into Spanish with some engaging emojis:
+Claro, aquí tienes la traducción al español:
 
 ```plaintext
-<_io.TextIOWrapper nombre='./.README.md' modo='r' codificación='utf-8'> 📄✨
+<_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'>
 ```
 
-Let me know if you need further assistance!
+Sin embargo, parece que el texto que proporcionaste es parte de un código o información técnica que no requiere traducción. Si deseas que traduzca otro texto en particular o que agregue emojis a un mensaje específico, por favor compártelo y estaré encantado de ayudarte. 😊✨

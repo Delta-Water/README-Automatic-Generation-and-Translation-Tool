@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you’ve provided a file name instead of text that needs translating. If you could share the specific text you would like translated into French, I'll be happy to help and add some engaging emojis! 😊📄
+Certainly! However, it seems that you've provided a file reference rather than the actual text you'd like translated. Please provide the text content so I can translate it into French with some engaging emojis! 😊
