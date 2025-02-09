@@ -257,9 +257,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         if sys.argv[1] == "generate":
             generate_and_commit_readme()
+        elif sys.argv[1] == "optimize":
+            optimize_readme_content()
         elif sys.argv[1] == "translate":
             translate_and_commit_translations()
-        elif sys.argv[1] == "optimize":  # 添加新的命令行参数
-            optimize_readme_content()
     else:
         print("Please run the code by passing parameters.")
