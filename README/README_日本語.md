@@ -5,10 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-It appears you've provided a file reference rather than a specific text to translate. If you have specific content from that file that you would like translated into Japanese, please copy and paste it here, and I'd be happy to help!
-
-If you're looking for a translation of the text "TextIOWrapper," here it is:
-
-テキストIOラッパー 📝
-
-Just let me know how you'd like to proceed!
+Sure! However, it seems like you provided a file reference instead of the actual text you want translated. Please provide the specific text from the README.md or any other text you would like me to translate into Japanese, along with any particular emojis you want to include!
