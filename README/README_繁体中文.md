@@ -5,5 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-請將以下文本翻譯成繁體中文，並保留表情符號以使其更具吸引力：
-<_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'>
+Sure! Please provide the text that you would like me to translate into 繁体中文.
