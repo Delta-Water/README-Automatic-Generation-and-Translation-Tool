@@ -5,4 +5,6 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! However, it seems that the text you provided appears as a code or file path rather than content to be translated. Please provide the actual text you'd like translated into 繁体中文, and I will be happy to help!
+請將以下文本翻譯成繁體中文，並保留表情符號以增加吸引力：
+
+<_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'>
