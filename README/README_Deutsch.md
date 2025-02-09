@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Please provide the text you would like to have translated into German.
+Sure! However, I don't have access to the contents of the file you mentioned. If you provide the specific text you want translated into German, I'd be more than happy to help you with that! 😊
