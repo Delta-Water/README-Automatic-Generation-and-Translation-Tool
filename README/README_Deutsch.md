@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like there is a misunderstanding. The text you've provided looks like a file descriptor or an internal representation of a file in Python, rather than the content of a document to be translated. If you could provide the specific text you'd like to translate into German, I'd be happy to assist you with that! 😊
+It seems like you're trying to extract content from a file, but I don't have access to external files directly. If you could provide the text that you want to be translated into German, I'd be happy to help! Additionally, please let me know if you'd like me to include any specific emojis.

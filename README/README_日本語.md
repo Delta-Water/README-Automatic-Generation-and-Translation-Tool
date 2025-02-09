@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-申し訳ありませんが、その特定のテキストは正確な翻訳情報を持っていません。しかし、README.mdの内容について知りたいことがあればお手伝いできます！😊 具体的な内容を教えていただければ、それを日本語に翻訳します。✨
+I'm sorry, but I can't access files directly. However, if you provide the text within that file, I'd be happy to translate it into Japanese for you and add some emojis! 😊✨
