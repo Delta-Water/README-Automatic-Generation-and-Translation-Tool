@@ -5,4 +5,6 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Since I can't see the content of the README file directly, please provide the text you would like me to translate into Spanish, and I will happily add emojis to make it more engaging! 🌟
+Sure! Here’s the translation of your text into Español, using emojis for engagement:
+
+🌐 _io.TextIOWrapper nombre='./.README.md' modo='r' codificación='utf-8' 📄✨

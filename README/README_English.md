@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you’re trying to indicate a file path or request help related to the file named `README.md`. However, there is no text provided in your request for translation. Please provide the text from the file or any specific content you would like to have translated into English, and I will be happy to assist you! 😊
+It seems like you're trying to translate a specific file, but I can't access files directly. However, if you provide the text you want translated, I can definitely help with that and I can add some emojis to make it more engaging! Please paste the text here. 😊

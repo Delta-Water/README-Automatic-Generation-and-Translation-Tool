@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Please provide the text you would like to have translated into 繁体中文, and I can help with that!
+It seems like you provided a reference to a file rather than a specific text to translate. If you have a specific piece of text from the README.md file that you want to translate into 繁體中文 (Traditional Chinese), please share that text, and I'll be happy to help! Additionally, let me know if there are any particular emojis you'd like to include. 😊
