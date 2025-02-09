@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-¡Claro! Pero parece que el texto que proporcionaste es un fragmento relacionado con un archivo en Python y no contiene un mensaje específico para traducir. Si tienes un texto específico que necesitas traducir al español, por favor compártelo, y con gusto lo traduciré para ti con emojis. 😊📄
+Parece que has proporcionado una ruta de archivo en lugar de texto para traducir. Sin embargo, si tienes un texto específico que deseas traducir al español, ¡compártelo y estaré encantado de ayudarte! 😊📄
