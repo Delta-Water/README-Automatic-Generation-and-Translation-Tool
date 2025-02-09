@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems that you've included a file descriptor rather than an actual text to translate. Please provide the specific text that you would like translated into German, and I'll be happy to help! 😊
+It seems that you have referenced a file path rather than providing specific text for translation. Please provide the text you would like translated into German, and I’ll be happy to assist you! 😊
