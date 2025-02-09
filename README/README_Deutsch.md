@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It looks like you provided a code-like snippet rather than a text passage to translate. If you have specific text that you'd like translated into German, please share it, and I'll be happy to help! 😊
+It appears that you're referencing a file input/output operation, but I can't access or retrieve files directly. However, if you provide me with the specific text you want to have translated into German, I would be more than happy to help you with that! Please paste the text you'd like to translate, and let me know which emojis you would like to include. 😊
