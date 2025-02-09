@@ -5,4 +5,8 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! However, the text you've provided seems to be a file descriptor rather than a translatable piece of content. If you have specific text you want to translate into Spanish, please provide that text and I'll be happy to help! 😊
+Por supuesto, aquí tienes la traducción al español, con algunos emojis para hacerlo más atractivo:
+
+📄 _io.TextIOWrapper nombre='./.README.md' modo='r' codificación='utf-8' 🌟
+
+Si necesitas más ayuda, ¡no dudes en pedirla! 😊

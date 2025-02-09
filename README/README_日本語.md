@@ -5,10 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-It seems you would like to translate the phrase from English to Japanese. Here’s the translation:
-
-```plaintext
-<_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'>
-```
-
-However, this appears to be a coding or technical reference, and it doesn't contain translatable text. If you want a specific text or content from the README file translated, please provide that text, and I would be happy to help! 😊
+It seems that you're asking for a translation, but there’s no specific text provided in your message for translation. If you have text from the README.md file that you'd like to be translated into Japanese with emojis, please provide that text, and I'll be happy to help! 😊✨

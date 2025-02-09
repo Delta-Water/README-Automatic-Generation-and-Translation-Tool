@@ -5,12 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you're trying to translate a specific piece of text that looks like a code snippet rather than a sentence or paragraph in natural language. However, if you want to translate the request to "please translate the following text into French" with a friendly touch, here’s how you could phrase it:
-
----
-
-Veuillez traduire le texte suivant en Français 🌍, et ajoutez des emojis pour le rendre plus engageant 🎉 !
-
----
-
-If you have more specific text that you want to translate, please provide that, and I'd be happy to help!
+Il semble que vous ayez partagé un chemin de fichier et non un texte à traduire. Si vous pouviez fournir le texte que vous souhaitez traduire en français, je serais heureux de vous aider et d'ajouter des emojis pour le rendre plus engageant ! 😊✨
