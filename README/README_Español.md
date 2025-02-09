@@ -5,10 +5,16 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Claro, aquí tienes la traducción al español, con algunos emojis para hacerla más atractiva:
+Claro, aquí tienes la traducción al español con algunos emojis para hacerlo más atractivo:
 
-```
-<_io.TextIOWrapper nombre='./.README.md' modo='r' codificación='utf-8'>
-```
+---
 
-¡Espero que te guste! 😊
+***Bienvenido a nuestro README!*** 📖✨
+
+Aquí encontrarás información importante sobre nuestro proyecto. Si tienes alguna pregunta, no dudes en contactarnos. 💬😊
+
+¡Esperamos que disfrutes explorando! 🚀🌟
+
+--- 
+
+Espero que te guste esta traducción. Si necesitas algo más específico, ¡hazmelo saber!

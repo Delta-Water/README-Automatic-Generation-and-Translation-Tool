@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-Sure, I'll translate and include some emojis to make it engaging. However, you didn't provide the specific text you'd like translated. Please share the text you want translated into Japanese, and I'll be happy to assist! 😊
+Certainly! However, it looks like you have provided a line of code or a file reference instead of specific text to translate. Please share the actual text you want me to translate into Japanese, and I'll be happy to assist you, adding emojis to make it more engaging! 😊
