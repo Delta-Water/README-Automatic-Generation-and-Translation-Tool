@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you're trying to read the contents of a file rather than providing text for translation. If you have specific text that you want me to translate into English, please share it, and I'll be happy to help! Additionally, let me know if you'd like to add emojis to make it more engaging! 😊
+It seems like you've mentioned a file name rather than provided text for translation. Please paste the text you'd like to have translated into English, and I'll be happy to assist you with that! 🎉
