@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you're asking to translate a technical string related to a file rather than an actual text. Could you please provide the specific text you want translated into French? This way, I can help you with a proper translation and add some engaging emojis! 😊
+It seems that you have provided a code snippet related to reading a file in Python. If you have specific text from the README file that you would like translated into French, please share that text, and I'll be happy to help with the translation and add emojis to make it engaging! 😊

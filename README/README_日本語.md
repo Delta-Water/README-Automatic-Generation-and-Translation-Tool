@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-もちろん！ただし、具体的なテキスト内容が提供されていないため、翻訳する内容を教えていただけますか？その内容に基づいて日本語に翻訳し、エモジを使って楽しくすることができます！✨
+It seems like you're referencing a code or file operation, but it doesn't contain translatable text. If you have specific text you'd like me to translate into Japanese and add emojis to, please provide that text, and I'll be happy to help! 😊
