@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you're trying to reference a file path for a markdown file, but I cannot access files directly. If you could provide the text you would like me to translate, I would be happy to assist you with the translation and add some emojis to make it more engaging! 😊✨
+It looks like the input is not a text that can be translated but rather a reference to a file in a coding context. If you have specific content from that file that you'd like translated into English, please provide the text, and I'll be happy to help! 😊

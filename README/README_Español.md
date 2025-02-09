@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Please provide the text you'd like me to translate into Spanish, and I'll be happy to help you with that! ✍️🌟
+Parece que has compartido una referencia a un archivo en lugar de un texto específico. Si deseas que traduzca un texto particular, por favor proporciona el contenido que necesitas traducir y estaré encantado de ayudarte. Además, puedo agregar emojis para hacerlo más atractivo. ¡Espero tu respuesta! 😊
