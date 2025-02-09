@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! However, it seems like the text you provided is a reference to a file rather than actual content. If you provide me with specific text or content from the README.md file that you would like translated into French, I'd be happy to help! Just let me know what you'd like to translate. 😊
+Sure! However, your request seems to be a reference to a file rather than containing the text to translate. If you provide the specific text you would like translated into French, I'll be happy to assist you! 😊📄✍️
