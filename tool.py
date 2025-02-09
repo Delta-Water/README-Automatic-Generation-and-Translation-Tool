@@ -191,6 +191,10 @@ def generate_and_commit_readme():
 
 def optimize_readme_content():
     config = load_config()
+    global TRANSLATION_LANGUAGES
+    TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
+    main_language_index = config['main_language_index']
+    main_language = TRANSLATION_LANGUAGES[main_language_index]
 
     global model_name
     model_name = config['model_name']
@@ -209,7 +213,7 @@ def optimize_readme_content():
         f"Please optimize the following README content to make it more professional and engaging:\n\n"
         f"{readme_content}\n"
         f"Please ensure the output is clear, concise, and appealing."
-        f"Please use the language of the README itself."
+        f"Please use {main_language}."
     )
     print("Optimizing README content...")  # 正在优化 README 内容
     optimized_content = call_openai_api(client, prompt)
