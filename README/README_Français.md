@@ -5,4 +5,12 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Désolé, je n'ai pas accès à des fichiers ou des documents directement. Cependant, je peux vous aider à traduire un texte que vous me fournissez. Veuillez copier le texte que vous souhaitez traduire, et je serai ravi de vous aider ! 😊
+Bien sûr ! Voici la traduction en français :
+
+---
+
+<_io.TextIOWrapper nom='./.README.md' mode='r' encoding='utf-8'> 📄✨
+
+---
+
+Si tu souhaites ajouter quelque chose de spécifique au contenu, n'hésite pas à me le faire savoir ! 😊
