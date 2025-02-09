@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems that you've provided a code snippet that indicates a file being opened in read mode, rather than text that can be translated. If you have specific text from the README file that you would like translated into English, please provide that text, and I'll be happy to help! 😊📄
+It seems like you've included a file reference (`README.md`) rather than specific text for translation. Please provide the text you would like translated, and I'll be happy to help! 😊

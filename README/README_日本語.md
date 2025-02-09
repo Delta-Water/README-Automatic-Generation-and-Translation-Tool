@@ -5,12 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-It looks like you've provided a snippet of Python code that references a file (`README.md`). If you're looking for a translation of that instruction or a description to be translated into Japanese, here it is:
-
----
-
-このテキストは、ファイル `README.md` を読み込むためのPythonコードの一部です。📄🔍
-
----
-
-If you meant something else, please provide more context, and I'll be glad to assist! 😊
+It seems like you've provided a file reference rather than text to translate. If there's specific text from a README file or any other text you'd like me to translate into Japanese, please share that text, and I'll be happy to help! 🌟
