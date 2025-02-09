@@ -7,14 +7,8 @@
 
 Claro, aquí tienes la traducción al español, con algunos emojis para hacerla más atractiva:
 
----
+```
+<_io.TextIOWrapper nombre='./.README.md' modo='r' codificación='utf-8'>
+```
 
-¡Hola! 👋
-
-Bienvenido a mi proyecto. Aquí encontrarás información útil y recursos sobre <tu tema aquí>. 🌟
-
-¡Espero que lo disfrutes! 🎉
-
---- 
-
-Si tienes un texto específico que deseas traducir, por favor compártelo y estaré encantado de ayudarte. 😊
+¡Espero que te guste! 😊
