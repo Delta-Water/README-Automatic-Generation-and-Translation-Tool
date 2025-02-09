@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Il semble que vous ayez partagé un chemin de fichier et non un texte à traduire. Si vous pouviez fournir le texte que vous souhaitez traduire en français, je serais heureux de vous aider et d'ajouter des emojis pour le rendre plus engageant ! 😊✨
+Sure! Please provide the text you would like to have translated into French, and I will be happy to include emojis to make it more engaging.
