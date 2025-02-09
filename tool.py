@@ -47,7 +47,7 @@ def get_file_content(file_url, github_token):
 def call_openai_api(client, prompt):
     try:
         completion = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=model_name,
             messages=[{"role": "user", "content": prompt}]
         )
         return completion.choices[0].message.content
@@ -161,7 +161,9 @@ def generate_and_commit_readme():
     repo_name = config['repo_name']
     owner = config["owner"]
     github_token = os.getenv('GITHUB_TOKEN')
-    base_url = config['base_url']
+    base_url = config.get('base_url', 'https://api.openai.com/v1')
+    global model_name
+    model_name = config['model_name']
     branch = config.get('branch', 'main')
     global TRANSLATION_LANGUAGES
     TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
@@ -193,7 +195,9 @@ def translate_and_commit_translations():
     repo_name = config['repo_name']
     owner = config["owner"]
     github_token = os.getenv('GITHUB_TOKEN')
-    base_url = config['base_url']
+    base_url = config.get('base_url', 'https://api.openai.com/v1')
+    global model_name
+    model_name = config['model_name']
     branch = config.get('branch', 'main')
     global TRANSLATION_LANGUAGES
     TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
