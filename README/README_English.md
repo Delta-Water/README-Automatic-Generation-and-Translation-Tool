@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you've provided a file path that refers to a Markdown file, rather than a specific text that needs to be translated. If you could share the actual text that requires translation, I'd be happy to help translate it into English and add some emojis to make it engaging! Please provide the content. 😊
+It seems like you provided a file reference rather than specific text to translate. If you have some text from a README or any other document that you would like translated into English, please share the actual text here, and I'll be happy to assist! 😊

@@ -5,18 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems that the text you've provided is a code snippet related to file handling in Python, specifically a wrapper for reading a README file. If you'd like to translate this into German while making it engaging with emojis, we might need some context or content from the README file itself to provide a meaningful translation.
-
-However, if you're looking for a translation of the snippet itself, it could be translated as follows:
-
-```plaintext
-<_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'>
-```
-
-might be referred to as
-
-```plaintext
-<_io.TextIOWrapper Name='./.README.md' Modus='r' Codierung='utf-8'>
-```
-
-Feel free to provide more specific text that you would like translated! 😊📄
+It looks like you're referring to a file operation in Python, which involves reading a Markdown file called `README.md`. However, you didn't provide specific text to translate. Please provide the content you want translated into German, and I’ll be happy to help! 😊📄

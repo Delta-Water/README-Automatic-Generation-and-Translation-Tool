@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems that you have provided a code-like text referencing a file, specifically a markdown file (`README.md`). If you would like to translate a specific text from that file into Spanish, please provide the actual content you want translated. I'm here to help! 🌟
+It seems like you've provided a file reference rather than text to translate. However, if you'd like me to translate something specific into Spanish, please provide the text you'd like translated, and I'll be happy to help! 😊
