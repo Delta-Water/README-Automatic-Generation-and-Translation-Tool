@@ -5,10 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-Certainly! However, the given text appears to be a technical file descriptor, not a typical message. If you want a specific message translated, please provide the content you wish to translate. 
-
-For example, if you wanted to translate "Hello, welcome to my README file! 😊," it would be:
-
-「こんにちは、私のREADMEファイルへようこそ！😊」
-
-Please share the text you would like translated, and I will gladly assist!
+Sure! However, the text you provided looks like a file descriptor rather than any content needing translation. If you have specific content from the README.md file that you would like to have translated into Japanese, please share that text and I would be happy to help! 🌟

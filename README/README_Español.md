@@ -5,4 +5,6 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! However, it seems you've provided a technical text that doesn't contain specific content to translate. If you have a specific text from your README.md file that you want translated into Spanish, please share that text, and I'll be happy to assist you! 😊
+Sure! Here is the translation of your text into Spanish, with emojis added for engagement:
+
+🔍 <_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'> 📄
