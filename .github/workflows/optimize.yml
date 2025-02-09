@@ -27,14 +27,3 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         python tool.py optimize
-
-    - name: commit changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .README.md
-        git commit -m "Automatically optimize README."
-
-    - name: push changes
-      run: |
-        git push
