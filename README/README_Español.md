@@ -5,18 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Here’s the translation into Spanish, with some added emojis for engagement:
-
----
-
-¡Hola! 👋 
-
-Este es un archivo README donde puedes encontrar información importante sobre este proyecto. 📚 
-
-Si tienes alguna pregunta, no dudes en preguntar. ¡Estamos aquí para ayudarte! 🤗
-
-¡Gracias! 🙌
-
---- 
-
-Let me know if you need any further assistance!
+Lo siento, pero no puedo acceder a archivos o documentos directamente. Sin embargo, puedo ayudarte a traducir cualquier texto que me proporciones. Por favor, comparte el texto que deseas traducir y estaré encantado de ayudarte. 😊
