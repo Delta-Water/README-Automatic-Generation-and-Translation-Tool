@@ -5,4 +5,4 @@
 - [Changer de langue: Français](/README/README_Français.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-It seems like you've referenced a file in a way that's not easily translatable. If you have specific text from the README.md file that you would like me to translate into German, please share it here, and I'll be happy to assist! You can also include suggestions for emojis if you'd like. 😊
+Sure! However, it seems that you're trying to reference a document rather than providing specific text to translate. Please share the text you want translated into German, and I can help with that! 😊
