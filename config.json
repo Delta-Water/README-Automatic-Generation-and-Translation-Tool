@@ -2,7 +2,7 @@
     "repo_name": "README-Automatic-Generation-and-Translation-Tool",
     "owner": "Delta-Water",
     "base_url": "https://api.chatanywhere.tech",
-    "model_name": "chatgpt_4o_mini",
+    "model_name": "gpt-4o-mini",
     "branch": "main",
     "TRANSLATION_LANGUAGES": ["简体中文", "繁体中文", "English", "Español", "Français", "Deutsch", "日本語"],
     "LANGUAGE_SWITCH_HEADER": {
