@@ -5,4 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Please provide the text you would like me to translate into 繁體中文, and I'll add some emojis to make it more engaging.
+Sure! However, it looks like you've provided a file path instead of the text you want translated. Please provide the actual text you would like translated into 繁体中文, and I'll be happy to help! 📝😊
