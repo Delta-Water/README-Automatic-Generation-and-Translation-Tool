@@ -5,6 +5,4 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-Sure! Here’s a translation of the provided text into Spanish, with emojis added for engagement:
-
-¡Hola! 👋 Hoy vamos a explorar cómo funciona este archivo. 📄✨ Aquí encontrarás información importante que te ayudará a entender mejor el proyecto. Si tienes alguna duda, no dudes en preguntar. ¡Vamos a comenzar! 🚀😊
+Sure! However, it seems like you've provided a reference to a file rather than specific text to translate. Could you please provide the text you'd like me to translate into Spanish? 😊
