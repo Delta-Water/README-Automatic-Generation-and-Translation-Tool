@@ -5,4 +5,6 @@
 - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-I'm sorry, but I cannot open or access files directly like the one you mentioned. However, if you provide the specific text you’d like to be translated, I would be happy to help! Just paste the text here, and I'll translate it into 繁體中文 for you. 😊
+請將以下文本翻譯成繁體中文，並保留表情符號以使其更具吸引力：
+
+<_io.TextIOWrapper name='./.README.md' mode='r' encoding='utf-8'>
