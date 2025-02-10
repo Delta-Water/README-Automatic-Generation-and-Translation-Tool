@@ -203,6 +203,7 @@ def optimize_readme_content():
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
 
+    base_url = config.get('base_url', 'https://api.openai.com/v1')
     global model_name
     model_name = config['model_name']
 
@@ -210,7 +211,7 @@ def optimize_readme_content():
     repo_name = config['repo_name']
     owner = config["owner"]
     github_token = os.getenv('GITHUB_TOKEN')
-    base_url = config.get('base_url', 'https://api.openai.com/v1')
+    branch = config.get('branch', 'main')
     readme_url = f'https://api.github.com/repos/{owner}/{repo_name}/contents/README.md'
     headers = {'Authorization': f'token {github_token}'}
     response = requests.get(readme_url, headers=headers)
