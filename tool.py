@@ -118,7 +118,7 @@ def create_translations(client, readme_content, main_language):
 def create_links(language, path, main_language=''):
     head = '<div align="center">\n\n'
     if main_language:
-        head += f"[{LANGUAGE_ABBR[main_language]}](/README.md) | "
+        head += f"[{main_language}](/README.md) /"
     return head + " /".join(f"[{key}]({'/{readme_path}/README_{lang}.md'.format(readme_path=path, lang=value)})" for key, value in LANGUAGE_ABBR.items() if key != language and key != main_language) + "\n\n</div>"
 
 def update_readme_with_links(readme_content, translations, main_language, path):
