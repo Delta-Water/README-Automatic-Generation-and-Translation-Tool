@@ -91,7 +91,6 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
         f"Project Structure:(You need to make it more readable)\n{structure_info}\n\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
         f"Use witty language and appropriate emoticons to make people want to star the project and make the descriptive file more appealing."
-        f"This is a direct output to the production environment, so please do not provide anything to be modified."
     )
     print(f"Generating README file.")
     return call_openai_api(client, prompt)
