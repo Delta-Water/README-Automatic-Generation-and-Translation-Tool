@@ -118,8 +118,8 @@ def create_translations(client, readme_content, main_language):
 def create_links(language, path, main_language=''):
     head = ""
     if main_language:
-        head = f"[{LANGUAGE_SWITCH_HEADER[main_language]}](/README.md) | "
-    return head + " | ".join(f"[{key}]({'/{readme_path}/README_{lang}.md'.format(readme_path=path, lang=value)})" for key, value in LANGUAGE_SWITCH_HEADER.items() if key != language and key != main_language)
+        head = f"[{LANGUAGE_ABBR[main_language]}](/README.md) | "
+    return head + " | ".join(f"[{key}]({'/{readme_path}/README_{lang}.md'.format(readme_path=path, lang=value)})" for key, value in LANGUAGE_ABBR.items() if key != language and key != main_language)
 
 def update_readme_with_links(readme_content, translations, main_language, path):
     readme_with_links = f"{create_links(main_language, path)}\n\n{readme_content}"
@@ -174,8 +174,8 @@ def generate_and_commit_readme():
     branch = config.get('branch', 'main')
     global TRANSLATION_LANGUAGES
     TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
-    global LANGUAGE_SWITCH_HEADER
-    LANGUAGE_SWITCH_HEADER = config.get('LANGUAGE_SWITCH_HEADER')
+    global LANGUAGE_ABBR
+    LANGUAGE_ABBR = config.get('LANGUAGE_ABBR')
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     ignore_patterns = config.get('ignore_patterns', [])
@@ -250,8 +250,8 @@ def translate_and_commit_translations():
     branch = config.get('branch', 'main')
     global TRANSLATION_LANGUAGES
     TRANSLATION_LANGUAGES = config.get('TRANSLATION_LANGUAGES')
-    global LANGUAGE_SWITCH_HEADER
-    LANGUAGE_SWITCH_HEADER = config.get('LANGUAGE_SWITCH_HEADER')
+    global LANGUAGE_ABBR
+    LANGUAGE_ABBR = config.get('LANGUAGE_ABBR')
     main_language_index = config['main_language_index']
     main_language = TRANSLATION_LANGUAGES[main_language_index]
     readme_path = config.get('readme_path', "README")
