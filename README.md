@@ -72,7 +72,7 @@
 
 如果希望生成一个readme请手动触发generate工作流
 
-如果希望修缮一个粗糙的readme请手动触发optimize工作流
+如果希望完善一个不规范的readme请手动触发optimize工作流
 
 如果希望翻译一个readme请手动触发translate工作流
 
