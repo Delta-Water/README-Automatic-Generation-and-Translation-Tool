@@ -148,7 +148,6 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
         # Update translation files
         for lang, translation in translations.items():
             translation_path = f'./{repo_name}/{readme_path}/README_{LANGUAGE_ABBR[lang]}.md'
-            translation_path = f'./{repo_name}/{readme_path}/README_{LANGUAGE_ABBR[lang]}.md'
             with open(translation_path, 'w', encoding='utf-8') as f:
                 f.write(translation)
 
