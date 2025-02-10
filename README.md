@@ -1,7 +1,3 @@
-[繁体中文](/README/README_zh-TW.md) | [English](/README/README_en.md) | [Español](/README/README_es.md) | [Français](/README/README_fr.md) | [Deutsch](/README/README_de.md) | [日本語](/README/README_ja.md)
-
-- [切換語言: 繁體中文](/README/README_繁体中文.md) | - [Switch Language: English](/README/README_English.md) | - [Cambiar idioma: Español](/README/README_Español.md) | - [Changer de langue: Français](/README/README_Français.md) | - [Sprache wechseln: Deutsch](/README/README_Deutsch.md) | - [言語を切り替える: 日本語](/README/README_日本語.md)
-
 # 🤖 自动生成与翻译 README 工具
 
 欢迎来到 **README-Automatic-Generation-and-Translation-Tool** 项目! 🎉 这个项目旨在简化您的 GitHub 项目文档生成与翻译工作，让您的 README 文件更加专业和多语言化，无论您身在何处，都能轻松吸引更多的开发者！🌍✨
