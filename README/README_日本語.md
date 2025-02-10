@@ -1,111 +1,76 @@
-- [切换语言: 简体中文](/README.md)
-- [切換語言: 繁體中文](/README/README_繁体中文.md)
-- [Switch Language: English](/README/README_English.md)
-- [Cambiar idioma: Español](/README/README_Español.md)
-- [Changer de langue: Français](/README/README_Français.md)
-- [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
+- [切换语言: 简体中文](/README.md) | - [切換語言: 繁體中文](/README/README_繁体中文.md) | - [Switch Language: English](/README/README_English.md) | - [Cambiar idioma: Español](/README/README_Español.md) | - [Changer de langue: Français](/README/README_Français.md) | - [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
 
-# 自動生成と翻訳 README ツール 🛠️✨
+# 🤖 自動生成と翻訳の README ツール
 
-ようこそ **自動生成と翻訳 README ツール** プロジェクトへ！本ツールは、GitHub リポジトリ内の README ファイルの管理と翻訳を簡素化し、向上させることを目指しています。プロジェクトのメンテナーであれ新しいユーザーであれ、あなたの作業フローをより効率的で楽しいものにします！😄
+ようこそ **README-自動生成と翻訳ツール** プロジェクトへ！ 🎉 このプロジェクトは、あなたの GitHub プロジェクトのドキュメント生成と翻訳を簡素化し、README ファイルをよりプロフェッショナルで多言語対応にすることを目指しています。どこにいても、もっと多くの開発者を惹きつけることができます！🌍✨
 
-## プロジェクト構造 🗂️
+## 🚀 プロジェクト構成
 
-以下はディレクトリ構造で、各ファイルやフォルダーの用途を迅速に理解するのに役立ちます：
+以下はプロジェクトの構成概要です：
 
 ```
-.github
-└── workflows
-    ├── generate.yml         # README ファイルを自動生成するワークフロー
-    ├── optimize.yml         # README ファイルを自動最適化するワークフロー
-    └── translate.yml        # README ファイルを自動翻訳するワークフロー
-
-LICENSE                        # プロジェクトのライセンスファイル
-README.md                     # プロジェクトのメイン README ファイル
-README
-├── README_Deutsch.md        # ドイツ語 README
-├── README_English.md        # 英語 README
-├── README_Español.md        # スペイン語 README
-├── README_Français.md       # フランス語 README
-├── README_日本語.md         # 日本語 README
-└── README_繁体中文.md      # 中国語（繁体）README
-
-config.json                   # 設定ファイル
-requirements.txt              # Python 依存ファイル
-tool.py                       # 自動化ツールスクリプト
+README-自動生成と翻訳ツール/
+│
+├── .github/
+│   └── workflows/
+│       └── main.yml  # GitHub Actions ワークフローファイル
+│
+├── LICENSE            # Apache ライセンス 2.0
+│
+├── README.md          # プロジェクトの主要 README ファイル
+│
+├── README/
+│   ├── README_Deutsch.md     # ドイツ語 README 
+│   ├── README_English.md      # 英語 README 
+│   ├── README_Español.md      # スペイン語 README 
+│   ├── README_Français.md     # フランス語 README 
+│   ├── README_日本語.md        # 日本語 README 
+│   └── README_繁体中文.md      # 繁体字中国語 README 
+│
+├── config.json       # 設定内容と翻訳言語を含む設定ファイル
+│
+├── requirements.txt   # プロジェクトに必要な依存ライブラリ
+│
+└── tool.py            # README を自動生成および翻訳する主要スクリプト
 ```
 
-## ワークフロー概要 🚀
+## 📜 ライセンス概要
 
-### 1. `generate.yml`
-この GitHub Actions ワークフローは README ファイルを自動生成・更新します。主なステップは以下の通りです：
+私たちのプロジェクトは **Apache ライセンス 2.0** を採用しています。これは、あなたが私たちのコードを自由に使用、変更、配布できることを意味しますが、元のライセンスと関連声明を保持する必要があります。📝 共にオープンソースの協力を進めましょう！💪
 
-- コードのチェックアウト
-- Python 3.8 環境の設定
-- 必要な依存関係のインストール（`requests`、`openai`、`GitPython`）
-- スクリプト（`tool.py generate`）を実行して README ファイルを生成または更新
-- Git を設定し、更新された README ファイルをプッシュ
+## ⚙️ 設定ファイル
 
-このプロセスは README ファイルの管理を簡素化し、より重要なことに集中できるようにします！😎
+`config.json` はあなたのプロジェクトの設定センターです。これにより、リポジトリ名、オーナー情報、およびサポートされる翻訳言語（簡体字中国語、繁体字中国語、英語、スペイン語、フランス語、ドイツ語、日本語）を設定できます。これにより、簡単に多言語コンテンツを切り替え、管理できます。🌐💻
 
-### 2. `optimize.yml`
-このワークフローは README ファイルを自動的に最適化し、同様に `workflow_dispatch` イベントによって手動でトリガーできます。主要なステップは：
+## 📦 依存ライブラリ
 
-- コードのチェックアウト
-- Python 3.8 環境の設定
-- 依存関係のインストール
-- スクリプト（`tool.py optimize`）を実行して README コンテンツを向上
-- 更新された README ファイルをコミットし、プッシュ
+私たちのプロジェクトは、以下のライブラリに依存しています。このライブラリにより、開発環境を簡単に構築できます：
 
-一緒に内容の質を向上させましょう！💪
+1. **requests** - 簡単なHTTPリクエストライブラリ。
+2. **openai** - OpenAI API と対話するためのライブラリ。
+3. **GitPython** - Python を使用して Git リポジトリを操作するためのライブラリ。
 
-### 3. `translate.yml`
-このワークフローは README ファイルを自動翻訳し、あなたのプロジェクトがより広いオーディエンスにリーチできるようにします。ステップは以下の通りです：
+以下のコマンドを実行するだけで、依存関係をインストールできます：
 
-- コードのチェックアウト
-- Python 3.8 環境の設定
-- 依存関係のインストール
-- 翻訳スクリプト（`tool.py`）を実行
+```bash
+pip install -r requirements.txt
+```
 
-それは多言語時代におけるあなたの究極のアシスタントです！🌍
+## ⚙️ 機能概要
 
-## ライセンス 📄
-本プロジェクトは Apache License 2.0 に従い、コードの使用、修正、配布を許可し、あなたの権利と義務を保護します。
+スクリプト `tool.py` は、以下の強力な機能を提供します：
 
-## 設定管理 🛠️
-`config.json` ファイルは API エンドポイントやサポートされている翻訳言語などの重要な設定を定義し、ツールの円滑な運用と多言語機能のサポートを保証します。🤓
+1. **設定の読み込み** - 設定ファイルからプロジェクトパラメータを読み込みます。
+2. **リポジトリとの対話** - GitHub API を介してリポジトリファイルおよびその内容を取得します。
+3. **内容の要約** - OpenAI の API を使用してリポジトリファイルの内容を要約し、簡潔な説明を生成します。
+4. **README 生成** - ファイル構造と要約情報に基づいてプロフェッショナルな README ファイルを生成します。
+5. **翻訳** - README 内容を多言語に翻訳し、活気のある絵文字やスタイルを保ちます。😄🎨
+6. **Git 操作** - 更新された README および翻訳ファイルをリポジトリにコミットします。
 
-## 依存管理 🐍
-`requirements.txt` ファイルには必要な Python パッケージがリストアップされています：
+## 🚀 旅を始めましょう
 
-- **requests**：HTTP リクエストを簡素化
-- **openai**：さまざまな操作のために OpenAI API にアクセス
-- **GitPython**：Python 内で Git リポジトリと対話
+手動で GitHub Actions ワークフローを起動するだけで、数分待つと素晴らしい README ファイルが自動的に生成され、翻訳も完了します。このすべての美しさをお楽しみください。✨
 
-これらの依存関係をインストールして、ツールを円滑に運用してください！🌟
+### 🌟 ぜひ私たちにスターを付けてください！あなたのサポートが私たちの前進の力です！💖
 
-## 使い方
-
-このプロジェクトをフォークして `GitHub Actions` を使用するか、ローカルにクローンして使用することができます。
-
-以下は GitHub Actions を使用する例です：
-
-1. GitHub Secrets に `PAT` と `OPENAI_API_KEY` を追加します。
-2. `config.json` を編集して設定関連のパラメーターを構成します。
-3. README ファイルを生成して翻訳したい場合：
-   - 手動で `generate` ワークフローを実行し、リポジトリのルートディレクトリに `.README.md` ファイルを生成します。
-   - そのファイルをレビューおよび編集後、コミットします。
-   - 手動で `translate` ワークフローをトリガーし、ツールが編集した README をターゲットリポジトリに追加し、翻訳版を生成します。
-
-完了です！🎉
-
-もしすでに README ファイルが用意されていて、単に翻訳を希望する場合：
-- それをツールリポジトリの `.README.md` ファイルにプッシュします。
-- 手動で `translate` ワークフローをトリガーします。
-
-完了です！🎉
-
-## フィードバックと貢献 🙌
-私たちはあなたのフィードバックや提案を歓迎します！ぜひこのプロジェクトにいいね⭐️をつけて、一緒に参加し、プロジェクトの質と有用性を向上させましょう。
-
-ご注目とご支援、ありがとうございます！一緒に README ファイルをより生き生きと楽しいものにしていきましょう！🎉
+ご関心とご支援ありがとうございます！ご質問やご提案がありましたら、いつでも GitHub でお知らせください。より良いオープンソースコミュニティを共に創造することを楽しみにしています！🤝

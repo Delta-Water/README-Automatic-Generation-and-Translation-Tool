@@ -1,111 +1,76 @@
-- [切换语言: 简体中文](/README.md)
-- [Switch Language: English](/README/README_English.md)
-- [Cambiar idioma: Español](/README/README_Español.md)
-- [Changer de langue: Français](/README/README_Français.md)
-- [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
-- [言語を切り替える: 日本語](/README/README_日本語.md)
+- [切换语言: 简体中文](/README.md) | - [Switch Language: English](/README/README_English.md) | - [Cambiar idioma: Español](/README/README_Español.md) | - [Changer de langue: Français](/README/README_Français.md) | - [Sprache wechseln: Deutsch](/README/README_Deutsch.md) | - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-# 自動生成與翻譯 README 工具 🛠️✨
+# 🤖 自動生成與翻譯 README 工具
 
-歡迎使用 **自動生成與翻譯 README 工具** 項目！本工具旨在簡化和提升 GitHub 存儲庫中 README 文件的管理與翻譯，無論您是項目維護者還是新用戶，都能使您的工作流程變得更加高效和愉快！😄
+歡迎來到 **README-Automatic-Generation-and-Translation-Tool** 專案! 🎉 這個專案旨在簡化您的 GitHub 專案文件生成與翻譯工作，讓您的 README 文件更加專業和多語言化，無論您身在何處，都能輕鬆吸引更多的開發者！🌍✨
 
-## 項目結構 🗂️
+## 🚀 專案結構
 
-以下是目錄結構，幫助您快速了解每個文件和文件夾的用途：
+以下是專案的結構概覽：
 
 ```
-.github
-└── workflows
-    ├── generate.yml         # 自動生成 README 文件的工作流
-    ├── optimize.yml         # 自動優化 README 文件的工作流
-    └── translate.yml        # 自動翻譯 README 文件的工作流
-
-LICENSE                        # 項目許可證文件
-README.md                     # 項目的主 README 文件
-README
-├── README_Deutsch.md        # 德語 README
-├── README_English.md        # 英語 README
-├── README_Español.md       # 西班牙語 README
-├── README_Français.md       # 法語 README
-├── README_日本語.md         # 日語 README
-└── README_繁體中文.md      # 中文（繁體）README
-
-config.json                   # 配置文件
-requirements.txt              # Python 依賴文件
-tool.py                       # 自動化工具腳本
+README-Automatic-Generation-and-Translation-Tool/
+│
+├── .github/
+│   └── workflows/
+│       └── main.yml  # GitHub Actions 工作流文件
+│
+├── LICENSE            # Apache 許可證 2.0
+│
+├── README.md          # 專案的主要 README 文件
+│
+├── README/
+│   ├── README_Deutsch.md     # 德語 README 
+│   ├── README_English.md      # 英語 README 
+│   ├── README_Español.md      # 西班牙語 README 
+│   ├── README_Français.md     # 法語 README 
+│   ├── README_日本語.md        # 日語 README 
+│   └── README_繁體中文.md      # 繁體中文 README 
+│
+├── config.json       # 配置文件，包括設定與翻譯語言
+│
+├── requirements.txt   # 專案所需的依賴庫
+│
+└── tool.py            # 自動生成與翻譯 README 的主要腳本
 ```
 
-## 工作流概述 🚀
+## 📜 許可證概要
 
-### 1. `generate.yml`
-此 GitHub Actions 工作流用於自動生成和更新 README 文件。主要步驟包括：
+我們的專案採用 **Apache 許可證 2.0**，這意味著您可以自由使用、修改和分發我們的代碼，但需保留原始許可證和相關聲明。📝 讓我們共同促進開源合作吧！💪
 
-- 檢出代碼
-- 設置 Python 3.8 環境
-- 安裝所需依賴（`requests`、`openai`、`GitPython`）
-- 運行腳本（`tool.py generate`）生成或更新 README 文件
-- 配置 Git 並推送更新的 README 文件
+## ⚙️ 配置文件
 
-這一過程簡化了 README 文件的維護，讓您能夠專注於更重要的事務！😎
+`config.json` 是您專案的配置中心。它允許您設置相關參數，如倉庫名稱、擁有者信息及支持的翻譯語言（簡體中文、繁體中文、英語、西班牙語、法語、德語、日語），讓您能輕鬆切換和管理多語言內容。🌐💻
 
-### 2. `optimize.yml`
-該工作流自動優化 README 文件，同樣通過 `workflow_dispatch` 事件手動觸發。關鍵步驟包括：
+## 📦 依賴庫
 
-- 檢出代碼
-- 設置 Python 3.8 環境
-- 安裝依賴
-- 運行腳本（`tool.py optimize`）提升 README 內容
-- 提交並推送更新的 README 文件
+我們的專案依賴以下庫，確保您可以輕鬆搭建開發環境：
 
-讓我們共同提升內容質量！💪
+1. **requests** - 簡單的HTTP請求庫。
+2. **openai** - 與 OpenAI API 互動的庫。
+3. **GitPython** - 通過 Python 操作 Git 倉庫的庫。
 
-### 3. `translate.yml`
-該工作流自動翻譯 README 文件，確保您的項目能夠接觸到更廣泛的受眾。步驟包括：
+您只需要運行以下命令安裝依賴：
 
-- 檢出代碼
-- 設置 Python 3.8 環境
-- 安裝依賴
-- 運行翻譯腳本（`tool.py`）
+```bash
+pip install -r requirements.txt
+```
 
-它是您在多語言時代的終極助手！🌍
+## ⚙️ 功能概述
 
-## 許可證 📄
-本項目遵循 Apache 許可證 2.0，允許您使用、修改和分發代碼，同時保障您的權利與義務。
+腳本 `tool.py` 提供了強大的功能，包括：
 
-## 配置管理 🛠️
-`config.json` 文件定義了重要設置，如 API 端點和支持的翻譯語言，以確保工具的順利運行並支持多語言功能。🤓
+1. **配置加載** - 從配置文件中讀取專案參數。
+2. **倉庫互動** - 通過 GitHub API 獲取倉庫文件及其內容。
+3. **內容摘要** - 利用 OpenAI 的 API 摘要倉庫文件內容，生成簡潔的描述。
+4. **README 生成** - 根據文件結構與摘要信息生成專業的 README 文件。
+5. **翻譯** - 將 README 內容翻譯成多種語言，保留活潑的表情符號和樣式。😄🎨
+6. **Git 操作** - 提交更新後的 README 和翻譯文件到倉庫。
 
-## 依賴管理 🐍
-`requirements.txt` 文件列出了必要的 Python 包，包括：
+## 🚀 開啟之旅
 
-- **requests**：簡化 HTTP 請求
-- **openai**：訪問 OpenAI API 進行各種操作
-- **GitPython**：在 Python 中與 Git 存儲庫交互
+只需手動啟動 GitHub Actions 工作流，等待幾分鐘，優秀的 README 文件將自動生成並翻譯好，您可以盡情享受這一切的美好。✨
 
-請確保安裝這些依賴，以確保工具的順利運行！🌟
+### 🌟 快來為我們加星吧！您的支持是我們不斷前進的動力！💖
 
-## 如何使用？
-
-您可以選擇 fork 本項目並使用 `GitHub Actions`，或將其克隆到本地使用。
-
-以下是使用 GitHub Actions 的示例：
-
-1. 在 GitHub Secrets 中添加 `PAT` 和 `OPENAI_API_KEY`。
-2. 編輯 `config.json` 配置相關參數。
-3. 如果希望生成並翻譯 README 文件：
-   - 手動運行 `generate` 工作流，這將生成一個 `.README.md` 文件在倉庫根目錄。
-   - 審閱和修改該文件後再提交。
-   - 手動觸發 `translate` 工作流，工具會將已編輯的 README 添加到目標倉庫並生成翻譯版本。
-
-完成！🎉
-
-如果您已準備好一個 README 文件並希望僅進行翻譯：
-- 將其推送到工具倉庫的 `.README.md` 文件中。
-- 手動觸發 `translate` 工作流。
-
-完成！🎉
-
-## 反饋與貢獻 🙌
-我們歡迎您的反饋和建議！請隨時為這個項目點贊⭐️並參與其中，共同提升項目的質量與可用性。
-
-感謝您的關注與支持！讓我們攜手讓 README 文件更加生動有趣！🎉
+感謝您的關注和支持！如有任何問題或建議，請隨時在GitHub上與我們聯繫。我們期待著與您共同創造更美好的開源社區！🤝

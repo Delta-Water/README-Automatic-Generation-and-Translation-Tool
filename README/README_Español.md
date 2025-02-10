@@ -1,111 +1,76 @@
-- [切换语言: 简体中文](/README.md)
-- [切換語言: 繁體中文](/README/README_繁体中文.md)
-- [Switch Language: English](/README/README_English.md)
-- [Changer de langue: Français](/README/README_Français.md)
-- [Sprache wechseln: Deutsch](/README/README_Deutsch.md)
-- [言語を切り替える: 日本語](/README/README_日本語.md)
+- [切换语言: 简体中文](/README.md) | - [切換語言: 繁體中文](/README/README_繁体中文.md) | - [Switch Language: English](/README/README_English.md) | - [Changer de langue: Français](/README/README_Français.md) | - [Sprache wechseln: Deutsch](/README/README_Deutsch.md) | - [言語を切り替える: 日本語](/README/README_日本語.md)
 
-# Herramienta de Generación y Traducción Automática de README 🛠️✨
+# 🤖 Herramienta de Generación y Traducción Automática de README
 
-¡Bienvenido al proyecto de **Herramienta de Generación y Traducción Automática de README**! Esta herramienta está diseñada para simplificar y mejorar la gestión y traducción de archivos README en repositorios de GitHub. ¡Ya seas un mantenedor del proyecto o un nuevo usuario, te ayudará a hacer tu flujo de trabajo más eficiente y agradable! 😄
+¡Bienvenido al proyecto **README-Automatic-Generation-and-Translation-Tool**! 🎉 Este proyecto tiene como objetivo simplificar la generación y traducción de la documentación de su proyecto en GitHub, haciendo que su archivo README sea más profesional y multilingüe, ¡sin importar dónde esté, podrá atraer fácilmente a más desarrolladores! 🌍✨
 
-## Estructura del Proyecto 🗂️
+## 🚀 Estructura del Proyecto
 
-A continuación se presenta la estructura del directorio, para que puedas comprender rápidamente la finalidad de cada archivo y carpeta:
+A continuación se presenta un resumen de la estructura del proyecto:
 
 ```
-.github
-└── workflows
-    ├── generate.yml         # Flujo de trabajo para generar automáticamente el archivo README
-    ├── optimize.yml         # Flujo de trabajo para optimizar automáticamente el archivo README
-    └── translate.yml        # Flujo de trabajo para traducir automáticamente el archivo README
-
-LICENSE                        # Archivo de licencia del proyecto
-README.md                     # Archivo README principal del proyecto
-README
-├── README_Deutsch.md        # README en alemán
-├── README_English.md        # README en inglés
-├── README_Español.md        # README en español
-├── README_Français.md       # README en francés
-├── README_日本語.md         # README en japonés
-└── README_繁体中文.md      # README en chino (tradicional)
-
-config.json                   # Archivo de configuración
-requirements.txt              # Archivo de dependencias de Python
-tool.py                       # Script de la herramienta automatizada
+README-Automatic-Generation-and-Translation-Tool/
+│
+├── .github/
+│   └── workflows/
+│       └── main.yml  # Archivo de flujo de trabajo de GitHub Actions
+│
+├── LICENSE            # Licencia Apache 2.0
+│
+├── README.md          # Archivo README principal del proyecto
+│
+├── README/
+│   ├── README_Deutsch.md     # README en alemán 
+│   ├── README_English.md      # README en inglés 
+│   ├── README_Español.md      # README en español 
+│   ├── README_Français.md     # README en francés 
+│   ├── README_日本語.md        # README en japonés 
+│   └── README_繁体中文.md      # README en chino tradicional 
+│
+├── config.json       # Archivo de configuración, incluye ajustes y lenguajes de traducción
+│
+├── requirements.txt   # Librerías requeridas por el proyecto
+│
+└── tool.py            # Script principal para generar y traducir el README
 ```
 
-## Resumen del Flujo de Trabajo 🚀
+## 📜 Resumen de la Licencia
 
-### 1. `generate.yml`
-Este flujo de trabajo de GitHub Actions se utiliza para generar y actualizar automáticamente el archivo README. Los pasos principales incluyen:
+Nuestro proyecto utiliza la **Licencia Apache 2.0**, lo que significa que puede usar, modificar y distribuir nuestro código libremente, siempre y cuando conserve la licencia original y las declaraciones correspondientes. 📝 ¡Promovamos juntos la colaboración en código abierto! 💪
 
-- Clonar el código
-- Configurar el entorno de Python 3.8
-- Instalar las dependencias necesarias (`requests`, `openai`, `GitPython`)
-- Ejecutar el script (`tool.py generate`) para generar o actualizar el archivo README
-- Configurar Git y enviar el archivo README actualizado
+## ⚙️ Archivo de Configuración
 
-¡Este proceso simplifica el mantenimiento del archivo README, permitiéndote concentrarte en asuntos más importantes! 😎
+`config.json` es el centro de configuración de su proyecto. Le permite establecer parámetros relevantes, como el nombre del repositorio, información del propietario y los lenguajes de traducción compatibles (chino simplificado, chino tradicional, inglés, español, francés, alemán, japonés), para que pueda cambiar y gestionar fácilmente el contenido multilingüe. 🌐💻
 
-### 2. `optimize.yml`
-Este flujo de trabajo optimiza automáticamente el archivo README, que también puede ser activado manualmente a través del evento `workflow_dispatch`. Los pasos clave incluyen:
+## 📦 Librerías Requeridas
 
-- Clonar el código
-- Configurar el entorno de Python 3.8
-- Instalar las dependencias
-- Ejecutar el script (`tool.py optimize`) para mejorar el contenido del README
-- Hacer un commit y enviar el archivo README actualizado
+Nuestro proyecto depende de las siguientes bibliotecas para garantizar que pueda configurar su entorno de desarrollo de manera sencilla:
 
-¡Mejoramos la calidad del contenido juntos! 💪
+1. **requests** - Biblioteca simple para realizar solicitudes HTTP.
+2. **openai** - Biblioteca para interactuar con la API de OpenAI.
+3. **GitPython** - Biblioteca para operar con repositorios Git desde Python.
 
-### 3. `translate.yml`
-Este flujo de trabajo traduce automáticamente el archivo README, asegurando que tu proyecto llegue a una audiencia más amplia. Los pasos incluyen:
+Solo necesita ejecutar el siguiente comando para instalar las dependencias:
 
-- Clonar el código
-- Configurar el entorno de Python 3.8
-- Instalar las dependencias
-- Ejecutar el script de traducción (`tool.py`)
+```bash
+pip install -r requirements.txt
+```
 
-¡Es tu asistente definitivo en la era multilingüe! 🌍
+## ⚙️ Resumen de Funcionalidades
 
-## Licencia 📄
-Este proyecto está bajo la Licencia Apache 2.0, que te permite utilizar, modificar y distribuir el código, mientras se protegen tus derechos y obligaciones.
+El script `tool.py` ofrece potentes funcionalidades, que incluyen:
 
-## Gestión de Configuración 🛠️
-El archivo `config.json` define configuraciones importantes, como el punto final de la API y los idiomas de traducción admitidos, para asegurar el funcionamiento fluido de la herramienta y apoyar características multilingües. 🤓
+1. **Carga de configuración** - Leer los parámetros del proyecto desde el archivo de configuración.
+2. **Interacción con el repositorio** - Obtener archivos del repositorio y su contenido a través de la API de GitHub.
+3. **Resumen de contenido** - Utilizar la API de OpenAI para resumir el contenido de los archivos del repositorio, generando descripciones concisas.
+4. **Generación de README** - Crear un README profesional basado en la estructura de archivos y la información resumida.
+5. **Traducción** - Traducir el contenido del README a varios idiomas, manteniendo emojis y estilo vibrante. 😄🎨
+6. **Operaciones de Git** - Confirmar el README actualizado y los archivos traducidos en el repositorio.
 
-## Gestión de Dependencias 🐍
-El archivo `requirements.txt` enumera los paquetes de Python necesarios, incluyendo:
+## 🚀 Comienza tu Aventura
 
-- **requests**: Simplifica las solicitudes HTTP
-- **openai**: Acceso a la API de OpenAI para diversas operaciones
-- **GitPython**: Interactuar con repositorios de Git en Python
+Simplemente inicie manualmente el flujo de trabajo de GitHub Actions, espere unos minutos, y un excelente archivo README será generado y traducido automáticamente, ¡puede disfrutar de todo lo que esto ofrece! ✨
 
-¡Asegúrate de instalar estas dependencias para garantizar el correcto funcionamiento de la herramienta! 🌟
+### 🌟 ¡Ven y danos estrellas! Tu apoyo es nuestra motivación para seguir avanzando! 💖
 
-## ¿Cómo Usar?
-
-Puedes optar por hacer un fork de este proyecto y utilizar `GitHub Actions`, o clonarlo localmente para su uso.
-
-Aquí tienes un ejemplo de uso con GitHub Actions:
-
-1. Agrega `PAT` y `OPENAI_API_KEY` en los Secrets de GitHub.
-2. Edita el archivo `config.json` para configurar los parámetros relevantes.
-3. Si deseas generar y traducir el archivo README:
-   - Ejecuta manualmente el flujo de trabajo `generate`, lo que generará un archivo `.README.md` en el directorio raíz del repositorio.
-   - Revisa y modifica ese archivo antes de hacer un commit.
-   - Activa manualmente el flujo de trabajo `translate`, la herramienta añadirá el README editado al repositorio objetivo y generará versiones traducidas.
-
-¡Listo! 🎉
-
-Si ya tienes un archivo README y solo deseas traducirlo:
-- Sube el archivo al archivo `.README.md` del repositorio de la herramienta.
-- Activa manualmente el flujo de trabajo `translate`.
-
-¡Listo! 🎉
-
-## Comentarios y Contribuciones 🙌
-¡Agradecemos tus comentarios y sugerencias! No dudes en dar un "me gusta"⭐️ a este proyecto y participar en él, ¡juntos mejoramos la calidad y usabilidad del proyecto!
-
-¡Gracias por tu interés y apoyo! ¡Unámonos para hacer los archivos README más vibrantes y divertidos! 🎉
+¡Gracias por su atención y apoyo! Si tiene alguna pregunta o sugerencia, no dude en contactarnos en GitHub. ¡Esperamos crear juntos una comunidad de código abierto aún mejor! 🤝
