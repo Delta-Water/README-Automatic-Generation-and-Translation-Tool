@@ -6,13 +6,13 @@
     "branch": "main",
     "TRANSLATION_LANGUAGES": ["简体中文", "繁体中文", "English", "Español", "Français", "Deutsch", "日本語"],
     "LANGUAGE_SWITCH_HEADER": {
-        "简体中文": "切换语言: 简体中文",
-        "繁体中文": "切換語言: 繁體中文",
-        "English": "Switch Language: English",
-        "Español": "Cambiar idioma: Español",
-        "Français": "Changer de langue: Français",
-        "Deutsch": "Sprache wechseln: Deutsch",
-        "日本語": "言語を切り替える: 日本語"
+        "简体中文": "zh",
+        "繁体中文": "zh-TW",
+        "English": "en",
+        "Español": "es",
+        "Français": "fr",
+        "Deutsch": "de",
+        "日本語": "ja"
     },
     "_comment_0": "You can also add other languages to your descriptive document.",
     "main_language_index": 0,
