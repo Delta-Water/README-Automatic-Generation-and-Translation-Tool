@@ -1,5 +1,6 @@
 import os
 import sys
+import base64
 import json
 import requests
 from openai import OpenAI
