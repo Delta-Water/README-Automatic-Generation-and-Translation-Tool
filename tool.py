@@ -220,6 +220,7 @@ def optimize_readme_content():
         print("Failed to retrieve README content from the repository.")  # 无法从仓库检索 README 内容
         return
 
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     if readme_content:
         print("Optimizing README content...")  # 正在优化 README 内容
         prompt = (
@@ -266,6 +267,7 @@ def translate_and_commit_translations():
         print("Failed to retrieve README content from the repository.")  # 无法从仓库检索 README 内容
         return
 
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url=base_url)
     if readme_content:
         print("Generating translations...")  # 正在生成翻译
         translations = create_translations(client, readme_content, main_language)
