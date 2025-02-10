@@ -210,6 +210,7 @@ def optimize_readme_content():
     repo_name = config['repo_name']
     owner = config["owner"]
     github_token = os.getenv('GITHUB_TOKEN')
+    base_url = config.get('base_url', 'https://api.openai.com/v1')
     readme_url = f'https://api.github.com/repos/{owner}/{repo_name}/contents/README.md'
     headers = {'Authorization': f'token {github_token}'}
     response = requests.get(readme_url, headers=headers)
