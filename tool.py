@@ -226,7 +226,7 @@ def optimize_readme_content():
         prompt = (
             f"Please optimize the following README content to make it more professional and engaging:\n\n"
             f"{readme_content}\n"
-            f"Please ensure the output is clear, concise, and appealing."
+            f"Please ensure the output is canonical, methodical, and appealing."
             f"Please use {main_language}."
         )
         optimized_content = call_openai_api(client, prompt)
