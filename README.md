@@ -1,6 +1,6 @@
 <div align="center">
 
-[繁体中文](/README/README_zh-TW.md)/[English](/README/README_en.md)/[Español](/README/README_es.md)/[Français](/README/README_fr.md)/[Deutsch](/README/README_de.md)/[日本語](/README/README_ja.md)
+[繁体中文](/README/README_zh-TW.md) /[English](/README/README_en.md)/[Español](/README/README_es.md) /[Français](/README/README_fr.md) /[Deutsch](/README/README_de.md) /[日本語](/README/README_ja.md)
 </div>
 
 # 🤖 自动生成与翻译 README 工具
