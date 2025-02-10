@@ -1,74 +1,72 @@
-# 🤖 自动生成与翻译 README 工具
+# 📚 自动化 README 生成与翻译工具
 
-欢迎来到 **README-Automatic-Generation-and-Translation-Tool** 项目! 🎉 这个项目旨在简化您的 GitHub 项目文档生成与翻译工作，让您的 README 文件更加专业和多语言化，无论您身在何处，都能轻松吸引更多的开发者！🌍✨
+欢迎来到 **README 自动化生成与翻译工具** 项目！🎉 这个项目的目的是帮助开发者和项目维护者轻松地生成、优化和翻译他们的 README 文件，从而确保文档始终保持最新状态。无论你是新手还是专家，只需轻松点击几下，即可获取一份专业、引人入胜的 README 文档！ 🚀
 
-## 🚀 项目结构
+## 📂 项目结构
 
-以下是项目的结构概览：
-
-```
-README-Automatic-Generation-and-Translation-Tool/
-│
-├── .github/
-│   └── workflows/
-│       └── main.yml  # GitHub Actions 工作流文件
-│
-├── LICENSE            # Apache 许可证 2.0
-│
-├── README.md          # 项目的主要 README 文件
-│
-├── README/
-│   ├── README_Deutsch.md     # 德语 README 
-│   ├── README_English.md      # 英语 README 
-│   ├── README_Español.md      # 西班牙语 README 
-│   ├── README_Français.md     # 法语 README 
-│   ├── README_日本語.md        # 日语 README 
-│   └── README_繁体中文.md      # 繁体中文 README 
-│
-├── config.json       # 配置文件，包括设定与翻译语言
-│
-├── requirements.txt   # 项目所需的依赖库
-│
-└── tool.py            # 自动生成与翻译 README 的主要脚本
+```plaintext
+.github/
+└── workflows/
+    ├── generate.yml      # 自动生成 README 文件的工作流
+    ├── optimize.yml      # 自动优化 README 文档的工作流
+    └── translate.yml      # 自动翻译 README 文档的工作流
+LICENSE                    # Apache 许可证文件
+README.md                  # 项目的自述文件
+config.json                # 配置文件，定义项目参数
+requirements.txt          # Python 依赖包列表
+tool.py                    # 自动化处理工具
 ```
 
-## 📜 许可证概要
+## ⚙️ 文件简介
 
-我们的项目采用 **Apache 许可证 2.0**，这意味着您可以自由使用、修改和分发我们的代码，但需保留原始许可证和相关声明。📝 让我们共同促进开源合作吧！💪
+### .github/workflows/generate.yml
+这是一个 GitHub Actions 工作流，用于自动生成项目的 README 文件。它通过手动触发 (workflow_dispatch) 启动，并执行以下步骤：
+1. 检出项目代码；
+2. 设置 Python 3.8 环境；
+3. 安装必要的依赖 (`requests`, `openai`, `GitPython`)；
+4. 执行 `tool.py` 脚本生成 README 文件。
 
-## ⚙️ 配置文件
+### .github/workflows/optimize.yml
+该工作流用于自动优化 README 文件，使用 GitHub Actions 手动启动。其主要步骤包括：
+1. 检出代码；
+2. 设置 Python 3.8 环境；
+3. 安装所需依赖；
+4. 执行 `tool.py optimize`，利用 OpenAI API 进行优化。
 
-`config.json` 是您项目的配置中心。它允许您设置相关参数，如仓库名称、所有者信息及支持的翻译语言（简体中文、繁体中文、英语、西班牙语、法语、德语、日语），让您能轻松切换和管理多语言内容。🌐💻
+### .github/workflows/translate.yml
+这个工作流是用于自动翻译项目的 README 文件，通过手动触发启动。具体步骤包括：
+1. 检出代码；
+2. 设置 Python 3.8 环境；
+3. 安装依赖；
+4. 执行 `tool.py translate` 进行翻译。
 
-## 📦 依赖库
+### LICENSE
+包含 Apache 许可证，第 2 版，允许用户自由使用、修改和分发项目，但需遵守相关条件，保护原作者和贡献者的权益。
 
-我们的项目依赖以下库，确保您可以轻松搭建开发环境：
+### config.json
+配置文件，定义项目运行所需的参数，包括仓库信息、API 基本网址、模型以及支持的翻译语言。
 
-1. **requests** - 简单的HTTP请求库。
-2. **openai** - 与 OpenAI API 交互的库。
-3. **GitPython** - 通过 Python 操作 Git 仓库的库。
+### requirements.txt
+列出项目所需的 Python 包，包括：
+- `requests`: 处理 HTTP 请求，简化网络数据交互。
+- `openai`: 交互 OpenAI API，实现 AI 模型的使用。
+- `GitPython`: 操作 Git 仓库的库。
 
-您只需要运行以下命令安装依赖：
+### tool.py
+自动化处理 README 的核心脚本，主要功能包括：
+1. 加载配置；
+2. 获取仓库内容；
+3. 生成 README 内容；
+4. 优化和翻译 README；
+5. 提交变更；
+6. 提供命令行接口。
 
-```bash
-pip install -r requirements.txt
-```
+## 🌟 让我们开始吧！
 
-## ⚙️ 功能概述
+别再犹豫了！用这个工具来提升你的项目文档质量，吸引更多的协作与关注！如果你觉得这个项目对你有帮助，请给我们一个 💖 Star！大家一起努力，让开源社区更加美好！🌈
 
-脚本 `tool.py` 提供了强大的功能，包括：
+## 📄 许可证
 
-1. **配置加载** - 从配置文件中读取项目参数。
-2. **仓库交互** - 通过 GitHub API 获取仓库文件及其内容。
-3. **内容摘要** - 利用 OpenAI 的 API 摘要仓库文件内容，生成简洁的描述。
-4. **README 生成** - 根据文件结构与摘要信息生成专业的 README 文件。
-5. **翻译** - 将 README 内容翻译成多种语言，保留活泼的表情符号和样式。😄🎨
-6. **Git 操作** - 提交更新后的 README 和翻译文件到仓库。
+本项目采用 Apache 许可证，详细信息请查看 [LICENSE](LICENSE) 文件。
 
-## 🚀 开启之旅
-
-只需手动启动 GitHub Actions 工作流，等待几分钟，优秀的 README 文件将自动生成并翻译好，您可以尽情享受这一切的美好。✨
-
-### 🌟 快来为我们加星吧！您的支持是我们不断前进的动力！💖
-
-感谢您的关注和支持！如有任何问题或建议，请随时在GitHub上与我们联系。我们期待着与您共同创造更美好的开源社区！🤝
+欢迎加入，我们一起让 README 变得更简单！🚀
