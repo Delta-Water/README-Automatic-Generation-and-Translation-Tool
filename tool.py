@@ -150,9 +150,7 @@ def commit_changes(repo_name, owner, github_token, updated_readme, translations,
             translation_path = f'./{repo_name}/{readme_path}/README_{LANGUAGE_ABBR[lang]}.md'
             with open(translation_path, 'w', encoding='utf-8') as f:
                 f.write(translation)
-
-        for abbr in translations.values():
-            repo.git.add(f'{readme_path}/README_{abbr}.md')
+            repo.git.add(f'{readme_path}/README_{LANGUAGE_ABBR[lang]}.md')
 
         repo.index.commit('Automatically translate README files.')
 
