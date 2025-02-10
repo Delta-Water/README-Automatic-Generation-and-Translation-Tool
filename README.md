@@ -5,16 +5,16 @@
 ## 📂 项目结构
 
 ```plaintext
-.github/
+./
 └── workflows/
-    ├── generate.yml      # 自动生成 README 文件的工作流
-    ├── optimize.yml      # 自动优化 README 文档的工作流
-    └── translate.yml      # 自动翻译 README 文档的工作流
-LICENSE                    # Apache 许可证文件
-README.md                  # 项目的自述文件
-config.json                # 配置文件，定义项目参数
-requirements.txt          # Python 依赖包列表
-tool.py                    # 自动化处理工具
+│   ├── generate.yml      # 自动生成 README 文件的工作流
+│   ├── optimize.yml      # 自动优化 README 文档的工作流
+│   └── translate.yml      # 自动翻译 README 文档的工作流
+└── LICENSE                    # Apache 许可证文件
+└── README.md                  # 项目的自述文件
+└── config.json                # 配置文件，定义项目参数
+└── requirements.txt          # Python 依赖包列表
+└── tool.py                    # 自动化处理工具
 ```
 
 ## ⚙️ 文件简介
@@ -24,7 +24,7 @@ tool.py                    # 自动化处理工具
 1. 检出项目代码；
 2. 设置 Python 3.8 环境；
 3. 安装必要的依赖 (`requests`, `openai`, `GitPython`)；
-4. 执行 `tool.py` 脚本生成 README 文件。
+4. 执行 `tool.py generate` 脚本生成 README 文件。
 
 ### .github/workflows/optimize.yml
 该工作流用于自动优化 README 文件，使用 GitHub Actions 手动启动。其主要步骤包括：
@@ -60,6 +60,21 @@ tool.py                    # 自动化处理工具
 4. 优化和翻译 README；
 5. 提交变更；
 6. 提供命令行接口。
+
+## 🌸 如何使用？
+你可以选择fork本项目后使用`GitHub Actions`或者git到本地使用
+
+这里以前者为示例，选择本地的请自行配置并调整代码
+
+首先语言添加`PAT`和`OPENAI_API_KET`到secrets
+
+然后进入config.json配置相关参数
+
+如果希望生成一个readme请手动触发generate工作流
+
+如果希望修缮一个粗糙的readme请手动触发optimize工作流
+
+如果希望翻译一个readme请手动触发translate工作流
 
 ## 🌟 让我们开始吧！
 
