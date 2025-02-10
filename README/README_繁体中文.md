@@ -1,8 +1,10 @@
-- [切换语言: 简体中文](/README.md) | - [Switch Language: English](/README/README_English.md) | - [Cambiar idioma: Español](/README/README_Español.md) | - [Changer de langue: Français](/README/README_Français.md) | - [Sprache wechseln: Deutsch](/README/README_Deutsch.md) | - [言語を切り替える: 日本語](/README/README_日本語.md)
+[zh](/README.md) | [English](/README/README_en.md) | [Español](/README/README_es.md) | [Français](/README/README_fr.md) | [Deutsch](/README/README_de.md) | [日本語](/README/README_ja.md)
+
+- [切換語言: 繁體中文](/README/README_繁体中文.md) | - [Switch Language: English](/README/README_English.md) | - [Cambiar idioma: Español](/README/README_Español.md) | - [Changer de langue: Français](/README/README_Français.md) | - [Sprache wechseln: Deutsch](/README/README_Deutsch.md) | - [言語を切り替える: 日本語](/README/README_日本語.md)
 
 # 🤖 自動生成與翻譯 README 工具
 
-歡迎來到 **README-Automatic-Generation-and-Translation-Tool** 專案! 🎉 這個專案旨在簡化您的 GitHub 專案文件生成與翻譯工作，讓您的 README 文件更加專業和多語言化，無論您身在何處，都能輕鬆吸引更多的開發者！🌍✨
+歡迎來到 **README-Automatic-Generation-and-Translation-Tool** 專案！🎉 這個專案旨在簡化您的 GitHub 專案文檔生成與翻譯工作，讓您的 README 文件更加專業和多語言化，無論您身在何處，都能輕鬆吸引更多的開發者！🌍✨
 
 ## 🚀 專案結構
 
@@ -15,7 +17,7 @@ README-Automatic-Generation-and-Translation-Tool/
 │   └── workflows/
 │       └── main.yml  # GitHub Actions 工作流文件
 │
-├── LICENSE            # Apache 許可證 2.0
+├── LICENSE            # Apache 授權 2.0
 │
 ├── README.md          # 專案的主要 README 文件
 │
@@ -34,9 +36,9 @@ README-Automatic-Generation-and-Translation-Tool/
 └── tool.py            # 自動生成與翻譯 README 的主要腳本
 ```
 
-## 📜 許可證概要
+## 📜 授權概要
 
-我們的專案採用 **Apache 許可證 2.0**，這意味著您可以自由使用、修改和分發我們的代碼，但需保留原始許可證和相關聲明。📝 讓我們共同促進開源合作吧！💪
+我們的專案採用 **Apache 授權 2.0**，這意味著您可以自由使用、修改和分發我們的代碼，但需保留原始授權和相關聲明。📝 讓我們共同促進開源合作吧！💪
 
 ## ⚙️ 配置文件
 
