@@ -226,7 +226,7 @@ def optimize_readme_content():
         prompt = (
             f"Please optimize the following README content which was simply modified by human to make it more professional and engaging:\n\n"
             f"{readme_content}\n\n"
-            f"Please ensure the document is canonical, methodical, and appealing.\n"
+            f"Please add appropriate emoticons.\n"
             f"Please ensure that the document is consistent in structure, punctuation, and use of emoticons.\n"
             f"Please use {main_language}."
         )
