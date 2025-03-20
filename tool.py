@@ -226,8 +226,9 @@ def optimize_readme_content():
         prompt = (
             f"Please optimize the following README content which was simply modified by human to make it more professional and engaging:\n\n"
             f"{readme_content}\n\n"
-            f"Please add appropriate emoticons.\n"
+            f"Please add appropriate emoticons for each title and add appropriate emoticons in the body of the text.\n"
             f"Please ensure that the document is consistent in structure, punctuation, and use of emoticons.\n"
+            f"Use ordered and unordered lists, tables, and other special MD syntax as much as possible to make the article more readable.\n"
             f"Please use {main_language}."
         )
         optimized_content = call_openai_api(client, prompt)
