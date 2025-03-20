@@ -224,9 +224,10 @@ def optimize_readme_content():
     if readme_content:
         print("Optimizing README content...")  # 正在优化 README 内容
         prompt = (
-            f"Please optimize the following README content to make it more professional and engaging:\n\n"
+            f"Please optimize the following README content which was simply modified by human to make it more professional and engaging:\n\n"
             f"{readme_content}\n"
-            f"Please ensure the output is canonical, methodical, and appealing."
+            f"Please ensure the document is canonical, methodical, and appealing."
+            f"Please ensure that the document is consistent in structure, punctuation, and use of emoticons."
             f"Please use {main_language}."
         )
         optimized_content = call_openai_api(client, prompt)
