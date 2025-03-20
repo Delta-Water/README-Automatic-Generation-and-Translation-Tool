@@ -90,7 +90,7 @@ def generate_readme_content(client, files, github_token, main_language, ignore_p
         f"Please use {main_language} to generate a professional and engaging README file based on the following project structure and file summaries:\n"
         f"Project Structure:(You need to make it more readable)\n{structure_info}\n\n"
         f"File Summaries:\n{all_file_summaries}\n\n"
-        f"Use witty language and appropriate emoticons to make people want to star the project and make the descriptive file more appealing."
+        f"Use witty language and appropriate emoticons to make people want to star the project and make the descriptive file more appealing.\n"
         f"Don't wrap the whole content in a block of code, just print it out."
     )
     print(f"Generating README file.")
@@ -225,9 +225,9 @@ def optimize_readme_content():
         print("Optimizing README content...")  # 正在优化 README 内容
         prompt = (
             f"Please optimize the following README content which was simply modified by human to make it more professional and engaging:\n\n"
-            f"{readme_content}\n"
-            f"Please ensure the document is canonical, methodical, and appealing."
-            f"Please ensure that the document is consistent in structure, punctuation, and use of emoticons."
+            f"{readme_content}\n\n"
+            f"Please ensure the document is canonical, methodical, and appealing.\n"
+            f"Please ensure that the document is consistent in structure, punctuation, and use of emoticons.\n"
             f"Please use {main_language}."
         )
         optimized_content = call_openai_api(client, prompt)
